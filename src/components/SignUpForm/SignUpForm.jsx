@@ -28,6 +28,7 @@ const SignUpForm = () => {
    return (
     <div>
        <div>
+           <h3>I am sign up page</h3>
         <div className="form-container">
           {/* <form autoComplete="off" onSubmit={this.handleSubmit}> */}
           <form autoComplete="off">
