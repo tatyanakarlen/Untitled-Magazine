@@ -11,7 +11,7 @@ const SignUpForm = ({ setUserInState }) => {
         error: '',
       });
     
-      console.log('userInfo', userInfo);
+    //   console.log('userInfo', userInfo);
 
     //   const handleChange = (evt) => {
     //     setUserInfo({
@@ -30,7 +30,7 @@ const SignUpForm = ({ setUserInState }) => {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({name: userInfo.name, email: userInfo.email, password: userInfo.password,})
           })
-          
+          console.log('is this working?')
           // 2. Check "fetchResponse.ok". False means status code was 4xx from the server/controller action
           if (!fetchResponse.ok) throw new Error('Fetch failed - Bad request')
           

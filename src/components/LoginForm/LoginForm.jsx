@@ -9,7 +9,6 @@ const LoginForm = ({ setUserInState }) => {
         error: ''
       });
     
-      console.log('userInfo', userLogin);
 
     //   const handleChange = (evt) => {
     //     setUserInfo({
@@ -70,7 +69,7 @@ const LoginForm = ({ setUserInState }) => {
             })
             }
             required />
-            <label>Email</label>
+            <label>Password</label>
             <input 
             type="text" 
             name="password" 
@@ -83,7 +82,7 @@ const LoginForm = ({ setUserInState }) => {
             }
             required />
             {/* <button type="submit" disabled={disable}>SIGN UP</button> */}
-            <button onClick={logUserObj} type="submit">LOGIN UP</button>
+            <button type="submit">LOGIN UP</button>
           </form>
         </div>
         <p className="error-message">&nbsp;{userLogin.error}</p>
