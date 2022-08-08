@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 
-const SignUpForm = () => {
+const SignUpForm = ({ setUserInState }) => {
 
     const [userInfo, setUserInfo] = useState({
         name: '',
@@ -20,18 +20,43 @@ const SignUpForm = () => {
     //     });
     //   };
 
-      const logUserObj = (e) => {
-          e.preventDefault();
-          console.log(userInfo)
+      
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+           // 1. POST our new user info to the server
+          const fetchResponse = await fetch('/api/users/signup', {
+            method: 'POST',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({name: userInfo.name, email: userInfo.email, password: userInfo.password,})
+          })
+          
+          // 2. Check "fetchResponse.ok". False means status code was 4xx from the server/controller action
+          if (!fetchResponse.ok) throw new Error('Fetch failed - Bad request')
+          
+          let token = await fetchResponse.json() // 3. decode fetch response to get jwt from srv
+          localStorage.setItem('token', token);  // 4. Stick token into localStorage (users browser)
+          
+          const userDoc = JSON.parse(atob(token.split('.')[1])).user; // 5. Decode the token + put user document into state
+          setUserInState(userDoc)
+        } catch (err) {
+          console.log("SignupForm error", err)
+          setUserInfo({
+            ...userInfo,
+            error: 'Sign Up Failed - Try Again',
+          })
+        }
       }
+    
+      const disable = userInfo.password !== userInfo.confirm
 
    return (
+
     <div>
        <div>
            <h3>I am sign up page</h3>
         <div className="form-container">
-          {/* <form autoComplete="off" onSubmit={this.handleSubmit}> */}
-          <form autoComplete="off">
+          <form autoComplete="off" onSubmit={handleSubmit}>
             <label>Name</label>
             <input 
             type="text" 
@@ -80,8 +105,8 @@ const SignUpForm = () => {
                 })
             }
             required />
-            {/* <button type="submit" disabled={disable}>SIGN UP</button> */}
-            <button onClick={logUserObj} type="submit">SIGN UP</button>
+            <button type="submit" disabled={disable}>SIGN UP</button>
+            {/* <button onClick={logUserObj} type="submit">SIGN UP</button> */}
           </form>
         </div>
         <p className="error-message">&nbsp;{userInfo.error}</p>
