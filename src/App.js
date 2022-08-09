@@ -4,6 +4,8 @@ import AuthPage from './pages/AuthPage/AuthPage'
 import MagazinePage from './pages/MagazinePage/MagazinePage'
 import { Route, Routes, Navigate } from 'react-router-dom';
 
+//testing 
+
 function App() {
 
   const [user, setUser] = useState(null)
