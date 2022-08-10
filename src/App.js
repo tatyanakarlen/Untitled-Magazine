@@ -1,8 +1,8 @@
 import './App.css'
 import { useState, useEffect } from 'react';
-import AuthPage from './pages/AuthPage/AuthPage'
-import AdminDashboardPage from './pages/AdminDashboardPage/AdminDashboardPage'
-import MagazinePage from './pages/MagazinePage/MagazinePage'
+import AuthPage from './pages/dashboard/AuthPage/AuthPage'
+import AdminDashboardPage from './pages/dashboard/AdminDashboardPage/AdminDashboardPage'
+import MagazinePage from './pages/dashboard/MagazinePage/MagazinePage'
 import { Route, Routes, Navigate, Switch, Redirect } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom'
 

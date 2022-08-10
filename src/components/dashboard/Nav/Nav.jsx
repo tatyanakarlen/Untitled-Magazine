@@ -1,7 +1,7 @@
 import React from 'react'
 import './Nav.css'
 
-const Nav = ({ handleLogOut }) => {
+const Nav = ({ handleLogOut, navActive, setNavActive }) => {
   return (
     <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-dark d-flex sticky-top">
             <div class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
@@ -20,8 +20,24 @@ const Nav = ({ handleLogOut }) => {
                             <i class="fs-5 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Articles</span> </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link px-sm-0 px-2">
-                            <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Post New</span></a>
+
+                   
+                    {/* main: true, 
+        authors: false, 
+        articles: false, 
+        post:false, */}
+
+                        <a href="#" class="nav-link px-sm-0 px-2"   
+                        onClick={() =>
+                            setNavActive({
+                            ...navActive,
+                            main: false,
+                            authors: true, 
+                            articles: false, 
+                            post: false,
+                            })
+                        }>
+                            <i class="fs-5 bi-table"></i><span class="ms-1 d-none d-sm-inline">Contributers</span></a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle px-sm-0 px-1" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
