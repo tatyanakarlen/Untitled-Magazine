@@ -10,6 +10,7 @@ import './AdminDashboardPage.css';
 
 const AdminDashboardPage = ({ handleLogOut }) => {
 
+  // this is the page state, it changes based on which nav item is clicked 
   const [navActive, setNavActive] = useState({
         main: true, 
         contributers: false, 
@@ -17,7 +18,8 @@ const AdminDashboardPage = ({ handleLogOut }) => {
         post:false,
   })
 
-  // ArticlesList
+  
+// below is the logic that determines which component to render onClick in nav
 
   const main = navActive.main
   const contributers = navActive.contributers
@@ -37,9 +39,6 @@ const AdminDashboardPage = ({ handleLogOut }) => {
   }
   
  
-
-  console.log(activeNav)
-
   return (
     <div class="container-fluid overflow-hidden">
       <div class="row vh-100 overflow-auto">
