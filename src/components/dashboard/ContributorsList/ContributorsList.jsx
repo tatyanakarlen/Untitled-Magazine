@@ -2,8 +2,8 @@ import React from 'react'
 
 const ContributorsList = () => {
   return (
-    <div>
-      This is contributors list
+    <div class="col d-flex flex-column h-sm-100">
+      This is contributors list!!!!!
     </div>
   )
 }

@@ -11,12 +11,45 @@ const Nav = ({ handleLogOut, navActive, setNavActive }) => {
                 </a>
                 <ul id="nav-ul" class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
-                        <a href="#" class="nav-link px-sm-0 px-2">
-                            <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Magazine</span>
+                        {/* link to magazine goes here */}
+                        <a href="#" class="nav-link px-sm-0 px-2"
+                        onClick={() =>
+                            setNavActive({
+                            ...navActive,
+                            main: true,
+                            contributers: false, 
+                            articles: false, 
+                            post: false,
+                            })
+                        }>
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Main</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-sm-0 px-2">
+                        <a href="#" class="nav-link px-sm-0 px-2"
+                        onClick={() =>
+                            setNavActive({
+                            ...navActive,
+                            main: false,
+                            contributers: false, 
+                            articles: false, 
+                            post: true,
+                            })
+                        }>
+                            <i class="fs-5 bi-people"></i><span class="ms-1 d-none d-sm-inline">Post</span> </a>
+                    </li>
+                   
+                    <li>
+                        <a href="#submenu1" data-bs-toggle="collapse" class="nav-link px-sm-0 px-2"
+                         onClick={() =>
+                            setNavActive({
+                            ...navActive,
+                            main: false,
+                            contributers: false, 
+                            articles: true, 
+                            post: false,
+                            })
+                        }>
                             <i class="fs-5 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Articles</span> </a>
                     </li>
                     <li>
@@ -32,7 +65,7 @@ const Nav = ({ handleLogOut, navActive, setNavActive }) => {
                             setNavActive({
                             ...navActive,
                             main: false,
-                            authors: true, 
+                            contributers: true, 
                             articles: false, 
                             post: false,
                             })
@@ -45,14 +78,17 @@ const Nav = ({ handleLogOut, navActive, setNavActive }) => {
                         </a>
                        
                     </li>
+                    <li class="nav-item">
+                        {/* link to magazine goes here */}
+                        <a href="#" class="nav-link px-sm-0 px-2">
+                            <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Magazine</span>
+                        </a>
+                    </li>
                     <li>
                         <a href="#" class="nav-link px-sm-0 px-2" onClick={handleLogOut}>
                             <i class="fs-5 bi-grid"></i><span class="ms-1 d-none d-sm-inline">Log Out</span></a>
                     </li>
-                    <li>
-                        <a href="#" class="nav-link px-sm-0 px-2">
-                            <i class="fs-5 bi-people"></i><span class="ms-1 d-none d-sm-inline">Customers</span> </a>
-                    </li>
+                    
                 </ul>
                 <div class="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
                     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
