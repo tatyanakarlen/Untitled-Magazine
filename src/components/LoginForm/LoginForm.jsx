@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import {useNavigate} from 'react-router-dom'
 
 const LoginForm = ({ setUserInState }) => {
 
@@ -10,17 +11,14 @@ const LoginForm = ({ setUserInState }) => {
       });
     
 
-    //   const handleChange = (evt) => {
-    //     setUserInfo({
-    //       [evt.target.name]: evt.target.value,
-    //       error: ''
-    //     });
-    //   };
+   
 
       const logUserObj = (e) => {
           e.preventDefault();
           console.log(userLogin)
       }
+
+      const navigate = useNavigate()
 
 
       const handleSubmit = async (e) => {
@@ -41,6 +39,7 @@ const LoginForm = ({ setUserInState }) => {
     
           const userDoc = JSON.parse(atob(token.split('.')[1])).user; // 5. Decode the token + put user document into state
           setUserInState(userDoc)
+          // navigate('../login')
         } catch (err) {
           console.log("SignupForm error", err)
           setUserLogin({

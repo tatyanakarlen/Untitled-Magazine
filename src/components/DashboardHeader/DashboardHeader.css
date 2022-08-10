@@ -1,0 +1,8 @@
+#header-box {
+    /* width: 90%;  */
+    text-align:left; 
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    /* padding-top: 2rem;   */
+} 
