@@ -4,6 +4,7 @@ import AuthPage from './pages/AuthPage/AuthPage'
 import AdminDashboardPage from './pages/AdminDashboardPage/AdminDashboardPage'
 import MagazinePage from './pages/MagazinePage/MagazinePage'
 import { Route, Routes, Navigate, Switch, Redirect } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom'
 
 function App() {
 
@@ -11,6 +12,14 @@ function App() {
 
   const setUserInState = (incomingUserData) => {
     setUser(incomingUserData)
+  }
+
+  const navigate = useNavigate()
+
+  const handleLogOut = () =>{
+    localStorage.removeItem("token");
+    setUser(null)
+    navigate('../login')
   }
 
   // let [posts, setPosts] = useState([])
@@ -41,7 +50,7 @@ function App() {
       <Route path='/login' element={ user !== null ? <Navigate to='/dashboard' /> : <AuthPage setUserInState={setUserInState}/>} />
       <Route path='/' element={<MagazinePage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
-      <Route path='/dashboard' element={<AdminDashboardPage />} />
+      <Route path='/dashboard' element={<AdminDashboardPage handleLogOut={handleLogOut}/>} />
       {/* {user !== null ? <Navigate to='/dashboard' /> :
       <Navigate to='/' /> */}
       

@@ -5,7 +5,7 @@ import * as Icon from 'react-bootstrap-icons';
 const DashboardCardSm = () => {
   return (
   
-    <div class="card bg-light text-dark border border-secondary">
+    <div class="card bg-light text-dark">
       <div class="card-body text-left">
         <div class="h1 mb-1">
         <Icon.ArrowRight />
@@ -13,6 +13,7 @@ const DashboardCardSm = () => {
         </div>
 
         <h5 class="card-title mb-1 dashboard-cards-title">Summary</h5>
+        <hr class="bg-danger border-2 border-top border-danger" />
 
         <div class="dashboard-cards">
           <p class="card-text text-primary p-10 dashboard-text">28 posts</p>
