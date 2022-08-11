@@ -51,12 +51,7 @@ function App() {
       <Route path='/' element={<MagazinePage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
       <Route path='/dashboard' element={<AdminDashboardPage handleLogOut={handleLogOut}/>} />
-      {/* {user !== null ? <Navigate to='/dashboard' /> :
-      <Navigate to='/' /> */}
-      
-  {/* } */}
-  
-     </Routes>
+    </Routes>
     </div>
   );
 }

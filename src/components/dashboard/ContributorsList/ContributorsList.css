@@ -33,3 +33,12 @@
 .dashboard-text {
     font-size: 14px;
 }
+
+.sml-input {
+    width: 300px; 
+}
+
+#form-div {
+    display: flex; 
+    justify-content: center;
+}

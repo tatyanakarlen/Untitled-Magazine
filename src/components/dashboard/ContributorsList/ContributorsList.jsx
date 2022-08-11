@@ -19,15 +19,66 @@ const ContributorsList = () => {
         <form class="row g-3">
           <div class="col-md-12">
               <br/>
+
+              {/* <input
+            input
+            type="text"
+            name="name"
+            value={submission.name}
+            onChange={(e) =>
+              setSubmission({
+                ...submission,
+                name: e.target.value,
+              })
+            }
+            pattern="[A-Za-z]{2,}"
+          /> */}
+             {/* name: {type: String, required: true}, 
+    email: {type: String, required: true}, 
+    city: {type: String, required: true}, 
+    country: {type: String, required: true}, */}
+
+
               <label for="comments" class="form-label"></label>
-              <input class="form-control title-place" id="comments" rows="2" required placeholder="Contributor name here"></input>
+              <input 
+              class="form-control title-place" 
+              type="text" 
+              name= "name"
+              rows="2" 
+              required placeholder="Contributor name here"
+              >
+              </input>
               <label for="comments" class="form-label"></label>
-              <input class="form-control body-place"  rows="10" cols="40" id="comments" required placeholder="City, Country"></input>
+              <input 
+              class="form-control body-place"  
+              rows="10" cols="40" 
+              type="text" 
+              name= "email"
+              required placeholder="E-Mail"
+              >
+              </input>
               <label for="comments" class="form-label"></label>
-              <input class="form-control body-place"  rows="10" cols="40" id="comments" required placeholder="E-Mail"></input>
+              <input 
+              class="form-control body-place"  
+              rows="10" cols="40" 
+              type="text" 
+              name= "city"
+              required placeholder="City"
+              >
+              </input>
+              <label for="comments" class="form-label"></label>
+              <input 
+              class="form-control body-place"  
+              rows="10" cols="40" 
+              type="text" 
+              name= "country"
+              required placeholder="Country"
+              >
+              </input>
               <button type="submit" className="btn btn-dark text-light col-2 mt-2">Submit</button>
           </div>
           </form>
+         
       
         <hr class="bg-danger border-2 border-top border-danger" />
         <div class="dashboard-cards-articles">
