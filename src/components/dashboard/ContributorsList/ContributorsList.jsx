@@ -11,19 +11,21 @@ import { useState, useEffect } from 'react';
 // city
 //country
 
-const ContributorsList = () => {
+const ContributorsList = ({ user }) => {
 
     const[contributor, setContributor] = useState({
         name: '',
         email: '',
         city: '',
         country: '',
+        postedBy: user._id, 
       });
     
     
       const postContributor = async (e) => {
         e.preventDefault();
         console.log(contributor);
+        // console.log(user._id);
 
         // '/api/contributorSubmissions'
 
@@ -41,6 +43,7 @@ const ContributorsList = () => {
             email: '',
             city: '',
             country: '',
+            postedBy: user._id, 
           });
         }
       } catch (err) {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 
-const SignUpForm = ({ setUserInState }) => {
+const SignUpForm = ({ setUserInState, user }) => {
 
     const [userInfo, setUserInfo] = useState({
         name: '',

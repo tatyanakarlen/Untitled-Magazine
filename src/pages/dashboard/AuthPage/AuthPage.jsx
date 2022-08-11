@@ -6,7 +6,7 @@ import LoginForm from '../../../components/dashboard/LoginForm/LoginForm';
 
 
 
-const AuthPage = ({setUserInState}) => {
+const AuthPage = ({setUserInState, user}) => {
 
   let [showLogin, setShowLogin] = useState(true)
   return (
@@ -20,8 +20,8 @@ const AuthPage = ({setUserInState}) => {
       {showLogin ? 'SIGN UP' : 'LOG IN'}
       </h3>
       {showLogin ? 
-      <LoginForm setUserInState={setUserInState}/>:
-      <SignUpForm setUserInState={setUserInState}/>
+      <LoginForm user={user} setUserInState={setUserInState}/>:
+      <SignUpForm user={user} setUserInState={setUserInState}/>
       }
     </div>
   )

@@ -14,6 +14,10 @@ function App() {
     setUser(incomingUserData)
   }
 
+  console.log(user)
+
+  
+
   const navigate = useNavigate()
 
   const handleLogOut = () =>{
@@ -47,10 +51,10 @@ function App() {
   return (
     <div className="App">
       <Routes>
-      <Route path='/login' element={ user !== null ? <Navigate to='/dashboard' /> : <AuthPage setUserInState={setUserInState}/>} />
+      <Route path='/login' element={ user !== null ? <Navigate to='/dashboard' /> : <AuthPage user={user} setUserInState={setUserInState}/>} />
       <Route path='/' element={<MagazinePage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
-      <Route path='/dashboard' element={<AdminDashboardPage handleLogOut={handleLogOut}/>} />
+      <Route path='/dashboard' element={<AdminDashboardPage user={user} handleLogOut={handleLogOut}/>} />
     </Routes>
     </div>
   );

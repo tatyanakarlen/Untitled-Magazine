@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import {useNavigate} from 'react-router-dom'
 
-const LoginForm = ({ setUserInState }) => {
+const LoginForm = ({ setUserInState, user }) => {
 
     const [userLogin, setUserLogin] = useState({
         email: '',
