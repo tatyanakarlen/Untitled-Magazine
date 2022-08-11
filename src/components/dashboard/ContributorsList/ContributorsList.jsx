@@ -19,7 +19,34 @@ const ContributorsList = () => {
         city: '',
         country: '',
       });
+    
+    
+      const postContributor = async (e) => {
+        e.preventDefault();
+        console.log(contributor);
 
+        // '/api/contributorSubmissions'
+
+        try {
+        const res = await fetch('/api/contributorSubmissions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ contributor: contributor }),
+        });
+        console.log(res);
+        if (res.statusText === 'OK') {
+          console.log('SUCCESSLY ADDED TO DB =>', contributor);
+          setContributor({
+            name: '',
+            email: '',
+            city: '',
+            country: '',
+          });
+        }
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
 
 
   return (
@@ -114,7 +141,7 @@ const ContributorsList = () => {
               >
               </input>
               <br/>
-              <button type="submit" className="btn btn-dark text-light col-2 mt-2">Submit</button>
+              <button onClick={postContributor} type="submit" className="btn btn-dark text-light col-2 mt-2">Submit</button>
           </div>
           </form>
          
