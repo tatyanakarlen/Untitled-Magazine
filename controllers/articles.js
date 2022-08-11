@@ -6,10 +6,10 @@ module.exports = {
   };
 
   async function create(req, res) {
-    console.log('this is req.user id ')
-//       let obj = (req.body.contributor)
+    console.log(req.body.article)
+      let obj = (req.body.article)
 //     //   console.log(req.body.postedBy)
-//       try {
+      try {
 //       // await SubmissionModel.create({submission: req.body.submission})
 //     //   const user = await user.findById(req.body.contributor.postedBy)
 //     //   console.log('this is user ' + user)
@@ -20,9 +20,9 @@ module.exports = {
 //     //       country: req.body.contributor.country, 
 //     //       postedBy: req.body.contributor.postedBy,
 //     //   })
-//       await Contributor.create(obj)
-//       res.status(200).json('ok. submissions added to DB!' + req.body.contributor)
-//     } catch(err) {
-//       res.json(err)
-//     }
+      await Article.create(obj)
+      res.status(200).json('ok. submissions added to DB!' + req.body.contributor)
+    } catch(err) {
+      res.json(err)
+    }
   }

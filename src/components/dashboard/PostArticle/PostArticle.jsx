@@ -20,6 +20,29 @@ const PostArticle = ({ user }) => {
       const postArticle = async (e) => {
         e.preventDefault();
         console.log(article);
+        
+        try {
+            const res = await fetch('/api/articleSubmissions', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ article: article }),
+            });
+            console.log(res);
+            if (res.statusText === 'OK') {
+              console.log('SUCCESSLY ADDED TO DB =>', article);
+              setArticle({
+                title: '',
+                contributor: '',
+                body: '',
+                tags: '',
+                postedBy: user._id, 
+              });
+            }
+          } catch (err) {
+            console.log(err.message);
+          }
+
+
       }
     
     
