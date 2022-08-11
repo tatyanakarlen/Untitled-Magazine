@@ -33,7 +33,7 @@ const AdminDashboardPage = ({ handleLogOut, user }) => {
   } else if (articles) {
     activeNav = <ArticlesList />
   } else if (post) {
-    activeNav = <PostArticle />
+    activeNav = <PostArticle user={user}/>
   } else {
     activeNav = <Main /> 
   }

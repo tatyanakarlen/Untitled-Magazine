@@ -1,0 +1,44 @@
+#articlesPost-main-container {
+    display: flex; 
+    justify-content: center;
+    background-color: rgb(223, 221, 221);
+    height: 100%; 
+}
+
+#articlesPost-container {
+    width: 75%; 
+    gap: 0.5rem; 
+}
+
+.no-underline {
+    /* text-decoration:none; */
+    display: inline-block;
+    font-weight: normal;
+    padding-left: 0.5rem; 
+}
+
+.dashboard-cards {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+}
+
+.underlined-text{
+    text-decoration: underline;
+    font-weight: bold; 
+    font-size: 16px;
+}
+
+.dashboard-text {
+    font-size: 14px;
+}
+
+.sml-input {
+    width: 300px; 
+}
+
+#form-div {
+    display: flex; 
+    justify-content: center;
+}
