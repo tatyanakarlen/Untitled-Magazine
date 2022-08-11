@@ -40,6 +40,7 @@ const AdminDashboardPage = ({ handleLogOut }) => {
   
  
   return (
+    
     <div class="container-fluid overflow-hidden">
       <div class="row vh-100 overflow-auto">
         <Nav handleLogOut={handleLogOut} setNavActive={setNavActive} navActive={navActive}/>

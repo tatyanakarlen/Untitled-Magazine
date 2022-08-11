@@ -3,8 +3,25 @@ import './ContributorsList.css'
 import * as Icon from 'react-bootstrap-icons';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { useState, useEffect } from 'react';
+
+
+// name
+// email
+// city
+//country
 
 const ContributorsList = () => {
+
+    const[contributor, setContributor] = useState({
+        name: '',
+        email: '',
+        city: '',
+        country: '',
+      });
+
+
+
   return (
     <div class="col d-flex flex-column h-sm-100">
         <div id="contributers-list-main-container" class="row overflow-auto">          
@@ -18,34 +35,34 @@ const ContributorsList = () => {
         <h5 class="card-title mb-1">Contributors<button>Add</button></h5>
         <form class="row g-3">
           <div class="col-md-12">
-              <br/>
+              {/* <br/> */}
+             <label for="comments" class="form-label"></label>
 
-              {/* <input
-            input
-            type="text"
-            name="name"
-            value={submission.name}
+             {/* value={submission.name}
             onChange={(e) =>
               setSubmission({
                 ...submission,
                 name: e.target.value,
               })
-            }
-            pattern="[A-Za-z]{2,}"
-          /> */}
-             {/* name: {type: String, required: true}, 
-    email: {type: String, required: true}, 
-    city: {type: String, required: true}, 
-    country: {type: String, required: true}, */}
+            } */}
 
-
-              <label for="comments" class="form-label"></label>
               <input 
               class="form-control title-place" 
               type="text" 
               name= "name"
               rows="2" 
               required placeholder="Contributor name here"
+              pattern="[A-Za-z]{2,}"
+              value={contributor.name}
+              onChange={(e) => 
+                setContributor({
+                    ...contributor, 
+                    name: e.target.value
+                })
+              }
+
+            
+                 
               >
               </input>
               <label for="comments" class="form-label"></label>
@@ -55,6 +72,13 @@ const ContributorsList = () => {
               type="text" 
               name= "email"
               required placeholder="E-Mail"
+              value={contributor.email}
+              onChange={(e) => 
+                setContributor({
+                    ...contributor, 
+                    email: e.target.value
+                })
+              }
               >
               </input>
               <label for="comments" class="form-label"></label>
@@ -64,6 +88,13 @@ const ContributorsList = () => {
               type="text" 
               name= "city"
               required placeholder="City"
+              value={contributor.city}
+              onChange={(e) => 
+                setContributor({
+                    ...contributor, 
+                    city: e.target.value
+                })
+              }
               >
               </input>
               <label for="comments" class="form-label"></label>
@@ -73,8 +104,16 @@ const ContributorsList = () => {
               type="text" 
               name= "country"
               required placeholder="Country"
+              value={contributor.country}
+              onChange={(e) => 
+                setContributor({
+                    ...contributor, 
+                    country: e.target.value
+                })
+              }
               >
               </input>
+              <br/>
               <button type="submit" className="btn btn-dark text-light col-2 mt-2">Submit</button>
           </div>
           </form>
