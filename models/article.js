@@ -8,13 +8,17 @@ const articleSchema = new Schema({
         required: true
     }, 
     contributor: {
-        type: Schema.Types.String,
-        required: true,
-        ref: 'Contributor',
+        type: String, 
+        required: true
     }, 
     body: {type: String, required: true}, 
     tags: {type: String, required: true}, 
     postedBy: {type: String, required: true},
+    contributorId:  {
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'Contributor',
+    }
 })
 
 module.exports = mongoose.model('Article', articleSchema);
