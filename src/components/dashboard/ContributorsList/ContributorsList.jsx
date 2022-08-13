@@ -8,6 +8,7 @@ import AddContributorForm from '../AddContributorForm/AddContributorForm';
 
 
 const ContributorsList = ({ user, allContributors }) => {
+  
   const [contributor, setContributor] = useState({
     name: '',
     email: '',
@@ -17,6 +18,21 @@ const ContributorsList = ({ user, allContributors }) => {
   });
 
   const [addContributorForm, setAddContributorForm] = useState(false);
+
+  // once an update button is clicked, this state should be changed to contributors profile. a form will toggle
+  // with inputs of existing info with submit button that will do a fetch/update in the database
+
+  const [updateContributorForm, setUpdateContributorForm] = useState(false);
+
+  const [selectedContributor, updateSelectedContributor] = useState({
+    name: '',
+    email: '',
+    city: '',
+    country: '',
+    postedBy: user._id,
+  })
+
+  
 
   const postContributor = async (e) => {
     e.preventDefault();
@@ -91,7 +107,24 @@ const ContributorsList = ({ user, allContributors }) => {
                         </span>
                       </p>
                       <p class="card-text text-primary dashboard-text">
-                        {m.email}
+                        {/* first step is to toggle a form here */}
+                        {m.email}<button 
+                        onClick={() => {
+                          console.log("I want to see if this comes through", m.name)
+                          setUpdateContributorForm(!updateContributorForm)
+                          console.log("How about this one?", m.name)
+                          updateSelectedContributor({
+                            ...selectedContributor,
+                            name: m.name,
+                            email: m.email,
+                            city: m.city, 
+                            country: m.name
+
+                          })
+                          console.log('this is contrib.name', m.name)
+      
+                        }
+                        }>update</button>
                       </p>
                     </div>
                   </div>
