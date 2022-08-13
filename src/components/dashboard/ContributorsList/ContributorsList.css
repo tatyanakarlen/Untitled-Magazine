@@ -5,7 +5,7 @@
     height: 100%; 
 }
 
-#contributers-list-container {
+.contributers-list-container {
     width: 75%; 
     gap: 0.5rem; 
 }
