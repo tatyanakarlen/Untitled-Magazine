@@ -63,8 +63,9 @@ const ContributorsList = ({ user }) => {
         <Icon.ArrowRight />
         </div>
         <h5 class="card-title mb-1">Contributors<button>Add</button></h5>
+        {/* <div id="form-box"> */}
         <form class="row g-3">
-          <div class="col-md-12">
+          <div class="col-md-12 form-box">
               {/* <br/> */}
              <label for="comments" class="form-label"></label>
 
@@ -77,7 +78,7 @@ const ContributorsList = ({ user }) => {
             } */}
 
               <input 
-              class="form-control title-place" 
+              class="form-control title-place reg_name" 
               type="text" 
               name= "name"
               rows="2" 
@@ -97,7 +98,7 @@ const ContributorsList = ({ user }) => {
               </input>
               <label for="comments" class="form-label"></label>
               <input 
-              class="form-control body-place"  
+              class="form-control body-place reg_name"  
               rows="10" cols="40" 
               type="text" 
               name= "email"
@@ -113,7 +114,7 @@ const ContributorsList = ({ user }) => {
               </input>
               <label for="comments" class="form-label"></label>
               <input 
-              class="form-control body-place"  
+              class="form-control body-place reg_name"  
               rows="10" cols="40" 
               type="text" 
               name= "city"
@@ -129,7 +130,7 @@ const ContributorsList = ({ user }) => {
               </input>
               <label for="comments" class="form-label"></label>
               <input 
-              class="form-control body-place"  
+              class="form-control body-place reg_name"  
               rows="10" cols="40" 
               type="text" 
               name= "country"
@@ -147,6 +148,7 @@ const ContributorsList = ({ user }) => {
               <button onClick={postContributor} type="submit" className="btn btn-dark text-light col-2 mt-2">Submit</button>
           </div>
           </form>
+         
          
       
         <hr class="bg-danger border-2 border-top border-danger" />
@@ -190,3 +192,35 @@ const ContributorsList = ({ user }) => {
 }
 
 export default ContributorsList
+
+
+
+// props examples: 
+// in App.js, passing props and giving it a value to a profileCard
+// <ProfileCard name={'Homer'} pic={homer} description={'Homer is fat and lazy'} email={'Homer@Simpsons.com'}/>
+
+// export default function ProfileCard(props) {
+//   return(
+//       <div id="single-article-1" className="single-article">
+//           <div id="card-front-1" className="front-card tb-card">
+//               <img src={props.pic} className="profile-image" alt='' />
+//               <div className="single-content">
+//                   <div className="card-middle">
+//                       <h1>{props.name}</h1>
+//                       <p className="team-p1">
+//                           {props.description}
+//                       </p>
+//                   </div>
+//                   <div className="card-bottom">
+//                       <div className="card-email">
+//                           {props.email}
+//                       </div>
+//                       <div className="card-icon profile-trigger" data-id="single-article-1" >
+//                           <i className="fa fa-chevron-right"></i>
+//                       </div>
+//                   </div>
+//               </div>
+//           </div>
+//       </div>
+//   )
+// }

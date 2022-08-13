@@ -29,8 +29,7 @@ module.exports = {
     const author = await Contributer.findOne({ name: req.body.article.contributor}).exec()
     const authorId = author._id
     console.log(authorId)
-      // let obj = (req.body.article)
-//     //   console.log(req.body.postedBy)
+ 
       try {
         
         const article = await Article.create({
@@ -42,18 +41,11 @@ module.exports = {
            contributorId: authorId,
 
         })
+        
+        author.articles.push(article._id)
+        await author.save()
       
-//     //   const user = await user.findById(req.body.contributor.postedBy)
-//     //   console.log('this is user ' + user)
-//     //   const contributor = await Contributor.create({
-//     //       name: req.body.contributor.name, 
-//     //       email: req.body.contributor.email, 
-//     //       city: req.body.contributor.city, 
-//     //       country: req.body.contributor.country, 
-//     //       postedBy: req.body.contributor.postedBy,
-//     //   })
-      // await Article.create(obj)
-      res.status(200).json('ok. submissions added to DB!' + req.body.contributor)
+      res.status(200).json('ok. submissions added to DB!')
     } catch(err) {
       res.json(err)
     }
