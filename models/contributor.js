@@ -2,12 +2,19 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
+
 const contributorSchema = new Schema({
     name: {type: String, required: true}, 
     email: {type: String, required: true}, 
     city: {type: String, required: true}, 
     country: {type: String, required: true},
     postedBy: {type: String, required: true},
+    articles: [
+        {type: Schema.Types.ObjectId,
+        required: true,
+        ref: 'Article',
+        }
+    ],
 })
 
 module.exports = mongoose.model('Contributor', contributorSchema);

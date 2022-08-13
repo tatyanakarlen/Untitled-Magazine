@@ -42,3 +42,13 @@
     display: flex; 
     justify-content: center;
 }
+
+.reg_name {
+    max-width:500px;
+}
+
+.form-box {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

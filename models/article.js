@@ -12,7 +12,7 @@ const articleSchema = new Schema({
         required: true
     }, 
     body: {type: String, required: true}, 
-    tags: {type: String, required: true}, 
+    tags: [], 
     postedBy: {type: String, required: true},
     contributorId:  {
         type: Schema.Types.ObjectId,
