@@ -1,119 +1,113 @@
-import React from 'react'
-import './ContributorsList.css'
+import React from 'react';
+import './ContributorsList.css';
 import * as Icon from 'react-bootstrap-icons';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react';
-import AddContributorForm from '../AddContributorForm/AddContributorForm'
+import AddContributorForm from '../AddContributorForm/AddContributorForm';
 
 
-// name
-// email
-// city
-//country
+const ContributorsList = ({ user, allContributors }) => {
+  const [contributor, setContributor] = useState({
+    name: '',
+    email: '',
+    city: '',
+    country: '',
+    postedBy: user._id,
+  });
 
-const ContributorsList = ({ user, allContributors}) => {
+  const [addContributorForm, setAddContributorForm] = useState(false);
 
-    const[contributor, setContributor] = useState({
-        name: '',
-        email: '',
-        city: '',
-        country: '',
-        postedBy: user._id, 
+  const postContributor = async (e) => {
+    e.preventDefault();
+    console.log(contributor);
+   
+
+    try {
+      const res = await fetch('/api/contributorSubmissions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ contributor: contributor }),
       });
-    
-
-    
-
-   
-    
-      const postContributor = async (e) => {
-        e.preventDefault();
-        console.log(contributor);
-        // console.log(user._id);
-
-        // '/api/contributorSubmissions'
-
-        try {
-        const res = await fetch('/api/contributorSubmissions', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ contributor: contributor }),
+      console.log(res);
+      if (res.statusText === 'OK') {
+        console.log('SUCCESSLY ADDED TO DB =>', contributor);
+        setContributor({
+          name: '',
+          email: '',
+          city: '',
+          country: '',
+          postedBy: user._id,
         });
-        console.log(res);
-        if (res.statusText === 'OK') {
-          console.log('SUCCESSLY ADDED TO DB =>', contributor);
-          setContributor({
-            name: '',
-            email: '',
-            city: '',
-            country: '',
-            postedBy: user._id, 
-          });
-        }
-      } catch (err) {
-        console.log(err.message);
       }
-    };
-
-    const [addContributorForm, setAddContributorForm] = useState(false)
-
-    const activeContribForm = <AddContributorForm contributor={contributor} setContributor={setContributor} postContributor={postContributor}/>
-
-    let activeAddContribForm = ""
-    if (addContributorForm) {
-      activeAddContribForm = activeContribForm
+    } catch (err) {
+      console.log(err.message);
     }
-   
-    
-    
+  };
+
+
+  const activeContribForm = (
+    <AddContributorForm
+      contributor={contributor}
+      setContributor={setContributor}
+      postContributor={postContributor}
+    />
+  );
+
+  let activeAddContribForm = '';
+  if (addContributorForm) {
+    activeAddContribForm = activeContribForm;
+  }
 
   return (
     <div class="col d-flex flex-column h-sm-100">
-        <div id="contributers-list-main-container" class="row overflow-auto">          
+      <div id="contributers-list-main-container" class="row overflow-auto">
         <div id="contributers-list-container" class="row text-center g-3">
-        <div class="col-md"> 
-        <div class="card bg-light text-dark">
-      <div class="card-body text-center">
-        <div class="h1 mb-1">
-        <Icon.ArrowRight />
-        </div>
+          <div class="col-md">
+            <div class="card bg-light text-dark">
+              <div class="card-body text-center">
+                <div class="h1 mb-1">
+                  <Icon.ArrowRight />
+                </div>
 
+                <h5 class="card-title mb-1">
+                  Contributors
+                  <button
+                    onClick={() => setAddContributorForm(!addContributorForm)}
+                  >
+                    Add
+                  </button>
+                </h5>
+                {activeAddContribForm}
 
-       <h5 class="card-title mb-1">Contributors<button onClick={() => setAddContributorForm(!addContributorForm)}>Add</button></h5>
-        {/* <div id="form-box"> */}
-        {activeAddContribForm}
-        
-
-
-          {allContributors.map((m) => (
-          <div id="data-div">
-           <hr class="bg-danger border-2 border-top border-danger" />
-           <div class="dashboard-cards-articles">
-            <p class="card-text text-primary dashboard-text left-p">{m.name}<span>{m.city}, {m.country}</span></p>
-            <p class="card-text text-primary dashboard-text">
-            {m.email}</p>
+                {allContributors.map((m) => (
+                  <div id="data-div">
+                    <hr class="bg-danger border-2 border-top border-danger" />
+                    <div class="dashboard-cards-articles">
+                      <p class="card-text text-primary dashboard-text left-p">
+                        {m.name}
+                        <span>
+                          {m.city}, {m.country}
+                        </span>
+                      </p>
+                      <p class="card-text text-primary dashboard-text">
+                        {m.email}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-        </div>
-        ))}
-         
-      
-      
-      </div>
-    </div>
-
+          </div>
         </div>
       </div>
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default ContributorsList
+export default ContributorsList;
 
-
-
-// props examples: 
+// props examples:
 // in App.js, passing props and giving it a value to a profileCard
 // <ProfileCard name={'Homer'} pic={homer} description={'Homer is fat and lazy'} email={'Homer@Simpsons.com'}/>
 
