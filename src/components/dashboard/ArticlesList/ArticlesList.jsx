@@ -1,11 +1,12 @@
 import React from 'react'
 import * as Icon from 'react-bootstrap-icons';
+import './ArticlesList.css'
 
 const ArticlesList = ( {allArticles} ) => {
   return (
     <div class="col d-flex flex-column h-sm-100">
-       <div id="contributers-list-main-container" class="row overflow-auto">          
-        <div id="contributers-list-containerclass" class="row text-center g-3">
+       <div id="articles-list-main-container" class="row overflow-auto">          
+        <div id="articles-list-container" class="row text-center g-3">
         <div class="col-md"> 
         <div class="card bg-light text-dark">
       <div class="card-body text-center">

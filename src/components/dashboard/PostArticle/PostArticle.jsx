@@ -88,7 +88,7 @@ const PostArticle = ({ user }) => {
         </div>
         <h5 class="card-title mb-1">Post Article</h5>
         <form class="row g-3">
-          <div class="col-md-12">
+          <div id="post-article-form-box" class="col-md-12">
               {/* <br/> */}
              <label for="comments" class="form-label"></label>
 

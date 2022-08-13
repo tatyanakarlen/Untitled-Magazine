@@ -55,7 +55,7 @@ const ContributorsList = ({ user, allContributors}) => {
   return (
     <div class="col d-flex flex-column h-sm-100">
         <div id="contributers-list-main-container" class="row overflow-auto">          
-        <div id="contributers-list-containerclass" class="row text-center g-3">
+        <div id="contributers-list-container" class="row text-center g-3">
         <div class="col-md"> 
         <div class="card bg-light text-dark">
       <div class="card-body text-center">
@@ -65,7 +65,7 @@ const ContributorsList = ({ user, allContributors}) => {
         <h5 class="card-title mb-1">Contributors<button>Add</button></h5>
         {/* <div id="form-box"> */}
         <form class="row g-3">
-          <div class="col-md-12">
+          <div id="form-box" class="col-md-12">
               {/* <br/> */}
              <label for="comments" class="form-label"></label>
 
@@ -151,12 +151,11 @@ const ContributorsList = ({ user, allContributors}) => {
 
 
           {allContributors.map((m) => (
-          <div>
+          <div id="data-div">
            <hr class="bg-danger border-2 border-top border-danger" />
            <div class="dashboard-cards-articles">
-            <p class="card-text text-primary dashboard-text">{m.name}
-            <span>{m.city}, {m.country}</span></p>
-            <p class="card-text font-italic dashboard-text">
+            <p class="card-text text-primary dashboard-text left-p">{m.name}<span>{m.city}, {m.country}</span></p>
+            <p class="card-text text-primary dashboard-text">
             {m.email}</p>
             </div>
         </div>

@@ -1,0 +1,16 @@
+#articles-list-main-container {
+    display: flex; 
+    justify-content: center;
+    background-color: rgb(223, 221, 221);
+    height: 100%; 
+}
+
+#articles-list-container {
+    width: 70%; 
+    gap: 0.5rem; 
+}
+
+.dashboard-cards-articles {
+    display: flex; 
+    align-items:center; 
+}

@@ -6,7 +6,7 @@
 }
 
 #articlesPost-container {
-    width: 75%; 
+    width: 65%; 
     gap: 0.5rem; 
 }
 
@@ -38,7 +38,6 @@
     width: 300px; 
 }
 
-#form-div {
-    display: flex; 
-    justify-content: center;
+#post-article-form-box {
+    padding: 0 2rem 0 2rem; 
 }
