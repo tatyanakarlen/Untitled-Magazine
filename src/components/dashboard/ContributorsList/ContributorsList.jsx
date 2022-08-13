@@ -4,6 +4,7 @@ import * as Icon from 'react-bootstrap-icons';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react';
+import AddContributorForm from '../AddContributorForm/AddContributorForm'
 
 
 // name
@@ -21,6 +22,10 @@ const ContributorsList = ({ user, allContributors}) => {
         postedBy: user._id, 
       });
     
+
+    
+
+   
     
       const postContributor = async (e) => {
         e.preventDefault();
@@ -51,7 +56,18 @@ const ContributorsList = ({ user, allContributors}) => {
       }
     };
 
-    // PostArticle
+    const [addContributorForm, setAddContributorForm] = useState(false)
+
+    const activeContribForm = <AddContributorForm contributor={contributor} setContributor={setContributor} postContributor={postContributor}/>
+
+    let activeAddContribForm = ""
+    if (addContributorForm) {
+      activeAddContribForm = activeContribForm
+    }
+   
+    
+    
+
   return (
     <div class="col d-flex flex-column h-sm-100">
         <div id="contributers-list-main-container" class="row overflow-auto">          
@@ -62,92 +78,12 @@ const ContributorsList = ({ user, allContributors}) => {
         <div class="h1 mb-1">
         <Icon.ArrowRight />
         </div>
-        <h5 class="card-title mb-1">Contributors<button>Add</button></h5>
+
+
+       <h5 class="card-title mb-1">Contributors<button onClick={() => setAddContributorForm(!addContributorForm)}>Add</button></h5>
         {/* <div id="form-box"> */}
-        <form class="row g-3">
-          <div id="form-box" class="col-md-12">
-              {/* <br/> */}
-             <label for="comments" class="form-label"></label>
-
-             {/* value={submission.name}
-            onChange={(e) =>
-              setSubmission({
-                ...submission,
-                name: e.target.value,
-              })
-            } */}
-
-              <input 
-              class="form-control title-place reg_name" 
-              type="text" 
-              name= "name"
-              rows="2" 
-              required placeholder="Contributor name here"
-              pattern="[A-Za-z]{2,}"
-              value={contributor.name}
-              onChange={(e) => 
-                setContributor({
-                    ...contributor, 
-                    name: e.target.value
-                })
-              }
-
-            
-                 
-              >
-              </input>
-              <label for="comments" class="form-label"></label>
-              <input 
-              class="form-control body-place reg_name"  
-              rows="10" cols="40" 
-              type="text" 
-              name= "email"
-              required placeholder="E-Mail"
-              value={contributor.email}
-              onChange={(e) => 
-                setContributor({
-                    ...contributor, 
-                    email: e.target.value
-                })
-              }
-              >
-              </input>
-              <label for="comments" class="form-label"></label>
-              <input 
-              class="form-control body-place reg_name"  
-              rows="10" cols="40" 
-              type="text" 
-              name= "city"
-              required placeholder="City"
-              value={contributor.city}
-              onChange={(e) => 
-                setContributor({
-                    ...contributor, 
-                    city: e.target.value
-                })
-              }
-              >
-              </input>
-              <label for="comments" class="form-label"></label>
-              <input 
-              class="form-control body-place reg_name"  
-              rows="10" cols="40" 
-              type="text" 
-              name= "country"
-              required placeholder="Country"
-              value={contributor.country}
-              onChange={(e) => 
-                setContributor({
-                    ...contributor, 
-                    country: e.target.value
-                })
-              }
-              >
-              </input>
-              <br/>
-              <button onClick={postContributor} type="submit" className="btn btn-dark text-light col-2 mt-2">Submit</button>
-          </div>
-          </form>
+        {activeAddContribForm}
+        
 
 
           {allContributors.map((m) => (
