@@ -9,6 +9,8 @@ import {useNavigate} from 'react-router-dom'
 function App() {
 
   const [user, setUser] = useState(null)
+  let [contributors, setContributors] = useState([])
+  let [articles, setArticles] = useState([])
 
   const setUserInState = (incomingUserData) => {
     setUser(incomingUserData)
@@ -16,7 +18,6 @@ function App() {
 
   console.log(user)
 
-  
 
   const navigate = useNavigate()
 
@@ -26,27 +27,52 @@ function App() {
     navigate('../login')
   }
 
-  // let [posts, setPosts] = useState([])
 
-  // async function getAllPosts() {
+  async function getData() {
+    try {
+      let response1 = await fetch('/api/contributorSubmissions/allContributors')
+      let contributors = await response1.json()
+      setContributors(contributors)
+      let response2 = await fetch('/api/articleSubmissions/allArticles')
+      let articles = await response2.json()
+      setArticles(articles)
+    } catch(err) {
+      console.log("couldn't fetch posts")
+    }
+  }
+
+  useEffect(() => {
+    getData()
+  }, []) // empty [] is componentDidMount
+  
+
+  // async function getAllContributors() {
   //   try {
-  //     let response1 = await fetch("/api/posts")
-  //     let response2 = await response1.json()
-  //     setPosts(response2)
+  //     let response1 = await fetch('/api/contributorSubmissions/allContributors')
+  //     let contributors = await response1.json()
+  //     setContributors(contributors)
   //   } catch(err) {
   //     console.log("couldn't fetch posts")
   //   }
   // }
 
+  // async function getAllArticles() {
+  //   try {
+  //     let response1 = await fetch('/api/articleSubmissions/allArticles')
+  //     let articles = await response1.json()
+  //     setArticles(articles)
+  //   } catch(err) {
+  //     console.log("couldn't fetch posts")
+  //   }
+  // }
+
+
   // useEffect(() => {
-  //   getAllPosts()
+  //   getAllContributors()
+  //   getAllArticles()
   // }, []) // empty [] is componentDidMount
 
   
-//   <Route
-//   path="/checkout"
-//   element={ cartItems.length < 1 ? <Navigate to="/products" /> : <Checkout /> }
-// />;
 
   return (
     <div className="App">
@@ -63,26 +89,4 @@ function App() {
 export default App;
 
 
-// const ProtectedComponent = () => {
-//   if (authFails)
-//     return <Redirect to='/login'  />
-//   }
-//   return <div> My Protected Component </div>
-// }
 
-// AdminDashboardPage
-
-
-// { this.state.user ? 
-//   <Switch>
-//     <Route path='/orders/new' render={(props) => (
-//       <NewOrderPage {...props} handleLogOut={this.handleLogOut}/>
-//     )}/>
-//     <Route path='/orders' render={(props) => (
-//       <OrderHistoryPage {...props} handleLogOut={this.handleLogOut}/>
-//     )}/>
-//     <Redirect to="/orders" />
-//   </Switch>
-//   :
-//   <AuthPage setUserInState={this.setUserInState}/>
-// }

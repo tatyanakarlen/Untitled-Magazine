@@ -3,7 +3,20 @@ const user = require('../models/user');
 
 module.exports = {
     create,
+    index,
   };
+
+
+  async function index(req,res) {
+    try {
+        let allContributors = await Contributor.find()
+        res.status(200).json(allContributors)
+        console.log(allContributors)
+    } catch(err) {
+        res.status(400).json("Couldn't get posts")
+    }
+}
+
 
   async function create(req, res) {
     console.log('this is req.user id ' + req.body.contributor.postedBy)

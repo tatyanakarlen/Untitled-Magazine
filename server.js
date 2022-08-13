@@ -23,6 +23,11 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/contributorSubmissions', require('./routes/api/contributorSubmissions.js'));
 app.use('/api/articleSubmissions', require('./routes/api/articleSubmissions.js'));
+app.use('/api', require('./routes/api/contributorSubmissions.js'));
+app.use('/api', require('./routes/api/articleSubmissions.js'));
+
+
+
 
 // Put API routes here, before the "catch all" route
 ///////////
