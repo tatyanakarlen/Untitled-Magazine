@@ -12,7 +12,7 @@ const DashboardCardLg = () => {
         <h5 class="card-title mb-1">Latest Articles</h5>
         <hr class="bg-danger border-2 border-top border-danger" />
         <div class="dashboard-cards-articles">
-          <p class="card-text text-primary dashboard-text">
+          <p class="left-p card-text text-primary dashboard-text ">
             Aug 8th 2002 12:30 pm
           </p>
           <p class="card-text font-italic dashboard-text underlined-text">
@@ -22,7 +22,7 @@ const DashboardCardLg = () => {
         </div>
         <hr class="bg-danger border-2 border-top border-danger" />
         <div class="dashboard-cards-articles">
-          <p class="card-text text-primary dashboard-text">
+          <p class="left-p card-text text-primary dashboard-text">
             Aug 9th 2002 11:00 am
           </p>
           <p class="card-text font-italic dashboard-text underlined-text">

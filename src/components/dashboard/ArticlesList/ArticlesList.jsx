@@ -20,7 +20,7 @@ const ArticlesList = ( {allArticles} ) => {
           <div>
            <hr class="bg-danger border-2 border-top border-danger" />
            <div class="dashboard-cards-articles">
-            <p class="card-text text-primary dashboard-text">{m.title}<span>{m.createdAt}</span></p>
+            <p class="left-p card-text text-primary dashboard-text">{m.title}<span>{m.createdAt}</span></p>
             <p class="card-text font-italic dashboard-text">
             {m.contributor}</p>
             </div>
