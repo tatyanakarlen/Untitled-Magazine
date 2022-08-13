@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 // city
 //country
 
-const ContributorsList = ({ user }) => {
+const ContributorsList = ({ user, allContributors}) => {
 
     const[contributor, setContributor] = useState({
         name: '',
@@ -65,7 +65,7 @@ const ContributorsList = ({ user }) => {
         <h5 class="card-title mb-1">Contributors<button>Add</button></h5>
         {/* <div id="form-box"> */}
         <form class="row g-3">
-          <div class="col-md-12 form-box">
+          <div id="form-box" class="col-md-12">
               {/* <br/> */}
              <label for="comments" class="form-label"></label>
 
@@ -148,39 +148,21 @@ const ContributorsList = ({ user }) => {
               <button onClick={postContributor} type="submit" className="btn btn-dark text-light col-2 mt-2">Submit</button>
           </div>
           </form>
-         
+
+
+          {allContributors.map((m) => (
+          <div id="data-div">
+           <hr class="bg-danger border-2 border-top border-danger" />
+           <div class="dashboard-cards-articles">
+            <p class="card-text text-primary dashboard-text left-p">{m.name}<span>{m.city}, {m.country}</span></p>
+            <p class="card-text text-primary dashboard-text">
+            {m.email}</p>
+            </div>
+        </div>
+        ))}
          
       
-        <hr class="bg-danger border-2 border-top border-danger" />
-        <div class="dashboard-cards-articles">
-          <p class="card-text text-primary dashboard-text">
-            Jonathan Grahm<span>Tuscon, Arizona</span>
-          </p>
-          <p class="card-text font-italic dashboard-text">
-          Jonathangrahm@gmail.com
-        
-          </p>
-        </div>
-        <hr class="bg-danger border-2 border-top border-danger" />
-        <div class="dashboard-cards-articles">
-          <p class="card-text text-primary dashboard-text">
-            Jonathan Grahm<span>Tuscon, Arizona</span>
-          </p>
-          <p class="card-text font-italic dashboard-text">
-          Jonathangrahm@gmail.com
-        
-          </p>
-        </div>
-        <hr class="bg-danger border-2 border-top border-danger" />
-        <div class="dashboard-cards-articles">
-          <p class="card-text text-primary dashboard-text">
-            Jonathan Grahm<span>Tuscon, Arizona</span>
-          </p>
-          <p class="card-text font-italic dashboard-text">
-          Jonathangrahm@gmail.com
-        
-          </p>
-        </div>
+      
       </div>
     </div>
 
