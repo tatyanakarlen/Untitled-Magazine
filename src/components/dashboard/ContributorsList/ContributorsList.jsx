@@ -110,9 +110,7 @@ const ContributorsList = ({ user, allContributors }) => {
                         {/* first step is to toggle a form here */}
                         {m.email}<button 
                         onClick={() => {
-                          console.log("I want to see if this comes through", m.name)
                           setUpdateContributorForm(!updateContributorForm)
-                          console.log("How about this one?", m.name)
                           updateSelectedContributor({
                             ...selectedContributor,
                             name: m.name,
