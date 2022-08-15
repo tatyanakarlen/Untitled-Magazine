@@ -75,7 +75,6 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
               >
               </input>
               <br/>
-              {selectedContributor.name}
               <button onClick={updateContributor} type="submit" className="btn btn-dark text-light col-2 mt-2">Update</button>
           </div>
           </form>

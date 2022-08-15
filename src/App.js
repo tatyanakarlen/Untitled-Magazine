@@ -16,6 +16,16 @@ function App() {
     setUser(incomingUserData)
   }
 
+  // const pushContributor = (obj) => {
+      
+  // }
+
+  // const skills = [...this.state.skills, newObj];
+
+  // this.setState({
+  //   skills
+  // });
+
   console.log(user)
 
 
@@ -46,31 +56,9 @@ function App() {
   }, []) // empty [] is componentDidMount
   
 
-  // async function getAllContributors() {
-  //   try {
-  //     let response1 = await fetch('/api/contributorSubmissions/allContributors')
-  //     let contributors = await response1.json()
-  //     setContributors(contributors)
-  //   } catch(err) {
-  //     console.log("couldn't fetch posts")
-  //   }
-  // }
-
-  // async function getAllArticles() {
-  //   try {
-  //     let response1 = await fetch('/api/articleSubmissions/allArticles')
-  //     let articles = await response1.json()
-  //     setArticles(articles)
-  //   } catch(err) {
-  //     console.log("couldn't fetch posts")
-  //   }
-  // }
+ 
 
 
-  // useEffect(() => {
-  //   getAllContributors()
-  //   getAllArticles()
-  // }, []) // empty [] is componentDidMount
 
   
 
@@ -80,7 +68,7 @@ function App() {
       <Route path='/login' element={ user !== null ? <Navigate to='/dashboard' /> : <AuthPage user={user} setUserInState={setUserInState}/>} />
       <Route path='/' element={<MagazinePage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
-      <Route path='/dashboard' element={<AdminDashboardPage user={user} handleLogOut={handleLogOut} allArticles={articles} allContributors={contributors}/>} />
+      <Route path='/dashboard' element={<AdminDashboardPage user={user} handleLogOut={handleLogOut} allArticles={articles} allContributors={contributors} setContributors={setContributors}/>} />
     </Routes>
     </div>
   );

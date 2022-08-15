@@ -8,7 +8,7 @@ import ArticlesList from '../../../components/dashboard/ArticlesList/ArticlesLis
 import PostArticle from '../../../components/dashboard/PostArticle/PostArticle';
 import './AdminDashboardPage.css';
 
-const AdminDashboardPage = ({ handleLogOut, user, allArticles, allContributors }) => {
+const AdminDashboardPage = ({ handleLogOut, user, allArticles, allContributors, setContributors }) => {
 
   // this is the page state, it changes based on which nav item is clicked 
   const [navActive, setNavActive] = useState({
@@ -29,7 +29,7 @@ const AdminDashboardPage = ({ handleLogOut, user, allArticles, allContributors }
   let activeNav =  ""
   
   if (contributers) {
-    activeNav = <ContributorsList user={user} allContributors={allContributors}/>
+    activeNav = <ContributorsList user={user} allContributors={allContributors} setContributors={setContributors}/>
   } else if (articles) {
     activeNav = <ArticlesList allArticles={allArticles} />
   } else if (post) {

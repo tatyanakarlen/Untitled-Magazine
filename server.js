@@ -23,10 +23,13 @@ app.use(express.static(path.join(__dirname, 'build')));
 // below routes for POST requests
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/contributorSubmissions', require('./routes/api/contributorSubmissions.js'));
+
 app.use('/api/articleSubmissions', require('./routes/api/articleSubmissions.js'));
 // below routes for GET requests
-app.use('/api', require('./routes/api/contributorSubmissions.js'));
+// app.use('/api', require('./routes/api/contributorSubmissions.js'));
 app.use('/api', require('./routes/api/articleSubmissions.js'));
+
+
 
 
 // // POST new order. Full address will be POST /api/orders

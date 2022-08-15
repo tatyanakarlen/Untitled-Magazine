@@ -6,9 +6,10 @@ import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react';
 import AddContributorForm from '../AddContributorForm/AddContributorForm';
 import UpdateContributorForm from '../UpdateContributorForm/UpdateContributorForm.jsx'
+import {useNavigate} from 'react-router-dom'
 
 
-const ContributorsList = ({ user, allContributors }) => {
+const ContributorsList = ({ user, allContributors, setContributors }) => {
   
   const [contributor, setContributor] = useState({
     name: '',
@@ -34,13 +35,14 @@ const ContributorsList = ({ user, allContributors }) => {
     postedBy: user._id,
   })
 
-  // let response1 = await fetch('/api/contributorSubmissions/allContributors')
+  
+  const navigate = useNavigate()
+  
 
   const postContributor = async (e) => {
     e.preventDefault();
     console.log(contributor);
    
-    // app.use('/api/contributorSubmissions', require('./routes/api/contributorSubmissions.js'));
     try {
       const res = await fetch('/api/contributorSubmissions', {
         method: 'POST',
@@ -57,11 +59,15 @@ const ContributorsList = ({ user, allContributors }) => {
           country: '',
           postedBy: user._id,
         });
+        
+        allContributors.push(contributor);
       }
     } catch (err) {
       console.log(err.message);
     }
   };
+
+  // let [contributors, setContributors] = useState([])
 
   // UPDATE CONTRIBUTER
 
@@ -71,8 +77,8 @@ const ContributorsList = ({ user, allContributors }) => {
    
 
     try {
-      const res = await fetch('/api/contributorSubmissions/update/updateContributor', {
-        method: 'POST',
+      const res = await fetch(`/api/contributorSubmissions/update/${selectedContributor.contributerId}`, {
+        method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ selectedContributor: selectedContributor }),
       });
@@ -92,6 +98,10 @@ const ContributorsList = ({ user, allContributors }) => {
       console.log(err.message);
     }
   };
+
+
+  // DELETE
+
 
 
 
@@ -151,7 +161,7 @@ const ContributorsList = ({ user, allContributors }) => {
                             name: m.name,
                             email: m.email,
                             city: m.city, 
-                            country: m.name,
+                            country: m.country,
                             contributerId: m._id
 
                           })

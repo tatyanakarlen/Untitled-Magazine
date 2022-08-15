@@ -45,10 +45,16 @@ module.exports = {
   // updates item
 
 async function update(req,res) {
-   console.log(req.body.selectedContributor.contributerId)
-   let contribId = req.body.selectedContributor.contributerId
-   let contributor = await Contributor.findByIdAndUpdate(contribId, req.body.selectedContributor)
-  }
+   
+  //  let contribId = req.body.selectedContributor.contributerId
+  const contribId = req.params.id
+   try{
+    let contributor = await Contributor.findByIdAndUpdate(contribId, req.body.selectedContributor)
+    res.status(200).json({'data': contributor})
+   } catch(err) {
+    res.status(500).json({'error': err.message})
+   }
+}
   
   
 //   // delete item 
