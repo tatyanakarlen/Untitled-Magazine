@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react';
 import AddContributorForm from '../AddContributorForm/AddContributorForm';
+import UpdateContributorForm from '../UpdateContributorForm/UpdateContributorForm.jsx'
 
 
 const ContributorsList = ({ user, allContributors }) => {
@@ -29,16 +30,17 @@ const ContributorsList = ({ user, allContributors }) => {
     email: '',
     city: '',
     country: '',
+    contributerId: '',
     postedBy: user._id,
   })
 
-  
+  // let response1 = await fetch('/api/contributorSubmissions/allContributors')
 
   const postContributor = async (e) => {
     e.preventDefault();
     console.log(contributor);
    
-
+    // app.use('/api/contributorSubmissions', require('./routes/api/contributorSubmissions.js'));
     try {
       const res = await fetch('/api/contributorSubmissions', {
         method: 'POST',
@@ -60,6 +62,38 @@ const ContributorsList = ({ user, allContributors }) => {
       console.log(err.message);
     }
   };
+
+  // UPDATE CONTRIBUTER
+
+  const updateContributor = async (e) => {
+    e.preventDefault();
+    console.log(selectedContributor);
+   
+
+    try {
+      const res = await fetch('/api/contributorSubmissions/update/updateContributor', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ selectedContributor: selectedContributor }),
+      });
+      console.log(res);
+      if (res.statusText === 'OK') {
+        console.log('SUCCESSLY ADDED TO DB =>', selectedContributor);
+        updateSelectedContributor({
+          name: '',
+          email: '',
+          city: '',
+          country: '',
+          contributerId: '',
+          postedBy: user._id,
+        });
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
+
 
 
   const activeContribForm = (
@@ -95,6 +129,7 @@ const ContributorsList = ({ user, allContributors }) => {
                   </button>
                 </h5>
                 {activeAddContribForm}
+                <UpdateContributorForm updateContributor={updateContributor} selectedContributor={selectedContributor} updateSelectedContributor={updateSelectedContributor}/>
 
                 {allContributors.map((m) => (
                   <div id="data-div">
@@ -116,10 +151,11 @@ const ContributorsList = ({ user, allContributors }) => {
                             name: m.name,
                             email: m.email,
                             city: m.city, 
-                            country: m.name
+                            country: m.name,
+                            contributerId: m._id
 
                           })
-                          console.log('this is contrib.name', m.name)
+                          
       
                         }
                         }>update</button>

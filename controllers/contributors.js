@@ -4,6 +4,7 @@ const user = require('../models/user');
 module.exports = {
     create,
     index,
+    update, 
   };
 
 
@@ -39,3 +40,20 @@ module.exports = {
       res.json(err)
     }
   }
+
+
+  // updates item
+
+async function update(req,res) {
+   console.log(req.body.selectedContributor.contributerId)
+   let contribId = req.body.selectedContributor.contributerId
+   let contributor = await Contributor.findByIdAndUpdate(contribId, req.body.selectedContributor)
+  }
+  
+  
+//   // delete item 
+  
+//   async function deleteItem (req,res) {
+//       let item = await Item.deleteOne({_id: req.params.id})
+//       res.redirect('/users/' + req.user.id + '/myItems')
+//   }

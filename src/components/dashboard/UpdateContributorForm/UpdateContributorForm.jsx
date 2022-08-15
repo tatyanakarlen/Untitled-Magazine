@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UpdateContributorForm = () => {
+const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor, updateContributor} ) => {
   return (
     <div>
       <form class="row g-3">
@@ -12,12 +12,12 @@ const UpdateContributorForm = () => {
               type="text" 
               name= "name"
               rows="2" 
-              required placeholder="Contributor name here"
+              required placeholder={selectedContributor.name}
               pattern="[A-Za-z]{2,}"
-              value={contributor.name}
+              value={selectedContributor.name}
               onChange={(e) => 
-                setContributor({
-                    ...contributor, 
+                updateSelectedContributor({
+                    ...selectedContributor, 
                     name: e.target.value
                 })
               }
@@ -32,11 +32,11 @@ const UpdateContributorForm = () => {
               rows="10" cols="40" 
               type="text" 
               name= "email"
-              required placeholder="E-Mail"
-              value={contributor.email}
+              required placeholder={selectedContributor.email}
+              value={selectedContributor.email}
               onChange={(e) => 
-                setContributor({
-                    ...contributor, 
+                updateSelectedContributor({
+                    ...selectedContributor, 
                     email: e.target.value
                 })
               }
@@ -48,11 +48,11 @@ const UpdateContributorForm = () => {
               rows="10" cols="40" 
               type="text" 
               name= "city"
-              required placeholder="City"
-              value={contributor.city}
+              required placeholder={selectedContributor.city}
+              value={selectedContributor.city}
               onChange={(e) => 
-                setContributor({
-                    ...contributor, 
+                updateSelectedContributor({
+                    ...selectedContributor, 
                     city: e.target.value
                 })
               }
@@ -64,18 +64,19 @@ const UpdateContributorForm = () => {
               rows="10" cols="40" 
               type="text" 
               name= "country"
-              required placeholder="Country"
-              value={contributor.country}
+              required placeholder={selectedContributor.country}
+              value={selectedContributor.country}
               onChange={(e) => 
-                setContributor({
-                    ...contributor, 
+                updateSelectedContributor({
+                    ...selectedContributor, 
                     country: e.target.value
                 })
               }
               >
               </input>
               <br/>
-              <button onClick={postContributor} type="submit" className="btn btn-dark text-light col-2 mt-2">Submit</button>
+              {selectedContributor.name}
+              <button onClick={updateContributor} type="submit" className="btn btn-dark text-light col-2 mt-2">Update</button>
           </div>
           </form>
     </div>
