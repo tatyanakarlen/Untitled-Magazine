@@ -60,7 +60,11 @@ const ContributorsList = ({ user, allContributors, setContributors }) => {
           postedBy: user._id,
         });
         
-        allContributors.push(contributor);
+        // allContributors.push(contributor);
+        const newContribsList = [...allContributors, contributor]
+        setContributors(newContribsList)
+
+   
       }
     } catch (err) {
       console.log(err.message);
@@ -70,6 +74,10 @@ const ContributorsList = ({ user, allContributors, setContributors }) => {
   // let [contributors, setContributors] = useState([])
 
   // UPDATE CONTRIBUTER
+
+  const deleteContrib = (id) => {
+    setContributors(allContributors.filter((contributor) => contributor._id !== id))
+  }
 
   const updateContributor = async (e) => {
     e.preventDefault();
@@ -85,6 +93,12 @@ const ContributorsList = ({ user, allContributors, setContributors }) => {
       console.log(res);
       if (res.statusText === 'OK') {
         console.log('SUCCESSLY ADDED TO DB =>', selectedContributor);
+        
+        deleteContrib(selectedContributor.contributerId)
+        
+        const newContribsList = [...allContributors, selectedContributor ]
+        setContributors(newContribsList)
+
         updateSelectedContributor({
           name: '',
           email: '',
@@ -93,11 +107,16 @@ const ContributorsList = ({ user, allContributors, setContributors }) => {
           contributerId: '',
           postedBy: user._id,
         });
+
+
       }
     } catch (err) {
       console.log(err.message);
     }
   };
+
+
+  
 
 
   // DELETE
