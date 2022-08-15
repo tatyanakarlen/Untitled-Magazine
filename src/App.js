@@ -68,7 +68,7 @@ function App() {
       <Route path='/login' element={ user !== null ? <Navigate to='/dashboard' /> : <AuthPage user={user} setUserInState={setUserInState}/>} />
       <Route path='/' element={<MagazinePage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
-      <Route path='/dashboard' element={<AdminDashboardPage user={user} handleLogOut={handleLogOut} allArticles={articles} allContributors={contributors} setContributors={setContributors}/>} />
+      <Route path='/dashboard' element={<AdminDashboardPage user={user} handleLogOut={handleLogOut} allArticles={articles} allContributors={contributors} setContributors={setContributors} getData={getData}/>} />
     </Routes>
     </div>
   );

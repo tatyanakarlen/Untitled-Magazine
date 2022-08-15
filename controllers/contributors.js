@@ -10,7 +10,7 @@ module.exports = {
 
   async function index(req,res) {
     try {
-        let allContributors = await Contributor.find()
+        let allContributors = await Contributor.find().sort({ _id: 'desc'})
         res.status(200).json(allContributors)
         console.log(allContributors)
     } catch(err) {

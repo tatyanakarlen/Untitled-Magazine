@@ -9,7 +9,7 @@ import UpdateContributorForm from '../UpdateContributorForm/UpdateContributorFor
 import {useNavigate} from 'react-router-dom'
 
 
-const ContributorsList = ({ user, allContributors, setContributors }) => {
+const ContributorsList = ({ user, allContributors, setContributors, getData }) => {
   
   const [contributor, setContributor] = useState({
     name: '',
@@ -75,29 +75,30 @@ const ContributorsList = ({ user, allContributors, setContributors }) => {
 
   // UPDATE CONTRIBUTER
 
-  const deleteContrib = (id) => {
-    setContributors(allContributors.filter((contributor) => contributor._id !== id))
-  }
+  // const deleteContrib = (id) => {
+  //   setContributors(allContributors.filter((contributor) => contributor._id !== id))
+  // }
 
   const updateContributor = async (e) => {
     e.preventDefault();
-    console.log(selectedContributor);
-   
 
-    try {
+       try {
       const res = await fetch(`/api/contributorSubmissions/update/${selectedContributor.contributerId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ selectedContributor: selectedContributor }),
       });
-      console.log(res);
+      console.log('response', res);
       if (res.statusText === 'OK') {
-        console.log('SUCCESSLY ADDED TO DB =>', selectedContributor);
+        getData()
+      //   const updatedContributor = await res.json()
+      //   console.log('updateContrib', updatedContributor.data)
         
-        deleteContrib(selectedContributor.contributerId)
         
-        const newContribsList = [...allContributors, selectedContributor ]
-        setContributors(newContribsList)
+      //  allContributors.push(selectedContributor);
+      //   deleteContrib(selectedContributor.contributerId)
+        // const newContribsList = [...allContributors, updatedContributor.data ]
+        // setContributors(newContribsList)
 
         updateSelectedContributor({
           name: '',
