@@ -64,6 +64,7 @@ const ContributorsList = ({
         // allContributors.push(contributor);
         const newContribsList = [...allContributors, contributor];
         setContributors(newContribsList);
+        setAddContributorForm(!addContributorForm)
       }
     } catch (err) {
       console.log(err.message);
@@ -109,6 +110,7 @@ const ContributorsList = ({
           contributerId: '',
           postedBy: user._id,
         });
+        setUpdateContributorForm(!updateContributorForm)
       }
     } catch (err) {
       console.log(err.message);
@@ -137,7 +139,11 @@ const ContributorsList = ({
         updateContributor={updateContributor}
         selectedContributor={selectedContributor}
         updateSelectedContributor={updateSelectedContributor}
+        updateContributorForm={updateContributorForm}
+        setUpdateContributorForm={setUpdateContributorForm}
     />
+
+   
   
 
 

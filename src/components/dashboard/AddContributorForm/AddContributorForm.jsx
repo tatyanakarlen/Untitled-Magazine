@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddContributorForm = ( {contributor, setContributor, postContributor} ) => {
+const AddContributorForm = ( {contributor, setContributor, postContributor } ) => {
   return (
     <div>
       <form class="row g-3">
@@ -8,7 +8,7 @@ const AddContributorForm = ( {contributor, setContributor, postContributor} ) =>
               {/* <br/> */}
              <label for="comments" class="form-label"></label>
                <input 
-              class="form-control title-place reg_name" 
+              class="form-control title-place" 
               type="text" 
               name= "name"
               rows="2" 
@@ -28,7 +28,7 @@ const AddContributorForm = ( {contributor, setContributor, postContributor} ) =>
               </input>
               <label for="comments" class="form-label"></label>
               <input 
-              class="form-control body-place reg_name"  
+              class="form-control body-place"  
               rows="10" cols="40" 
               type="text" 
               name= "email"
@@ -44,7 +44,7 @@ const AddContributorForm = ( {contributor, setContributor, postContributor} ) =>
               </input>
               <label for="comments" class="form-label"></label>
               <input 
-              class="form-control body-place reg_name"  
+              class="form-control body-place"  
               rows="10" cols="40" 
               type="text" 
               name= "city"
@@ -60,7 +60,7 @@ const AddContributorForm = ( {contributor, setContributor, postContributor} ) =>
               </input>
               <label for="comments" class="form-label"></label>
               <input 
-              class="form-control body-place reg_name"  
+              class="form-control body-place"  
               rows="10" cols="40" 
               type="text" 
               name= "country"

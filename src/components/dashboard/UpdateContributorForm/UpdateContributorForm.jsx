@@ -1,14 +1,17 @@
 import React from 'react'
 
-const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor, updateContributor} ) => {
+const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor, updateContributor, updateContributorForm, setUpdateContributorForm} ) => {
+  
   return (
     <div>
+      <header class="d-flex justify-content-between">Edit Contributor<button onClick={() => setUpdateContributorForm(!updateContributorForm)}>x</button>
+      </header>
       <form class="row g-3">
           <div id="form-box" class="col-md-12">
               {/* <br/> */}
-             <label for="comments" class="form-label">Name</label>
+             <label class="float-left" for="comments" class="form-label"></label>
                <input 
-              class="form-control title-place reg_name" 
+              class="form-control title-place" 
               type="text" 
               name= "name"
               rows="2" 
@@ -28,7 +31,7 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
               </input>
               <label for="comments" class="form-label"></label>
               <input 
-              class="form-control body-place reg_name"  
+              class="form-control body-place"  
               rows="10" cols="40" 
               type="text" 
               name= "email"
@@ -44,7 +47,7 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
               </input>
               <label for="comments" class="form-label"></label>
               <input 
-              class="form-control body-place reg_name"  
+              class="form-control body-place"  
               rows="10" cols="40" 
               type="text" 
               name= "city"
@@ -60,7 +63,7 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
               </input>
               <label for="comments" class="form-label"></label>
               <input 
-              class="form-control body-place reg_name"  
+              class="form-control body-place"  
               rows="10" cols="40" 
               type="text" 
               name= "country"
