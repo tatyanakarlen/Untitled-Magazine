@@ -2,8 +2,9 @@ import React from 'react';
 import * as Icon from 'react-bootstrap-icons';
 import './ArticlesList.css';
 import { useState, useEffect } from 'react';
+import UpdateArticleForm from '../UpdateArticleForm/UpdateArticleForm.jsx'
 
-const ArticlesList = ({ allArticles, user }) => {
+const ArticlesList = ({ allArticles, user, getData }) => {
   const [updateArticleForm, setUpdateArticleForm] = useState(false);
 
   const [selectedArticle, updateSelectedArticle] = useState({
@@ -14,6 +15,44 @@ const ArticlesList = ({ allArticles, user }) => {
     articleId: '',
     postedBy: user._id,
   });
+
+
+  const updateArticle = async (e) => {
+    e.preventDefault();
+
+       try {
+      const res = await fetch(`/api/articleSubmissions/update/${selectedArticle.articleId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ selectedArticle: selectedArticle }),
+      });
+      console.log('response', res);
+      if (res.statusText === 'OK') {
+        getData()
+      //   const updatedArticle = await res.json()
+      //   console.log('updateContrib', updatedArticle.data)
+        
+        
+      //  allContributors.push(selectedContributor);
+      //   deleteContrib(selectedContributor.contributerId)
+        // const newContribsList = [...allContributors, updatedContributor.data ]
+        // setContributors(newContribsList)
+
+        updateSelectedArticle({
+          title: '',
+          contributor: '',
+          body: '',
+          tags: '',
+          articleId: '',
+          postedBy: user._id,
+        });
+
+
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
 
   return (
     <div class="col d-flex flex-column h-sm-100">
@@ -28,6 +67,7 @@ const ArticlesList = ({ allArticles, user }) => {
                 <h5 class="card-title mb-1">
                   Articles<button>Add</button>
                 </h5>
+                <UpdateArticleForm selectedArticle={selectedArticle} updateSelectedArticle={updateSelectedArticle} updateArticle={updateArticle}/>
 
                 {allArticles.map((m) => (
                   <div>

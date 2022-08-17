@@ -4,6 +4,7 @@ const Contributer = require('../models/contributor')
 module.exports = {
     create,
     index,
+    update,
   };
 
 
@@ -43,3 +44,15 @@ module.exports = {
        res.json(err)
      }
     }
+
+    async function update(req,res) {
+   
+      const articleId = req.params.id
+       try{
+        let article = await Article.findByIdAndUpdate(articleId, req.body.selectedArticle)
+        res.status(200).json({'data': article})
+       } catch(err) {
+        res.status(500).json({'error': err.message})
+       }
+    }
+      

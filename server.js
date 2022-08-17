@@ -27,7 +27,7 @@ app.use('/api/contributorSubmissions', require('./routes/api/contributorSubmissi
 app.use('/api/articleSubmissions', require('./routes/api/articleSubmissions.js'));
 // below routes for GET requests
 // app.use('/api', require('./routes/api/contributorSubmissions.js'));
-app.use('/api', require('./routes/api/articleSubmissions.js'));
+// app.use('/api', require('./routes/api/articleSubmissions.js'));
 
 
 

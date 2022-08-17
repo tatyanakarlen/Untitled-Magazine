@@ -31,7 +31,7 @@ const AdminDashboardPage = ({ handleLogOut, user, allArticles, allContributors, 
   if (contributers) {
     activeNav = <ContributorsList user={user} allContributors={allContributors} setContributors={setContributors} getData={getData}/>
   } else if (articles) {
-    activeNav = <ArticlesList allArticles={allArticles} user={user} />
+    activeNav = <ArticlesList allArticles={allArticles} user={user} getData={getData}/>
   } else if (post) {
     activeNav = <PostArticle user={user}/>
   } else {
