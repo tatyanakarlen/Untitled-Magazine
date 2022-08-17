@@ -5,12 +5,15 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState, useEffect } from 'react';
 import AddContributorForm from '../AddContributorForm/AddContributorForm';
-import UpdateContributorForm from '../UpdateContributorForm/UpdateContributorForm.jsx'
-import {useNavigate} from 'react-router-dom'
+import UpdateContributorForm from '../UpdateContributorForm/UpdateContributorForm.jsx';
+import { useNavigate } from 'react-router-dom';
 
-
-const ContributorsList = ({ user, allContributors, setContributors, getData }) => {
-  
+const ContributorsList = ({
+  user,
+  allContributors,
+  setContributors,
+  getData,
+}) => {
   const [contributor, setContributor] = useState({
     name: '',
     email: '',
@@ -33,16 +36,14 @@ const ContributorsList = ({ user, allContributors, setContributors, getData }) =
     country: '',
     contributerId: '',
     postedBy: user._id,
-  })
+  });
 
-  
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
 
   const postContributor = async (e) => {
     e.preventDefault();
     console.log(contributor);
-   
+
     try {
       const res = await fetch('/api/contributorSubmissions', {
         method: 'POST',
@@ -59,12 +60,10 @@ const ContributorsList = ({ user, allContributors, setContributors, getData }) =
           country: '',
           postedBy: user._id,
         });
-        
-        // allContributors.push(contributor);
-        const newContribsList = [...allContributors, contributor]
-        setContributors(newContribsList)
 
-   
+        // allContributors.push(contributor);
+        const newContribsList = [...allContributors, contributor];
+        setContributors(newContribsList);
       }
     } catch (err) {
       console.log(err.message);
@@ -82,21 +81,23 @@ const ContributorsList = ({ user, allContributors, setContributors, getData }) =
   const updateContributor = async (e) => {
     e.preventDefault();
 
-       try {
-      const res = await fetch(`/api/contributorSubmissions/update/${selectedContributor.contributerId}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ selectedContributor: selectedContributor }),
-      });
+    try {
+      const res = await fetch(
+        `/api/contributorSubmissions/update/${selectedContributor.contributerId}`,
+        {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ selectedContributor: selectedContributor }),
+        }
+      );
       console.log('response', res);
       if (res.statusText === 'OK') {
-        getData()
-      //   const updatedContributor = await res.json()
-      //   console.log('updateContrib', updatedContributor.data)
-        
-        
-      //  allContributors.push(selectedContributor);
-      //   deleteContrib(selectedContributor.contributerId)
+        getData();
+        //   const updatedContributor = await res.json()
+        //   console.log('updateContrib', updatedContributor.data)
+
+        //  allContributors.push(selectedContributor);
+        //   deleteContrib(selectedContributor.contributerId)
         // const newContribsList = [...allContributors, updatedContributor.data ]
         // setContributors(newContribsList)
 
@@ -108,23 +109,13 @@ const ContributorsList = ({ user, allContributors, setContributors, getData }) =
           contributerId: '',
           postedBy: user._id,
         });
-
-
       }
     } catch (err) {
       console.log(err.message);
     }
   };
 
-
-  
-
-
   // DELETE
-
-
-
-
 
   const activeContribForm = (
     <AddContributorForm
@@ -159,7 +150,11 @@ const ContributorsList = ({ user, allContributors, setContributors, getData }) =
                   </button>
                 </h5>
                 {activeAddContribForm}
-                <UpdateContributorForm updateContributor={updateContributor} selectedContributor={selectedContributor} updateSelectedContributor={updateSelectedContributor}/>
+                <UpdateContributorForm
+                  updateContributor={updateContributor}
+                  selectedContributor={selectedContributor}
+                  updateSelectedContributor={updateSelectedContributor}
+                />
 
                 {allContributors.map((m) => (
                   <div id="data-div">
@@ -173,22 +168,22 @@ const ContributorsList = ({ user, allContributors, setContributors, getData }) =
                       </p>
                       <p class="card-text text-primary dashboard-text">
                         {/* first step is to toggle a form here */}
-                        {m.email}<button 
-                        onClick={() => {
-                          setUpdateContributorForm(!updateContributorForm)
-                          updateSelectedContributor({
-                            ...selectedContributor,
-                            name: m.name,
-                            email: m.email,
-                            city: m.city, 
-                            country: m.country,
-                            contributerId: m._id
-
-                          })
-                          
-      
-                        }
-                        }>update</button>
+                        {m.email}
+                        <button
+                          onClick={() => {
+                            setUpdateContributorForm(!updateContributorForm);
+                            updateSelectedContributor({
+                              ...selectedContributor,
+                              name: m.name,
+                              email: m.email,
+                              city: m.city,
+                              country: m.country,
+                              contributerId: m._id,
+                            });
+                          }}
+                        >
+                          update
+                        </button>
                       </p>
                     </div>
                   </div>

@@ -32,18 +32,6 @@ app.use('/api/articleSubmissions', require('./routes/api/articleSubmissions.js')
 
 
 
-// // POST new order. Full address will be POST /api/orders
-// router.post('/', orderCtrl.create)
-// // GET /api/orders
-// router.get('/', orderCtrl.index)
-
-// module.exports = router;
-
-
-
-// app.use('/api/orders', require('./routes/api/orders.js'));
-
-
 
 
 
