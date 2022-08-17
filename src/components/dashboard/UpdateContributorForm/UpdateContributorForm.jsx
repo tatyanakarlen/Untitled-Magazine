@@ -6,7 +6,7 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
       <form class="row g-3">
           <div id="form-box" class="col-md-12">
               {/* <br/> */}
-             <label for="comments" class="form-label"></label>
+             <label for="comments" class="form-label">Name</label>
                <input 
               class="form-control title-place reg_name" 
               type="text" 
