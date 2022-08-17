@@ -31,6 +31,7 @@ const ContributorsList = ({
 
   const [updateContributorForm, setUpdateContributorForm] = useState(false);
   const [deleteSelectedContributor, setDeleteSelectedContributor] = useState('')
+  const [deleteContributorAlert, setDeleteContributorAlert] = useState(false)
 
   const [selectedContributor, updateSelectedContributor] = useState({
     name: '',
@@ -147,6 +148,7 @@ const ContributorsList = ({
         // setContributors(newContribsList)
         deleteContribFromFrontEnd(deleteSelectedContributor)
         setDeleteSelectedContributor('')
+        setDeleteContributorAlert(!deleteContributorAlert)
 
       }
     } catch (err) {
@@ -197,12 +199,39 @@ const ContributorsList = ({
   >Add</button>
   }
 
+  // const [deleteAlert, setDeleteAlert] = useState(false)
+
+  let alert = ''
+  if (deleteContributorAlert) {
+    alert =  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Are you sure you want to delete this article?</h4>
+    <button onClick={deleteContributor}
+     
+      >Yes</button>
+    <button onClick={() => setDeleteContributorAlert(!deleteContributorAlert)}>No</button>
+  </div>
+  }
+
+  // onClick={() => {
+  //   setUpdateContributorForm(!updateContributorForm);
+  //   updateSelectedContributor({
+  //     ...selectedContributor,
+  //     name: m.name,
+  //     email: m.email,
+  //     city: m.city,
+  //     country: m.country,
+  //     contributerId: m._id,
+  //   });
+  // }}
+
+
 
   return (
     <div class="col d-flex flex-column h-sm-100">
       <div id="contributers-list-main-container" class="row overflow-auto">
         <div id="contributers-list-container" class="row text-center g-3">
           <div class="col-md">
+            {alert}
             <div class="card bg-light text-dark">
               <div class="card-body text-center">
                 <div class="h1 mb-1">
@@ -250,7 +279,10 @@ const ContributorsList = ({
                           onMouseEnter={() =>
                             setDeleteSelectedContributor(m._id)
                           }
-                          onClick={deleteContributor}
+                          // onClick={deleteContributor}
+                          onClick={() => 
+                            setDeleteContributorAlert(!deleteContributorAlert)
+                          }
                         >
                           Delete
                         </button>

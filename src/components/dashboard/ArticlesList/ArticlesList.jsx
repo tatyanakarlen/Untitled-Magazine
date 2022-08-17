@@ -8,6 +8,7 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
   
   const [updateArticleForm, setUpdateArticleForm] = useState(false);
   const [deleteSelectedArticle, setDeleteSelectedArticle] = useState('')
+  const [deleteArticleAlert, setDeleteArticleAlert] = useState(false)
 
   const [selectedArticle, updateSelectedArticle] = useState({
     title: '',
@@ -87,6 +88,7 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
         // setContributors(newContribsList)
         deleteArticleFromFrontEnd(deleteSelectedArticle)
         setDeleteSelectedArticle('')
+        setDeleteArticleAlert(!deleteArticleAlert)
 
       }
     } catch (err) {
@@ -113,11 +115,23 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
     activeUpdateArticleForm = showUpdateArticleForm 
   }
 
+  let alert = ''
+  if (deleteArticleAlert) {
+    alert =  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Are you sure you want to delete this article?</h4>
+    <button onClick={deleteArticle}
+     
+      >Yes</button>
+    <button onClick={() => setDeleteArticleAlert(!deleteArticleAlert)}>No</button>
+  </div>
+  }
+
   return (
     <div class="col d-flex flex-column h-sm-100">
       <div id="articles-list-main-container" class="row overflow-auto">
         <div id="articles-list-container" class="row text-center g-3">
           <div class="col-md">
+          {alert}
             <div class="card bg-light text-dark">
               <div class="card-body text-center">
                 <div class="h1 mb-1">
@@ -160,7 +174,9 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
                           onMouseEnter={() =>
                             setDeleteSelectedArticle(m._id)
                           }
-                          onClick={deleteArticle}
+                          onClick={() => 
+                            setDeleteArticleAlert(!deleteArticleAlert)
+                          }
                         >
                           Delete
                         </button>
