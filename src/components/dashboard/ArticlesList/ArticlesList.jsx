@@ -72,7 +72,7 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
         {
           method: 'DELETE',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ deleteSelectedArticle: deleteSelectedArticle }),
+          // body: JSON.stringify({ deleteSelectedArticle: deleteSelectedArticle }),
         }
       );
       console.log('response', res);

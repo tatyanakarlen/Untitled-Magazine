@@ -132,7 +132,7 @@ const ContributorsList = ({
         {
           method: 'DELETE',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ deleteSelectedContributor: deleteSelectedContributor }),
+          // body: JSON.stringify({ deleteSelectedContributor: deleteSelectedContributor }),
         }
       );
       console.log('response', res);
