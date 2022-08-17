@@ -124,6 +124,8 @@ const ContributorsList = ({
       contributor={contributor}
       setContributor={setContributor}
       postContributor={postContributor}
+      setAddContributorForm={setAddContributorForm}
+      addContributorForm={addContributorForm}
     />
   );
 
@@ -152,6 +154,14 @@ const ContributorsList = ({
     activeUpdateContribForm = updateContribForm
   }
 
+  let button = ''
+  if (!addContributorForm) {
+  button =  <button
+  onClick={() => setAddContributorForm(!addContributorForm)}
+  >Add</button>
+  }
+
+
   return (
     <div class="col d-flex flex-column h-sm-100">
       <div id="contributers-list-main-container" class="row overflow-auto">
@@ -165,11 +175,7 @@ const ContributorsList = ({
 
                 <h5 class="card-title mb-1">
                   Contributors
-                  <button
-                    onClick={() => setAddContributorForm(!addContributorForm)}
-                  >
-                    Add
-                  </button>
+                 {button}
                 </h5>
                 {activeAddContribForm}
                 {activeUpdateContribForm}

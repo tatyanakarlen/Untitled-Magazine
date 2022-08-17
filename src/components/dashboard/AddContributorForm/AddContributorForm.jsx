@@ -1,8 +1,11 @@
 import React from 'react'
 
-const AddContributorForm = ( {contributor, setContributor, postContributor } ) => {
+const AddContributorForm = ( {contributor, setContributor, postContributor, setAddContributorForm, addContributorForm } ) => {
+  
   return (
     <div>
+       <header class="d-flex justify-content-between">Add Contributor<button onClick={() => setAddContributorForm(!addContributorForm)}>x</button>
+      </header>
       <form class="row g-3">
           <div id="form-box" class="col-md-12">
               {/* <br/> */}
