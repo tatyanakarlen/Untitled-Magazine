@@ -14,6 +14,7 @@ const ContributorsList = ({
   setContributors,
   getData,
 }) => {
+  
   const [contributor, setContributor] = useState({
     name: '',
     email: '',
@@ -23,11 +24,13 @@ const ContributorsList = ({
   });
 
   const [addContributorForm, setAddContributorForm] = useState(false);
+  // const [deleteContributorForm, setDeleteContributorForm] = useState(false);
 
   // once an update button is clicked, this state should be changed to contributors profile. a form will toggle
   // with inputs of existing info with submit button that will do a fetch/update in the database
 
   const [updateContributorForm, setUpdateContributorForm] = useState(false);
+  const [deleteSelectedContributor, setDeleteSelectedContributor] = useState('')
 
   const [selectedContributor, updateSelectedContributor] = useState({
     name: '',
@@ -119,6 +122,37 @@ const ContributorsList = ({
 
   // DELETE
 
+  const deleteContributor = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch(
+        `/api/contributorSubmissions/delete/${deleteSelectedContributor}`,
+        {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deleteSelectedContributor: deleteSelectedContributor }),
+        }
+      );
+      console.log('response', res);
+      if (res.statusText === 'OK') {
+        // getData();
+        //   const updatedContributor = await res.json()
+        //   console.log('updateContrib', updatedContributor.data)
+
+        //  allContributors.push(selectedContributor);
+        //   deleteContrib(selectedContributor.contributerId)
+        // const newContribsList = [...allContributors, updatedContributor.data ]
+        // setContributors(newContribsList)
+
+        setDeleteSelectedContributor('')
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
+
   const activeContribForm = (
     <AddContributorForm
       contributor={contributor}
@@ -209,6 +243,20 @@ const ContributorsList = ({
                         >
                           update
                         </button>
+                        <button
+                          // onClick={() => {
+                          // setDeleteSelectedContributor(m._id)
+                          // deleteContributor()
+                          // }}
+                          onMouseEnter={() =>
+                            setDeleteSelectedContributor(m._id)
+                          }
+                          onClick={deleteContributor}
+                        >
+                          Delete
+                        </button>
+                       
+                        
                       </p>
                     </div>
                   </div>

@@ -5,7 +5,7 @@ const contributorsCtrl = require('../../controllers/contributors');
 // router.post('/update', contributorsCtrl.update)
 router.post('/', contributorsCtrl.create)
 router.patch('/update/:id', contributorsCtrl.update)
-// router.delete
+router.delete('/delete/:id', contributorsCtrl.deleteContributor)
 
 router.get('/allContributors', contributorsCtrl.index)
 

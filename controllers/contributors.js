@@ -5,6 +5,7 @@ module.exports = {
     create,
     index,
     update, 
+    deleteContributor, 
   };
 
 
@@ -57,9 +58,16 @@ async function update(req,res) {
 }
   
   
-//   // delete item 
+  // delete item 
   
-//   async function deleteItem (req,res) {
-//       let item = await Item.deleteOne({_id: req.params.id})
-//       res.redirect('/users/' + req.user.id + '/myItems')
-//   }
+  async function deleteContributor(req,res) {
+
+      const contribId = req.params.id
+      try{
+        let contributor = await Contributor.deleteOne({_id: contribId})
+        res.status(200).json({'data': contributor})
+      } catch(err) {
+        res.status(500).json({'error': err.message})
+      }
+  }
+
