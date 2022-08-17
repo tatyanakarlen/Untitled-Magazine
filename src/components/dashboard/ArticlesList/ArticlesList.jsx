@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import UpdateArticleForm from '../UpdateArticleForm/UpdateArticleForm.jsx'
 
 const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
+  
   const [updateArticleForm, setUpdateArticleForm] = useState(false);
 
   const [selectedArticle, updateSelectedArticle] = useState({
@@ -54,6 +55,21 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
     }
   };
 
+
+  const showUpdateArticleForm = 
+  <UpdateArticleForm 
+    selectedArticle={selectedArticle} 
+    updateSelectedArticle={updateSelectedArticle} 
+    updateArticle={updateArticle}
+  />
+  
+
+
+  let activeUpdateArticleForm = ''
+  if (updateArticleForm) {
+    activeUpdateArticleForm = showUpdateArticleForm 
+  }
+
   return (
     <div class="col d-flex flex-column h-sm-100">
       <div id="articles-list-main-container" class="row overflow-auto">
@@ -67,7 +83,8 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
                 <h5 class="card-title mb-1">
                   Articles<button>Add</button>
                 </h5>
-                <UpdateArticleForm selectedArticle={selectedArticle} updateSelectedArticle={updateSelectedArticle} updateArticle={updateArticle}/>
+                {activeUpdateArticleForm}
+                {/* <UpdateArticleForm selectedArticle={selectedArticle} updateSelectedArticle={updateSelectedArticle} updateArticle={updateArticle}/> */}
 
                 {allArticles.map((m) => (
                   <div>

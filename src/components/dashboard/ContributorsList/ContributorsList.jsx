@@ -130,6 +130,22 @@ const ContributorsList = ({
     activeAddContribForm = activeContribForm;
   }
 
+  ////////////////////////////////////////////
+
+  const updateContribForm = 
+    <UpdateContributorForm
+        updateContributor={updateContributor}
+        selectedContributor={selectedContributor}
+        updateSelectedContributor={updateSelectedContributor}
+    />
+  
+
+
+  let activeUpdateContribForm = ''
+  if (updateContributorForm) {
+    activeUpdateContribForm = updateContribForm
+  }
+
   return (
     <div class="col d-flex flex-column h-sm-100">
       <div id="contributers-list-main-container" class="row overflow-auto">
@@ -150,11 +166,8 @@ const ContributorsList = ({
                   </button>
                 </h5>
                 {activeAddContribForm}
-                <UpdateContributorForm
-                  updateContributor={updateContributor}
-                  selectedContributor={selectedContributor}
-                  updateSelectedContributor={updateSelectedContributor}
-                />
+                {activeUpdateContribForm}
+               
 
                 {allContributors.map((m) => (
                   <div id="data-div">
