@@ -4,7 +4,7 @@ import './ArticlesList.css';
 import { useState, useEffect } from 'react';
 import UpdateArticleForm from '../UpdateArticleForm/UpdateArticleForm.jsx'
 
-const ArticlesList = ({ allArticles, user, getData }) => {
+const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
   const [updateArticleForm, setUpdateArticleForm] = useState(false);
 
   const [selectedArticle, updateSelectedArticle] = useState({

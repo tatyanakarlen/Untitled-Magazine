@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 
 
 
-const PostArticle = ({ user }) => {
+const PostArticle = ({ user, allArticles, setArticles }) => {
 
     const[article, setArticle] = useState({
         title: '',
@@ -37,6 +37,9 @@ const PostArticle = ({ user }) => {
                 tags: '',
                 postedBy: user._id, 
               });
+
+              const newArticlesList = [...allArticles, article]
+              setArticles(newArticlesList)
             }
           } catch (err) {
             console.log(err.message);
@@ -44,6 +47,8 @@ const PostArticle = ({ user }) => {
 
 
       }
+
+      
     
     
     //   const postContributor = async (e) => {
