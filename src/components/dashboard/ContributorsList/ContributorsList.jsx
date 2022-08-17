@@ -65,8 +65,9 @@ const ContributorsList = ({
         });
 
         // allContributors.push(contributor);
-        const newContribsList = [...allContributors, contributor];
-        setContributors(newContribsList);
+        // const newContribsList = [...allContributors, contributor];
+        // setContributors(newContribsList);
+        getData();
         setAddContributorForm(!addContributorForm)
       }
     } catch (err) {
@@ -77,10 +78,6 @@ const ContributorsList = ({
   // let [contributors, setContributors] = useState([])
 
   // UPDATE CONTRIBUTER
-
-  // const deleteContrib = (id) => {
-  //   setContributors(allContributors.filter((contributor) => contributor._id !== id))
-  // }
 
   const updateContributor = async (e) => {
     e.preventDefault();
@@ -122,6 +119,10 @@ const ContributorsList = ({
 
   // DELETE
 
+  const deleteContribFromFrontEnd = (id) => {
+    setContributors(allContributors.filter((contributor) => contributor._id !== id))
+  }
+
   const deleteContributor = async (e) => {
     e.preventDefault();
 
@@ -144,8 +145,9 @@ const ContributorsList = ({
         //   deleteContrib(selectedContributor.contributerId)
         // const newContribsList = [...allContributors, updatedContributor.data ]
         // setContributors(newContribsList)
-
+        deleteContribFromFrontEnd(deleteSelectedContributor)
         setDeleteSelectedContributor('')
+
       }
     } catch (err) {
       console.log(err.message);
@@ -244,10 +246,7 @@ const ContributorsList = ({
                           update
                         </button>
                         <button
-                          // onClick={() => {
-                          // setDeleteSelectedContributor(m._id)
-                          // deleteContributor()
-                          // }}
+                         
                           onMouseEnter={() =>
                             setDeleteSelectedContributor(m._id)
                           }

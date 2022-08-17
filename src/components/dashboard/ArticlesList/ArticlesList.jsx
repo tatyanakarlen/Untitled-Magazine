@@ -7,6 +7,7 @@ import UpdateArticleForm from '../UpdateArticleForm/UpdateArticleForm.jsx'
 const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
   
   const [updateArticleForm, setUpdateArticleForm] = useState(false);
+  const [deleteSelectedArticle, setDeleteSelectedArticle] = useState('')
 
   const [selectedArticle, updateSelectedArticle] = useState({
     title: '',
@@ -49,6 +50,43 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
         });
         setUpdateArticleForm(!updateArticleForm)
 
+
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
+  };
+
+  // DELETE
+
+  const deleteArticleFromFrontEnd = (id) => {
+    setArticles(allArticles.filter((article) => article._id !== id))
+  }
+
+  const deleteArticle = async (e) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch(
+        `/api/articleSubmissions/delete/${deleteSelectedArticle}`,
+        {
+          method: 'DELETE',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ deleteSelectedArticle: deleteSelectedArticle }),
+        }
+      );
+      console.log('response', res);
+      if (res.statusText === 'OK') {
+        // getData();
+        //   const updatedContributor = await res.json()
+        //   console.log('updateContrib', updatedContributor.data)
+
+        //  allContributors.push(selectedContributor);
+        //   deleteContrib(selectedContributor.contributerId)
+        // const newContribsList = [...allContributors, updatedContributor.data ]
+        // setContributors(newContribsList)
+        deleteArticleFromFrontEnd(deleteSelectedArticle)
+        setDeleteSelectedArticle('')
 
       }
     } catch (err) {
@@ -117,6 +155,16 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
                         >
                           update
                         </button>
+                        <button
+                         
+                          onMouseEnter={() =>
+                            setDeleteSelectedArticle(m._id)
+                          }
+                          onClick={deleteArticle}
+                        >
+                          Delete
+                        </button>
+                       
                       </p>
                     </div>
                   </div>

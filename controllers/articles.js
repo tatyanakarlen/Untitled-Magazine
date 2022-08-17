@@ -5,6 +5,7 @@ module.exports = {
     create,
     index,
     update,
+    deleteArticle, 
   };
 
 
@@ -55,4 +56,15 @@ module.exports = {
         res.status(500).json({'error': err.message})
        }
     }
+
+    async function deleteArticle(req,res) {
+
+      const articleId = req.params.id
+      try{
+        let article = await Article.deleteOne({_id: articleId})
+        res.status(200).json({'data': article})
+      } catch(err) {
+        res.status(500).json({'error': err.message})
+      }
+  }
       
