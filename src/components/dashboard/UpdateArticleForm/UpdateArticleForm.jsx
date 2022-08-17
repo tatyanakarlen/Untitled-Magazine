@@ -1,6 +1,7 @@
 import React from 'react'
 
-const UpdateArticleForm = ({ selectedArticle, updateSelectedArticle, updateArticle }) => {
+const UpdateArticleForm = ({ selectedArticle, updateSelectedArticle, updateArticle, updateArticleForm, setUpdateArticleForm }) => {
+
 
     // const [selectedArticle, updateSelectedArticle] = useState({
     //     title: '',
@@ -15,6 +16,8 @@ const UpdateArticleForm = ({ selectedArticle, updateSelectedArticle, updateArtic
 
   return (
     <div>
+      <header class="d-flex justify-content-between">Edit Article<button onClick={() => setUpdateArticleForm(!updateArticleForm)}>x</button>
+      </header>
       <form class="row g-3">
           <div id="form-box" class="col-md-12">
               {/* <br/> */}

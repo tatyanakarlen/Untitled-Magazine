@@ -47,6 +47,7 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
           articleId: '',
           postedBy: user._id,
         });
+        setUpdateArticleForm(!updateArticleForm)
 
 
       }
@@ -61,7 +62,11 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
     selectedArticle={selectedArticle} 
     updateSelectedArticle={updateSelectedArticle} 
     updateArticle={updateArticle}
+    updateArticleForm={updateArticleForm}
+    setUpdateArticleForm={setUpdateArticleForm}
   />
+
+  
   
 
 
@@ -81,7 +86,7 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
                   <Icon.ArrowRight />
                 </div>
                 <h5 class="card-title mb-1">
-                  Articles<button>Add</button>
+                  Articles
                 </h5>
                 {activeUpdateArticleForm}
                 {/* <UpdateArticleForm selectedArticle={selectedArticle} updateSelectedArticle={updateSelectedArticle} updateArticle={updateArticle}/> */}
