@@ -9,9 +9,9 @@ const Main = () => {
   return (
     <div class="col d-flex flex-column h-sm-100">
       <div id="card-container" class="row overflow-auto">
-        <div id="card-box" class="row text-center g-3">
+        <div id="card-box" class="row text-center g-3" style={{ width: '90%'}}>
         <nav aria-label="breadcrumb">
-                    <ol style={{ backgroundColor: "black", height: "2.5rem"}}class="breadcrumb">
+                    <ol style={{ backgroundColor: "grey", height: "2.5rem"}}class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Overview</li>
                     </ol>

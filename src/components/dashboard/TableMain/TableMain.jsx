@@ -8,35 +8,44 @@ const TableMain = () => {
     <table class="table table-bordered table-hover table-striped">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          
+          <th scope="col">Date</th>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">ID</th>
+          
+          
+
         </tr>
       </thead>
       <tbody>
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <th scope="row">August 16 2002 5:55 pm</th>
+          <td>What went wrong with everything?</td>
+          <td>Mark Snith</td>
+          <td>76736526754625465</td>
+          <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
         </tr>
         <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
+          <th scope="row">August 16 2002 5:55 pm</th>
+          <td>What went wrong with everything?</td>
+          <td>Mark Snith</td>
+          <td>76736526754625465</td>
+          <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
         </tr>
         <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
+          <th scope="row">August 16 2002 5:55 pm</th>
+          <td>What went wrong with everything?</td>
+          <td>Mark Snith</td>
+          <td>76736526754625465</td>
+          <td><a href="#" class="btn btn-sm btn-primary">View</a></td>
         </tr>
       
       </tbody>
     </table>
+    <a href="#" class="btn btn-block btn-light" style={{ width: "100%"}}>View all</a>
   </div>
+ 
     </div>
   )
 }
