@@ -6,7 +6,7 @@ const Nav = ({ handleLogOut, navActive, setNavActive }) => {
     <div class="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-light d-flex sticky-top">
             <div class="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
                 <a href="/" class="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-                    <span class="fs-5"><span class="d-none d-sm-inline">Untitled Magazine</span></span>
+                    <span class="fs-5"><span class="d-none d-sm-inline" style={{ fontWeight:'bold', fontSize:"20px"}}>Untitled Magazine</span></span>
                     
                 </a>
                 <ul id="nav-ul" class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">

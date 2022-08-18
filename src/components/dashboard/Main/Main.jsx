@@ -11,7 +11,7 @@ const Main = () => {
       <div id="card-container" class="row overflow-auto">
         <div id="card-box" class="row text-center g-3" style={{ width: '90%'}}>
         <nav aria-label="breadcrumb">
-                    <ol style={{ backgroundColor: "grey", height: "2.5rem"}}class="breadcrumb">
+                    <ol style={{ backgroundColor: "#ced4da", height: "2.5rem", paddingTop: '0.5rem', paddingLeft: '0.5rem' }}class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Overview</li>
                     </ol>
