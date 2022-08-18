@@ -204,7 +204,7 @@ const ContributorsList = ({
   let alert = ''
   if (deleteContributorAlert) {
     alert =  <div class="alert alert-success" role="alert">
-    <h4 class="alert-heading">Are you sure you want to delete this article?</h4>
+    <h4 class="alert-heading">Are you sure you want to delete this contributer?</h4>
     <button onClick={deleteContributor}
      
       >Yes</button>
