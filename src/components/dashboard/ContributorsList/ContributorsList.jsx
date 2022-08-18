@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import AddContributorForm from '../AddContributorForm/AddContributorForm';
 import UpdateContributorForm from '../UpdateContributorForm/UpdateContributorForm.jsx';
 import { useNavigate } from 'react-router-dom';
+import BreadCrumb from '../BreadCrumb/BreadCrumb';
 
 const ContributorsList = ({
   user,
@@ -14,7 +15,6 @@ const ContributorsList = ({
   setContributors,
   getData,
 }) => {
-  
   const [contributor, setContributor] = useState({
     name: '',
     email: '',
@@ -30,8 +30,9 @@ const ContributorsList = ({
   // with inputs of existing info with submit button that will do a fetch/update in the database
 
   const [updateContributorForm, setUpdateContributorForm] = useState(false);
-  const [deleteSelectedContributor, setDeleteSelectedContributor] = useState('')
-  const [deleteContributorAlert, setDeleteContributorAlert] = useState(false)
+  const [deleteSelectedContributor, setDeleteSelectedContributor] =
+    useState('');
+  const [deleteContributorAlert, setDeleteContributorAlert] = useState(false);
 
   const [selectedContributor, updateSelectedContributor] = useState({
     name: '',
@@ -69,7 +70,7 @@ const ContributorsList = ({
         // const newContribsList = [...allContributors, contributor];
         // setContributors(newContribsList);
         getData();
-        setAddContributorForm(!addContributorForm)
+        setAddContributorForm(!addContributorForm);
       }
     } catch (err) {
       console.log(err.message);
@@ -111,7 +112,7 @@ const ContributorsList = ({
           contributerId: '',
           postedBy: user._id,
         });
-        setUpdateContributorForm(!updateContributorForm)
+        setUpdateContributorForm(!updateContributorForm);
       }
     } catch (err) {
       console.log(err.message);
@@ -121,8 +122,10 @@ const ContributorsList = ({
   // DELETE
 
   const deleteContribFromFrontEnd = (id) => {
-    setContributors(allContributors.filter((contributor) => contributor._id !== id))
-  }
+    setContributors(
+      allContributors.filter((contributor) => contributor._id !== id)
+    );
+  };
 
   const deleteContributor = async (e) => {
     e.preventDefault();
@@ -146,16 +149,14 @@ const ContributorsList = ({
         //   deleteContrib(selectedContributor.contributerId)
         // const newContribsList = [...allContributors, updatedContributor.data ]
         // setContributors(newContribsList)
-        deleteContribFromFrontEnd(deleteSelectedContributor)
-        setDeleteSelectedContributor('')
-        setDeleteContributorAlert(!deleteContributorAlert)
-
+        deleteContribFromFrontEnd(deleteSelectedContributor);
+        setDeleteSelectedContributor('');
+        setDeleteContributorAlert(!deleteContributorAlert);
       }
     } catch (err) {
       console.log(err.message);
     }
   };
-
 
   const activeContribForm = (
     <AddContributorForm
@@ -174,126 +175,125 @@ const ContributorsList = ({
 
   ////////////////////////////////////////////
 
-  const updateContribForm = 
+  const updateContribForm = (
     <UpdateContributorForm
-        updateContributor={updateContributor}
-        selectedContributor={selectedContributor}
-        updateSelectedContributor={updateSelectedContributor}
-        updateContributorForm={updateContributorForm}
-        setUpdateContributorForm={setUpdateContributorForm}
+      updateContributor={updateContributor}
+      selectedContributor={selectedContributor}
+      updateSelectedContributor={updateSelectedContributor}
+      updateContributorForm={updateContributorForm}
+      setUpdateContributorForm={setUpdateContributorForm}
     />
+  );
 
-   
-  
-
-
-  let activeUpdateContribForm = ''
+  let activeUpdateContribForm = '';
   if (updateContributorForm) {
-    activeUpdateContribForm = updateContribForm
+    activeUpdateContribForm = updateContribForm;
   }
 
-  let button = ''
+  let button = '';
   if (!addContributorForm) {
-  button =  <button
-  onClick={() => setAddContributorForm(!addContributorForm)}
-  >Add</button>
+    button = (
+      <button onClick={() => setAddContributorForm(!addContributorForm)}>
+        Add
+      </button>
+    );
   }
 
   // const [deleteAlert, setDeleteAlert] = useState(false)
 
-  let alert = ''
+  let alert = '';
   if (deleteContributorAlert) {
-    alert =  <div class="alert alert-success" role="alert">
-    <h4 class="alert-heading">Are you sure you want to delete this contributer?</h4>
-    <button onClick={deleteContributor}
-     
-      >Yes</button>
-    <button onClick={() => setDeleteContributorAlert(!deleteContributorAlert)}>No</button>
-  </div>
+    alert = (
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">
+          Are you sure you want to delete this contributer?
+        </h4>
+        <button onClick={deleteContributor}>Yes</button>
+        <button
+          onClick={() => setDeleteContributorAlert(!deleteContributorAlert)}
+        >
+          No
+        </button>
+      </div>
+    );
   }
-
-  // onClick={() => {
-  //   setUpdateContributorForm(!updateContributorForm);
-  //   updateSelectedContributor({
-  //     ...selectedContributor,
-  //     name: m.name,
-  //     email: m.email,
-  //     city: m.city,
-  //     country: m.country,
-  //     contributerId: m._id,
-  //   });
-  // }}
-
-
 
   return (
     <div class="col d-flex flex-column h-sm-100">
-      <div id="contributers-list-main-container" class="row overflow-auto">
-        <div id="contributers-list-container" class="row text-center g-3">
-          <div class="col-md">
-            {alert}
-            <div class="card bg-light text-dark">
-              <div class="card-body text-center">
-                <div class="h1 mb-1">
-                  <Icon.ArrowRight />
-                </div>
-
-                <h5 class="card-title mb-1">
-                  Contributors
-                 {button}
-                </h5>
-                {activeAddContribForm}
-                {activeUpdateContribForm}
-               
-
+      <BreadCrumb />
+      {alert}
+      <div class="row overflow-auto card-container">
+        <div class="row text-center g-3" style={{ width: '90%' }}>
+          
+          {/* <h1>Contributors List {button}</h1> */}
+          {activeAddContribForm}
+          {activeUpdateContribForm}
+          {/* table */}
+          <div class="table-responsive-md">
+            <p class="h3 text-left" style={{ textAlign: 'left' }}>
+              All contributors{button}
+            </p>
+            <table class="table table-bordered table-hover table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">City</th>
+                  <th scope="col">Country</th>
+                  <th scope="col">E-Mail</th>
+                  <th scope="col">Update</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
                 {allContributors.map((m) => (
-                  <div id="data-div">
-                    <hr class="bg-danger border-2 border-top border-danger" />
-                    <div class="dashboard-cards-articles">
-                      <p class="card-text text-primary dashboard-text left-p">
-                        {m.name}
-                        <span>
-                          {m.city}, {m.country}
-                        </span>
-                      </p>
-                      <p class="card-text text-primary dashboard-text">
-                        {/* first step is to toggle a form here */}
-                        {m.email}
-                        <button
-                          onClick={() => {
-                            setUpdateContributorForm(!updateContributorForm);
-                            updateSelectedContributor({
-                              ...selectedContributor,
-                              name: m.name,
-                              email: m.email,
-                              city: m.city,
-                              country: m.country,
-                              contributerId: m._id,
-                            });
-                          }}
-                        >
-                          update
-                        </button>
-                        <button
-                         
-                          onMouseEnter={() =>
-                            setDeleteSelectedContributor(m._id)
-                          }
-                          // onClick={deleteContributor}
-                          onClick={() => 
-                            setDeleteContributorAlert(!deleteContributorAlert)
-                          }
-                        >
-                          Delete
-                        </button>
-                       
-                        
-                      </p>
-                    </div>
-                  </div>
+                  <tr>
+                    <th scope="row">{m.name}</th>
+                    <td>{m.city}</td>
+                    <td>{m.country}</td>
+                    <td>{m.email}</td>
+                    <td>
+                      <a
+                        onClick={() => {
+                          setUpdateContributorForm(!updateContributorForm);
+                          updateSelectedContributor({
+                            ...selectedContributor,
+                            name: m.name,
+                            email: m.email,
+                            city: m.city,
+                            country: m.country,
+                            contributerId: m._id,
+                          });
+                        }}
+                        href="#"
+                        class="btn btn-sm btn-primary"
+                      >
+                        Update
+                      </a>
+                    </td>
+                    <td>
+                      <a
+                        onMouseEnter={() => setDeleteSelectedContributor(m._id)}
+                        // onClick={deleteContributor}
+                        onClick={() =>
+                          setDeleteContributorAlert(!deleteContributorAlert)
+                        }
+                        href="#"
+                        class="btn btn-sm btn-primary"
+                      >
+                        Delete
+                      </a>
+                    </td>
+                  </tr>
                 ))}
-              </div>
-            </div>
+              </tbody>
+            </table>
+            <a
+              href="#"
+              class="btn btn-block btn-light"
+              style={{ width: '100%' }}
+            >
+              View all
+            </a>
           </div>
         </div>
       </div>
