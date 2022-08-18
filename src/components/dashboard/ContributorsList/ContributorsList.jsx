@@ -224,6 +224,7 @@ const ContributorsList = ({
       {alert}
       <div class="row overflow-auto card-container">
         <div class="row text-center g-3" style={{ width: '90%' }}>
+      
           
           {/* <h1>Contributors List {button}</h1> */}
           {activeAddContribForm}
