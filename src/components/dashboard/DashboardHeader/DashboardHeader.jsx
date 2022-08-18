@@ -5,8 +5,8 @@ const DashboardHeader = () => {
   return (
     <div id="header-box">
       <div>
-        <h3>Untitled Magazine</h3>
-        <h5>Hello, Jane!</h5>
+        <h3>Dashboard</h3>
+        <p>Welcome to your content management dashboard, Jane!</p>
       </div>
     </div>
   );
