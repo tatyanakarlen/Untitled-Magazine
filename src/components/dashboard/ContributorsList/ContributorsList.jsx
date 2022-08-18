@@ -204,7 +204,7 @@ const ContributorsList = ({
   let alert = '';
   if (deleteContributorAlert) {
     alert = (
-      <div class="alert alert-success" role="alert">
+      <div class="alert alert-success" role="alert" style={{ width: '89%', margin: '0 auto'}}>
         <h4 class="alert-heading">
           Are you sure you want to delete this contributer?
         </h4>
@@ -220,7 +220,13 @@ const ContributorsList = ({
 
   return (
     <div class="col d-flex flex-column h-sm-100">
-      <BreadCrumb />
+        <nav aria-label="breadcrumb" style={{  width: "89%", margin: '0auto'}}>
+                    <ol style={{ backgroundColor: "#ced4da", height: "2.5rem", }}class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Overview</li>
+                    </ol>
+                </nav>
+              
       {alert}
       <div class="row overflow-auto card-container">
         <div class="row text-center g-3" style={{ width: '90%' }}>
