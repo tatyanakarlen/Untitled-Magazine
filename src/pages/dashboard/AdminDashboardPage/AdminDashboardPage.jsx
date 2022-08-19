@@ -6,6 +6,7 @@ import Main from '../../../components/Dashboard/Main/Main.jsx';
 import ContributorsList from '../../../components/Dashboard/ContributorsList/ContributorsList';
 import ArticlesList from '../../../components/Dashboard/ArticlesList/ArticlesList';
 import PostArticle from '../../../components/Dashboard/PostArticle/PostArticle';
+import BreadCrumb from '../../../components/Dashboard/BreadCrumb/BreadCrumb';
 import './AdminDashboardPage.css';
 
 const AdminDashboardPage = ({

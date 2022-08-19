@@ -220,7 +220,7 @@ const ContributorsList = ({
 
   return (
     <div class="col d-flex flex-column h-sm-100">
-        <nav aria-label="breadcrumb" style={{  width: "89%", margin: '0 auto', marginTop: '2rem' }}>
+        <nav aria-label="breadcrumb" style={{  width: "89%", margin: '0 auto', marginTop: '0.75rem' }}>
                     <ol style={{ backgroundColor: "#ced4da", height: "2.5rem", }}class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Overview</li>

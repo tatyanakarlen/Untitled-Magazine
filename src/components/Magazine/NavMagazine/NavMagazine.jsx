@@ -1,4 +1,5 @@
 import React from 'react'
+import './NavMagazine.css'
 
 const NavMagazine = () => {
   return (
@@ -41,6 +42,7 @@ const NavMagazine = () => {
       </div>
     </nav>
     </div>
+    
   )
 }
 
