@@ -1,11 +1,12 @@
 import React from 'react'
+import './TableMain.css'
 
 const TableMain = () => {
   return (
     <div>
       <div class="table-responsive-md">
           <p class="h4 text-left" style={{ textAlign: 'left'}}>Latest Posts</p>
-    <table class="table table-bordered table-hover table-striped">
+    <table class="table table-bordered table-hover table-striped tableTest">
       <thead>
         <tr>
           

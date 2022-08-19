@@ -1,0 +1,11 @@
+@media (max-width: 674px) {
+    .tableTest {
+      position: fixed;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .tableTest {
+      position:sticky;  
+    }
+  }
