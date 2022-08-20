@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import './ContributorsList.css';
 import * as Icon from 'react-bootstrap-icons';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useState, useEffect } from 'react';
 import AddContributorForm from '../AddContributorForm/AddContributorForm';
 import UpdateContributorForm from '../UpdateContributorForm/UpdateContributorForm.jsx';
 import { useNavigate } from 'react-router-dom';
@@ -15,11 +14,16 @@ const ContributorsList = ({
   setContributors,
   getData,
 }) => {
+
+  const ref = useRef();
+  const [img, setImg] = useState();
+  const [imgLink, setImgLink] = useState();
   const [contributor, setContributor] = useState({
     name: '',
     email: '',
     city: '',
     country: '',
+    image: '',
     postedBy: user._id,
   });
 

@@ -1,4 +1,6 @@
 import React from 'react'
+import '../ContributorsList/ContributorsList.css'
+
 
 const AddContributorForm = ( {contributor, setContributor, postContributor, setAddContributorForm, addContributorForm } ) => {
   
