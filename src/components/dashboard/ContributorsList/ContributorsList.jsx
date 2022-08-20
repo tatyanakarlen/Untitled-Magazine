@@ -243,7 +243,6 @@ const ContributorsList = ({
     activeAddContribForm = activeContribForm;
   }
 
-  ////////////////////////////////////////////
 
   const updateContribForm = (
     <UpdateContributorForm
@@ -318,94 +317,17 @@ const ContributorsList = ({
           {activeUpdateContribForm}
           {/* table goes here */}
 
-          <TableContributors 
-          button={button}
-          allContributors={allContributors}
-          setUpdateContributorForm={setUpdateContributorForm}
-          updateContributorForm={updateContributorForm}
-          updateSelectedContributor={updateSelectedContributor}
-          selectedContributor={selectedContributor}
-          setDeleteSelectedContributor={setDeleteSelectedContributor}
-          setDeleteContributorAlert={setDeleteContributorAlert}
-          deleteContributorAlert={deleteContributorAlert}
+          <TableContributors
+            button={button}
+            allContributors={allContributors}
+            setUpdateContributorForm={setUpdateContributorForm}
+            updateContributorForm={updateContributorForm}
+            updateSelectedContributor={updateSelectedContributor}
+            selectedContributor={selectedContributor}
+            setDeleteSelectedContributor={setDeleteSelectedContributor}
+            setDeleteContributorAlert={setDeleteContributorAlert}
+            deleteContributorAlert={deleteContributorAlert}
           />
-
-          {/* <div class="table-responsive-md">
-            <p class="h3 text-left" style={{ textAlign: 'left' }}>
-             
-              All contributors{button}
-            </p>
-            <table class="table table-bordered table-hover table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">Name</th>
-                  <th scope="col">City</th>
-                  <th scope="col">Country</th>
-                  <th scope="col">E-Mail</th>
-                  <th scope="col">Update</th>
-                  <th scope="col">Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                
-                {allContributors.map((m) => (
-                  <tr>
-                    <th scope="row">{m.name}</th>
-                    <td>{m.city}</td>
-                    <td>{m.country}</td>
-                    <td>{m.email}</td>
-                    <td>
-                      <Link
-                        to=""
-                       
-                        
-                        onClick={() => {
-                          setUpdateContributorForm(!updateContributorForm);
-                          updateSelectedContributor({
-                            ...selectedContributor,
-                            name: m.name,
-                            email: m.email,
-                            bio: m.bio,
-                            city: m.city,
-                            country: m.country,
-                            contributerId: m._id,
-                          });
-                        }}
-                        
-                        class="btn btn-sm btn-primary"
-                      >
-                        Update
-                      </Link>
-                      
-                    </td>
-                    <td>
-                    <Link
-                        to=""
-                       
-                        onMouseEnter={() => setDeleteSelectedContributor(m._id)}
-                       
-                        onClick={() =>
-                          setDeleteContributorAlert(!deleteContributorAlert)
-                        }
-                        
-                        class="btn btn-sm btn-primary"
-                      >
-                        Delete
-                     
-                      </Link>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            <a
-              href="#"
-              class="btn btn-block btn-light"
-              style={{ width: '100%' }}
-            >
-              View all
-            </a>
-          </div> */}
         </div>
       </div>
     </div>

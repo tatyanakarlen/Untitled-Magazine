@@ -63,7 +63,7 @@ const AdminDashboardPage = ({
       />
     );
   } else {
-    activeNav = <Main />;
+    activeNav = <Main allArticles={allArticles}/>;
   }
 
   return (
