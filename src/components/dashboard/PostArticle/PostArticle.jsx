@@ -63,11 +63,12 @@ const PostArticle = ({ user, allArticles, setArticles, getData }) => {
             })
           
           //Image sending ends here
-            const res = await fetch('/api/articleSubmissions', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ article: article, img: responseTwo.imageurl }),
-            });
+          article.image = responseTwo.imageurl
+          const res = await fetch('/api/articleSubmissions', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ article: article }),
+          })
             console.log(res);
             if (res.statusText === 'OK') {
               console.log('SUCCESSLY ADDED TO DB =>', article);

@@ -33,6 +33,7 @@ module.exports = {
            contributor: req.body.article.contributor, 
            body: req.body.article.body, 
            tags: req.body.article.tags, 
+           image: req.body.article.image,
            postedBy: req.body.article.postedBy, 
            contributorId: authorId,
 

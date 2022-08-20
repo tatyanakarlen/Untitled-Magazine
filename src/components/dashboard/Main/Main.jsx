@@ -5,7 +5,9 @@ import TableMain from '../TableMain/TableMain.jsx'
 import BreadCrumb from '../BreadCrumb/BreadCrumb.jsx';
 import './Main.css';
 
-const Main = ({ allArticles }) => {
+
+
+const Main = ({ allArticles, articleViewActive, setarticleViewActive }) => {
   return (
     <div class="col d-flex flex-column h-sm-100">
       <div class="row overflow-auto card-container">
@@ -16,7 +18,11 @@ const Main = ({ allArticles }) => {
           <DashboardCardSm title={"Posts"} count={25}/>
           <DashboardCardSm title={"Updates"} count={25}/>
           <DashboardCardSm title={"Contributors"} count={25}/>
-          <TableMain allArticles={allArticles}/>
+          <TableMain 
+          articleViewActive={articleViewActive}
+          setarticleViewActive={setarticleViewActive}
+          allArticles={allArticles}
+          />
          
         </div>
       </div>

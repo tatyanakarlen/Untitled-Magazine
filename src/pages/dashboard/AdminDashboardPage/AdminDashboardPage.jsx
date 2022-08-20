@@ -18,6 +18,9 @@ const AdminDashboardPage = ({
   getData,
   setArticles,
 }) => {
+
+  const [articleViewActive, setarticleViewActive] = useState(false)
+
   // this is the page state, it changes based on which nav item is clicked
   const [navActive, setNavActive] = useState({
     main: true,
@@ -51,6 +54,8 @@ const AdminDashboardPage = ({
         user={user}
         getData={getData}
         setArticles={setArticles}
+        articleViewActive={articleViewActive}
+        setarticleViewActive={setarticleViewActive}
       />
     );
   } else if (post) {
@@ -63,7 +68,11 @@ const AdminDashboardPage = ({
       />
     );
   } else {
-    activeNav = <Main allArticles={allArticles}/>;
+    activeNav = <Main 
+    allArticles={allArticles}
+    articleViewActive={articleViewActive}
+    setarticleViewActive={setarticleViewActive}
+    />;
   }
 
   return (
