@@ -59,6 +59,7 @@ const AdminDashboardPage = ({
         user={user}
         allArticles={allArticles}
         setArticles={setArticles}
+        getData={getData}
       />
     );
   } else {

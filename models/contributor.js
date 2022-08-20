@@ -8,6 +8,7 @@ const contributorSchema = new Schema({
     email: {type: String, required: true}, 
     city: {type: String, required: true}, 
     country: {type: String, required: true},
+    bio: {type: String, required: true},
     image: {type: String, required: false},
     postedBy: {type: String, required: true},
     articles: [

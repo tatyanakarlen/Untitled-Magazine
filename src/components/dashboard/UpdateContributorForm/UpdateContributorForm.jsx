@@ -50,6 +50,22 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
               class="form-control body-place"  
               rows="10" cols="40" 
               type="text" 
+              name= "bio"
+              required placeholder={selectedContributor.bio}
+              value={selectedContributor.bio}
+              onChange={(e) => 
+                updateSelectedContributor({
+                    ...selectedContributor, 
+                    bio: e.target.value
+                })
+              }
+              >
+              </input>
+              <label for="comments" class="form-label"></label>
+              <input 
+              class="form-control body-place"  
+              rows="10" cols="40" 
+              type="text" 
               name= "city"
               required placeholder={selectedContributor.city}
               value={selectedContributor.city}

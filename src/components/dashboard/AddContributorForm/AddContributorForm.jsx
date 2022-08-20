@@ -53,6 +53,24 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               }
               >
               </input>
+              
+              <label for="comments" class="form-label"></label>
+              <input 
+              class="form-control body-place"  
+              rows="10" cols="40" 
+              type="text" 
+              name= "bio"
+              required placeholder="Bio"
+              value={contributor.bio}
+              onChange={(e) => 
+                setContributor({
+                    ...contributor, 
+                    bio: e.target.value
+                })
+              }
+              >
+              </input>
+
               <label for="comments" class="form-label"></label>
               <input 
               class="form-control body-place"  
@@ -85,6 +103,22 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               }
               >
               </input>
+              {/* <label for="comments" class="form-label"></label>
+              <input 
+              class="form-control body-place"  
+              rows="10" cols="40" 
+              type="text" 
+              name= "bio"
+              required placeholder="Bio"
+              value={contributor.bio}
+              onChange={(e) => 
+                setContributor({
+                    ...contributor, 
+                    bio: e.target.value
+                })
+              }
+              >
+              </input> */}
               <br/>
 
               <br/>

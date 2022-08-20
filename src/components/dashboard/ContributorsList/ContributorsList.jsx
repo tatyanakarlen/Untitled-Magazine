@@ -20,6 +20,7 @@ const ContributorsList = ({
     email: '',
     city: '',
     country: '',
+    bio: '',
     image: '',
     postedBy: user._id,
   });
@@ -75,9 +76,11 @@ const ContributorsList = ({
   const [selectedContributor, updateSelectedContributor] = useState({
     name: '',
     email: '',
+    bio:'',
     city: '',
     country: '',
     contributerId: '',
+    // bio: '',
     postedBy: user._id,
   });
 
@@ -117,17 +120,19 @@ const ContributorsList = ({
       console.log(res);
       if (res.statusText === 'OK') {
         console.log('SUCCESSLY ADDED TO DB =>', contributor);
+        getData();
         setContributor({
           name: '',
           email: '',
           city: '',
           country: '',
+          bio: '',
           image: '',
           postedBy: user._id,
         });
         ref.current.value = '';
         setImg('');
-        getData();
+        // getData();
         setAddContributorForm(!addContributorForm);
       }
     } catch (err) {
@@ -163,6 +168,7 @@ const ContributorsList = ({
         updateSelectedContributor({
           name: '',
           email: '',
+          bio: '',
           city: '',
           country: '',
           contributerId: '',
@@ -342,6 +348,7 @@ const ContributorsList = ({
                             ...selectedContributor,
                             name: m.name,
                             email: m.email,
+                            bio: m.bio,
                             city: m.city,
                             country: m.country,
                             contributerId: m._id,

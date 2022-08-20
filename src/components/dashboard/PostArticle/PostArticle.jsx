@@ -8,7 +8,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 
 
 
-const PostArticle = ({ user, allArticles, setArticles }) => {
+const PostArticle = ({ user, allArticles, setArticles, getData }) => {
 
   const ref = useRef();
   const [img, setImg] = useState();
@@ -71,6 +71,7 @@ const PostArticle = ({ user, allArticles, setArticles }) => {
             console.log(res);
             if (res.statusText === 'OK') {
               console.log('SUCCESSLY ADDED TO DB =>', article);
+              getData();
               setArticle({
                 title: '',
                 contributor: '',
@@ -80,6 +81,7 @@ const PostArticle = ({ user, allArticles, setArticles }) => {
                 postedBy: user._id, 
               });
               ref.current.value = "";
+              getData();
               setImg("")
             }
           } catch (err) {
