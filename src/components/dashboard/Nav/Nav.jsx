@@ -10,7 +10,8 @@ const Nav = ({ handleLogOut, navActive, setNavActive }) => {
                     <span class="fs-5"><span class="d-none d-sm-inline" style={{ fontWeight:'bold', fontSize:"20px"}}>Untitled Magazine</span></span>
                     
                 </a>
-                <ul id="nav-ul" class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-0 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" id="menu">
+                <ul id="nav-ul" class="nav nav-pills flex-sm-column flex-row flex-nowrap flex-shrink-0 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 justify-content-center align-items-center align-items-sm-start" > 
+                {/* id="menu" */}
                     <li class="nav-item">
                         {/* link to magazine goes here */}
                         <a href="#" class="nav-link text-dark px-sm-0 px-2"

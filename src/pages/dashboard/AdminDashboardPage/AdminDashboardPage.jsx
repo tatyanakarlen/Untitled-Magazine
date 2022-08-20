@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Nav from '../../../components/Dashboard/Nav/Nav';
-import Main from '../../../components/Dashboard/Main/Main.jsx';
-import ContributorsList from '../../../components/Dashboard/ContributorsList/ContributorsList';
-import ArticlesList from '../../../components/Dashboard/ArticlesList/ArticlesList';
-import PostArticle from '../../../components/Dashboard/PostArticle/PostArticle';
-import BreadCrumb from '../../../components/Dashboard/BreadCrumb/BreadCrumb';
+import Nav from '../../../components/dashboard/Nav/Nav';
+import Main from '../../../components/dashboard/Main/Main.jsx';
+import ContributorsList from '../../../components/dashboard/ContributorsList/ContributorsList';
+import ArticlesList from '../../../components/dashboard/ArticlesList/ArticlesList';
+import PostArticle from '../../../components/dashboard/PostArticle/PostArticle';
+// import BreadCrumb from '../../../components/Dashboard/BreadCrumb/BreadCrumb';
 import './AdminDashboardPage.css';
 
 const AdminDashboardPage = ({
