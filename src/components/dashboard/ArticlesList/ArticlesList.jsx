@@ -7,10 +7,16 @@ import { Link } from 'react-router-dom';
 import UpdateArticleForm from '../UpdateArticleForm/UpdateArticleForm.jsx';
 import TableArticlesList from '../TableArticlesList/TableArticlesList';
 
-const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
+const ArticlesList = ({ allArticles, setArticles, user, getData, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData }) => {
   const [updateArticleForm, setUpdateArticleForm] = useState(false);
   const [deleteSelectedArticle, setDeleteSelectedArticle] = useState('');
   const [deleteArticleAlert, setDeleteArticleAlert] = useState(false);
+
+
+
+
+
+ 
 
   const [selectedArticle, updateSelectedArticle] = useState({
     title: '',
@@ -150,6 +156,8 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
           {activeUpdateArticleForm}
           {/* table goes here */}
 
+          
+
           <TableArticlesList 
           allArticles={allArticles}
           setUpdateArticleForm={setUpdateArticleForm}
@@ -159,6 +167,13 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
           setDeleteSelectedArticle={setDeleteSelectedArticle}
           setDeleteArticleAlert={setDeleteArticleAlert}
           deleteArticleAlert={deleteArticleAlert}
+          articleViewActive={articleViewActive}
+          setarticleViewActive={setarticleViewActive}
+          articleViewData={articleViewData}
+          setarticleViewData={setarticleViewData}
+
+
+
           />
           
         </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 const TableArticlesList = ({ allArticles, setUpdateArticleForm, updateArticleForm, updateSelectedArticle,selectedArticle, setDeleteSelectedArticle,
-    setDeleteArticleAlert, deleteArticleAlert
+    setDeleteArticleAlert, deleteArticleAlert, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData
   }) => {
 
     // allArticles={allArticles}
@@ -25,6 +25,7 @@ const TableArticlesList = ({ allArticles, setUpdateArticleForm, updateArticleFor
           <th scope="col">Title</th>
           <th scope="col">Contributor</th>
           <th scope="col">Posted</th>
+          <th scope="col">View</th>
           <th scope="col">Update</th>
           <th scope="col">Delete</th>
         </tr>
@@ -36,6 +37,25 @@ const TableArticlesList = ({ allArticles, setUpdateArticleForm, updateArticleFor
             <th scope="row">{m.title}</th>
             <td>{m.contributor}</td>
             <td>{m.createdAt}</td>
+            <td>
+              <Link
+                to=""
+                onClick={() => {
+                    setarticleViewActive(!articleViewActive);
+                    setarticleViewData({
+                      ...articleViewData,
+                      title: m.title,
+                      contributor: m.contributor,
+                      body: m.body,
+                      tags: m.tags,
+                      image: m.image,
+                    });
+                  }}
+                class="btn btn-sm btn-primary"
+              >
+                View
+              </Link>
+            </td>
             <td>
               <Link
                 to=""
