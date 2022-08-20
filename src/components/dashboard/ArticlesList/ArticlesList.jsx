@@ -2,13 +2,12 @@ import React from 'react';
 import * as Icon from 'react-bootstrap-icons';
 import './ArticlesList.css';
 import { useState, useEffect } from 'react';
-import UpdateArticleForm from '../UpdateArticleForm/UpdateArticleForm.jsx'
+import UpdateArticleForm from '../UpdateArticleForm/UpdateArticleForm.jsx';
 
 const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
-  
   const [updateArticleForm, setUpdateArticleForm] = useState(false);
-  const [deleteSelectedArticle, setDeleteSelectedArticle] = useState('')
-  const [deleteArticleAlert, setDeleteArticleAlert] = useState(false)
+  const [deleteSelectedArticle, setDeleteSelectedArticle] = useState('');
+  const [deleteArticleAlert, setDeleteArticleAlert] = useState(false);
 
   const [selectedArticle, updateSelectedArticle] = useState({
     title: '',
@@ -19,25 +18,26 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
     postedBy: user._id,
   });
 
-
   const updateArticle = async (e) => {
     e.preventDefault();
 
-       try {
-      const res = await fetch(`/api/articleSubmissions/update/${selectedArticle.articleId}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ selectedArticle: selectedArticle }),
-      });
+    try {
+      const res = await fetch(
+        `/api/articleSubmissions/update/${selectedArticle.articleId}`,
+        {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ selectedArticle: selectedArticle }),
+        }
+      );
       console.log('response', res);
       if (res.statusText === 'OK') {
-        getData()
-      //   const updatedArticle = await res.json()
-      //   console.log('updateContrib', updatedArticle.data)
-        
-        
-      //  allContributors.push(selectedContributor);
-      //   deleteContrib(selectedContributor.contributerId)
+        getData();
+        //   const updatedArticle = await res.json()
+        //   console.log('updateContrib', updatedArticle.data)
+
+        //  allContributors.push(selectedContributor);
+        //   deleteContrib(selectedContributor.contributerId)
         // const newContribsList = [...allContributors, updatedContributor.data ]
         // setContributors(newContribsList)
 
@@ -49,9 +49,7 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
           articleId: '',
           postedBy: user._id,
         });
-        setUpdateArticleForm(!updateArticleForm)
-
-
+        setUpdateArticleForm(!updateArticleForm);
       }
     } catch (err) {
       console.log(err.message);
@@ -61,8 +59,8 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
   // DELETE
 
   const deleteArticleFromFrontEnd = (id) => {
-    setArticles(allArticles.filter((article) => article._id !== id))
-  }
+    setArticles(allArticles.filter((article) => article._id !== id));
+  };
 
   const deleteArticle = async (e) => {
     e.preventDefault();
@@ -86,107 +84,124 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
         //   deleteContrib(selectedContributor.contributerId)
         // const newContribsList = [...allContributors, updatedContributor.data ]
         // setContributors(newContribsList)
-        deleteArticleFromFrontEnd(deleteSelectedArticle)
-        setDeleteSelectedArticle('')
-        setDeleteArticleAlert(!deleteArticleAlert)
-
+        deleteArticleFromFrontEnd(deleteSelectedArticle);
+        setDeleteSelectedArticle('');
+        setDeleteArticleAlert(!deleteArticleAlert);
       }
     } catch (err) {
       console.log(err.message);
     }
   };
 
+  const showUpdateArticleForm = (
+    <UpdateArticleForm
+      selectedArticle={selectedArticle}
+      updateSelectedArticle={updateSelectedArticle}
+      updateArticle={updateArticle}
+      updateArticleForm={updateArticleForm}
+      setUpdateArticleForm={setUpdateArticleForm}
+    />
+  );
 
-  const showUpdateArticleForm = 
-  <UpdateArticleForm 
-    selectedArticle={selectedArticle} 
-    updateSelectedArticle={updateSelectedArticle} 
-    updateArticle={updateArticle}
-    updateArticleForm={updateArticleForm}
-    setUpdateArticleForm={setUpdateArticleForm}
-  />
-
-  
-  
-
-
-  let activeUpdateArticleForm = ''
+  let activeUpdateArticleForm = '';
   if (updateArticleForm) {
-    activeUpdateArticleForm = showUpdateArticleForm 
+    activeUpdateArticleForm = showUpdateArticleForm;
   }
 
-  let alert = ''
+  let alert = '';
   if (deleteArticleAlert) {
-    alert =  <div class="alert alert-success" role="alert">
-    <h4 class="alert-heading">Are you sure you want to delete this article?</h4>
-    <button onClick={deleteArticle}
-     
-      >Yes</button>
-    <button onClick={() => setDeleteArticleAlert(!deleteArticleAlert)}>No</button>
-  </div>
+    alert = (
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">
+          Are you sure you want to delete this article?
+        </h4>
+        <button onClick={deleteArticle}>Yes</button>
+        <button onClick={() => setDeleteArticleAlert(!deleteArticleAlert)}>
+          No
+        </button>
+      </div>
+    );
   }
 
   return (
     <div class="col d-flex flex-column h-sm-100">
-      <div id="articles-list-main-container" class="row overflow-auto">
-        <div id="articles-list-container" class="row text-center g-3">
-          <div class="col-md">
-          {alert}
-            <div class="card bg-light text-dark">
-              <div class="card-body text-center">
-                <div class="h1 mb-1">
-                  <Icon.ArrowRight />
-                </div>
-                <h5 class="card-title mb-1">
-                  Articles
-                </h5>
-                {activeUpdateArticleForm}
-                {/* <UpdateArticleForm selectedArticle={selectedArticle} updateSelectedArticle={updateSelectedArticle} updateArticle={updateArticle}/> */}
-
+      <nav
+        aria-label="breadcrumb"
+        style={{ width: '89%', margin: '0 auto', marginTop: '0.75rem' }}
+      >
+        <ol
+          style={{ backgroundColor: '#ced4da', height: '2.5rem' }}
+          class="breadcrumb"
+        >
+          <li class="breadcrumb-item">
+            <a href="#">Home</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Overview
+          </li>
+        </ol>
+      </nav>
+      {alert}
+      <div class="row overflow-auto card-container">
+        <div class="row text-center g-3" style={{ width: '90%' }}>
+          {activeUpdateArticleForm}
+          <div class="table-responsive-md">
+            <p class="h3 text-left" style={{ textAlign: 'left' }}>
+              All Articles
+            </p>
+            <table class="table table-bordered table-hover table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">Title</th>
+                  <th scope="col">Contributor</th>
+                  <th scope="col">Posted</th>
+                  <th scope="col">Update</th>
+                  <th scope="col">Delete</th>
+                </tr>
+              </thead>
+              <tbody>
                 {allArticles.map((m) => (
-                  <div>
-                    <hr class="bg-danger border-2 border-top border-danger" />
-                    <div class="dashboard-cards-articles">
-                      <p class="left-p card-text text-primary dashboard-text">
-                        {m.title}
-                        <span>{m.createdAt}</span>
-                      </p>
-                      <p class="card-text font-italic dashboard-text">
-                        {m.contributor}
-                        <button
-                          onClick={() => {
-                            setUpdateArticleForm(!updateArticleForm);
-                            updateSelectedArticle({
-                              ...selectedArticle,
-                              title: m.title,
-                              contributor: m.contributor,
-                              body: m.body,
-                              tags: m.tags, 
-                              articleId: m._id,
-                              contributerId: m.contributorId,
-                            });
-                          }}
-                        >
-                          update
-                        </button>
-                        <button
-                         
-                          onMouseEnter={() =>
-                            setDeleteSelectedArticle(m._id)
-                          }
-                          onClick={() => 
-                            setDeleteArticleAlert(!deleteArticleAlert)
-                          }
-                        >
-                          Delete
-                        </button>
-                       
-                      </p>
-                    </div>
-                  </div>
+                  <tr>
+                    <th scope="row">{m.title}</th>
+                    <td>{m.contributor}</td>
+                    <td>{m.createdAt}</td>
+                    <td>
+                      <a
+                        onClick={() => {
+                          setUpdateArticleForm(!updateArticleForm);
+                          updateSelectedArticle({
+                            ...selectedArticle,
+                            title: m.title,
+                            contributor: m.contributor,
+                            body: m.body,
+                            tags: m.tags,
+                            articleId: m._id,
+                            contributerId: m.contributorId,
+                          });
+                        }}
+                        href="#"
+                        class="btn btn-sm btn-primary"
+                      >
+                        Update
+                      </a>
+                    </td>
+                    <td>
+                      <a
+                        onMouseEnter={() => setDeleteSelectedArticle(m._id)}
+                        // onClick={deleteContributor}
+                        onClick={() =>
+                          setDeleteArticleAlert(!deleteArticleAlert)
+                        }
+                        href="#"
+                        class="btn btn-sm btn-primary"
+                      >
+                        Delete
+                      </a>
+                    </td>
+                  </tr>
                 ))}
-              </div>
-            </div>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
