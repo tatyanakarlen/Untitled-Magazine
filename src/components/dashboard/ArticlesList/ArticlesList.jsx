@@ -2,21 +2,25 @@ import React from 'react';
 import * as Icon from 'react-bootstrap-icons';
 import './ArticlesList.css';
 import { useState, useEffect } from 'react';
-import Table from '../TableArticlesList/TableArticlesList'
+import Table from '../TableArticlesList/TableArticlesList';
 import { Link } from 'react-router-dom';
 import UpdateArticleForm from '../UpdateArticleForm/UpdateArticleForm.jsx';
 import TableArticlesList from '../TableArticlesList/TableArticlesList';
+import ArticleView from '../ArticleView/ArticleView';
 
-const ArticlesList = ({ allArticles, setArticles, user, getData, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData }) => {
+const ArticlesList = ({
+  allArticles,
+  setArticles,
+  user,
+  getData,
+  articleViewActive,
+  setarticleViewActive,
+  articleViewData,
+  setarticleViewData,
+}) => {
   const [updateArticleForm, setUpdateArticleForm] = useState(false);
   const [deleteSelectedArticle, setDeleteSelectedArticle] = useState('');
   const [deleteArticleAlert, setDeleteArticleAlert] = useState(false);
-
-
-
-
-
- 
 
   const [selectedArticle, updateSelectedArticle] = useState({
     title: '',
@@ -134,49 +138,57 @@ const ArticlesList = ({ allArticles, setArticles, user, getData, articleViewActi
 
   return (
     <div class="col d-flex flex-column h-sm-100">
-      <nav
-        aria-label="breadcrumb"
-        style={{ width: '89%', margin: '0 auto', marginTop: '0.75rem' }}
-      >
-        <ol
-          style={{ backgroundColor: '#ced4da', height: '2.5rem' }}
-          class="breadcrumb"
-        >
-          <li class="breadcrumb-item">
-            <a href="#">Home</a>
-          </li>
-          <li class="breadcrumb-item active" aria-current="page">
-            Overview
-          </li>
-        </ol>
-      </nav>
+      
       {alert}
       <div class="row overflow-auto card-container">
+      { articleViewActive ? (
+           <ArticleView 
+           articleViewActive={articleViewActive} 
+           setarticleViewActive={setarticleViewActive}
+           articleViewData={articleViewData}
+           setarticleViewData={setarticleViewData}
+           />
+          ) : (
         <div class="row text-center g-3" style={{ width: '90%' }}>
+          {/* {activeUpdateArticleForm} */}
+
+          
+
+          <nav
+            aria-label="breadcrumb"
+            style={{ width: '89%', margin: '0 auto', marginTop: '0.75rem' }}
+          >
+            <ol
+              style={{ backgroundColor: '#ced4da', height: '2.5rem' }}
+              class="breadcrumb"
+            >
+              <li class="breadcrumb-item">
+                <a href="#">Home</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Overview
+              </li>
+            </ol>
+          </nav>
           {activeUpdateArticleForm}
-          {/* table goes here */}
-
           
 
-          <TableArticlesList 
-          allArticles={allArticles}
-          setUpdateArticleForm={setUpdateArticleForm}
-          updateArticleForm={updateArticleForm}
-          updateSelectedArticle={updateSelectedArticle}
-          selectedArticle={selectedArticle}
-          setDeleteSelectedArticle={setDeleteSelectedArticle}
-          setDeleteArticleAlert={setDeleteArticleAlert}
-          deleteArticleAlert={deleteArticleAlert}
-          articleViewActive={articleViewActive}
-          setarticleViewActive={setarticleViewActive}
-          articleViewData={articleViewData}
-          setarticleViewData={setarticleViewData}
-
-
-
+          <TableArticlesList
+            allArticles={allArticles}
+            setUpdateArticleForm={setUpdateArticleForm}
+            updateArticleForm={updateArticleForm}
+            updateSelectedArticle={updateSelectedArticle}
+            selectedArticle={selectedArticle}
+            setDeleteSelectedArticle={setDeleteSelectedArticle}
+            setDeleteArticleAlert={setDeleteArticleAlert}
+            deleteArticleAlert={deleteArticleAlert}
+            articleViewActive={articleViewActive}
+            setarticleViewActive={setarticleViewActive}
+            articleViewData={articleViewData}
+            setarticleViewData={setarticleViewData}
           />
-          
         </div>
+          )}
       </div>
     </div>
   );

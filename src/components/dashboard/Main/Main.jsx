@@ -10,10 +10,10 @@ const Main = ({ allArticles, articleViewActive, setarticleViewActive, articleVie
 
   // const showArticle = articleViewActive
 
-  <ArticleView
-    articleViewActive={articleViewActive}
-    setarticleViewActive={setarticleViewActive}
-  />;
+  // <ArticleView
+  //   articleViewActive={articleViewActive}
+  //   setarticleViewActive={setarticleViewActive}
+  // />;
 
   return (
     <div class="col d-flex flex-column h-sm-100">
