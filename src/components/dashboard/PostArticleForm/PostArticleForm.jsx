@@ -93,8 +93,7 @@ const ref = useRef();
               <button
                 onClick={postArticle}
                 type="submit"
-                className="btn btn-dark text-light col-2 mt-2"
-              >
+                className="btn btn-dark text-light col-2 mt-2" >
                 Submit
               </button>
             </div>

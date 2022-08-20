@@ -40,6 +40,7 @@ const ContributorsList = ({
   }, [formObj]);
 
   const onImgChange = useCallback((e) => {
+    console.log("running on image change!!!")
     const [file] = e.target.files;
     var reader = new FileReader();
     reader.readAsDataURL(file);
@@ -130,6 +131,8 @@ const ContributorsList = ({
         setImg('');
         getData();
         setAddContributorForm(!addContributorForm);
+        setFormObj({});
+
       }
     } catch (err) {
       console.log(err.message);

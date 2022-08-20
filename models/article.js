@@ -14,7 +14,7 @@ const articleSchema = new Schema({
     body: {type: String, required: true}, 
     tags: [], 
     image: {type: String, required: false},
-    // timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },
+    //timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },
     postedBy: {type: String, required: true},
     contributorId:  {
         type: Schema.Types.ObjectId,
