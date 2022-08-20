@@ -27,15 +27,50 @@ const ContributorsList = ({
     postedBy: user._id,
   });
 
+  // related to photo upload
+  
+
+  const [formObj, setFormObj] = useState({});
+  useEffect(() => {
+    if (!(Object.keys(formObj).length === 0)) {
+      console.log('post contrib', formObj)
+      postContributor();
+      
+    }
+  }, [formObj]);
+
+  const onImgChange = useCallback((e) => {
+    const [file] = e.target.files;
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = function () {
+      var base64data = reader.result;
+      setImg(base64data);
+    };
+  }, []);
+
+  let setImage = async (e) => {
+    e.preventDefault();
+    console.log('setImage is running');
+    let responseOne = await fetch('/img', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        photo: img, // take this image, if all goes wel then ....
+      }),
+    });
+
+    let responseTwo = await responseOne.json();
+
+    console.log('cloudinary url :', responseTwo.imageurl);
+    setFormObj({ ...contributor, image: responseTwo.imageurl });
+  };
+
   const [addContributorForm, setAddContributorForm] = useState(false);
-  // const [deleteContributorForm, setDeleteContributorForm] = useState(false);
-
-  // once an update button is clicked, this state should be changed to contributors profile. a form will toggle
-  // with inputs of existing info with submit button that will do a fetch/update in the database
-
   const [updateContributorForm, setUpdateContributorForm] = useState(false);
-  const [deleteSelectedContributor, setDeleteSelectedContributor] =
-    useState('');
+  const [deleteSelectedContributor, setDeleteSelectedContributor] = useState('');
   const [deleteContributorAlert, setDeleteContributorAlert] = useState(false);
 
   const [selectedContributor, updateSelectedContributor] = useState({
@@ -49,15 +84,36 @@ const ContributorsList = ({
 
   const navigate = useNavigate();
 
-  const postContributor = async (e) => {
-    e.preventDefault();
+  const postContributor = async () => {
+    
     console.log(contributor);
 
     try {
+      // const res = await fetch('/api/contributorSubmissions', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ contributor: contributor }),
+      // });
+      // console.log(res);
+      // if (res.statusText === 'OK') {
+      //   console.log('SUCCESSLY ADDED TO DB =>', contributor);
+      //   setContributor({
+      //     name: '',
+      //     email: '',
+      //     city: '',
+      //     country: '',
+      //     postedBy: user._id,
+      //   });
+
+      //   // allContributors.push(contributor);
+      //   // const newContribsList = [...allContributors, contributor];
+      //   // setContributors(newContribsList);
+      //   getData();
+      //   setAddContributorForm(!addContributorForm);
       const res = await fetch('/api/contributorSubmissions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ contributor: contributor }),
+        body: JSON.stringify({ contributor: formObj, img: formObj.image }),
       });
       console.log(res);
       if (res.statusText === 'OK') {
@@ -67,12 +123,11 @@ const ContributorsList = ({
           email: '',
           city: '',
           country: '',
+          image: '',
           postedBy: user._id,
         });
-
-        // allContributors.push(contributor);
-        // const newContribsList = [...allContributors, contributor];
-        // setContributors(newContribsList);
+        ref.current.value = '';
+        setImg('');
         getData();
         setAddContributorForm(!addContributorForm);
       }
@@ -80,8 +135,6 @@ const ContributorsList = ({
       console.log(err.message);
     }
   };
-
-  // let [contributors, setContributors] = useState([])
 
   // UPDATE CONTRIBUTER
 
@@ -169,6 +222,14 @@ const ContributorsList = ({
       postContributor={postContributor}
       setAddContributorForm={setAddContributorForm}
       addContributorForm={addContributorForm}
+      img={img}
+      setImg={setImg}
+      imgLink={imgLink}
+      setImgLink={setImgLink}
+      formObj={formObj}
+      setFormObj={setFormObj}
+      onImgChange={onImgChange}
+      setImage={setImage}
     />
   );
 
@@ -208,7 +269,11 @@ const ContributorsList = ({
   let alert = '';
   if (deleteContributorAlert) {
     alert = (
-      <div class="alert alert-success" role="alert" style={{ width: '89%', margin: '0 auto'}}>
+      <div
+        class="alert alert-success"
+        role="alert"
+        style={{ width: '89%', margin: '0 auto' }}
+      >
         <h4 class="alert-heading">
           Are you sure you want to delete this contributer?
         </h4>
@@ -224,18 +289,26 @@ const ContributorsList = ({
 
   return (
     <div class="col d-flex flex-column h-sm-100">
-        <nav aria-label="breadcrumb" style={{  width: "89%", margin: '0 auto', marginTop: '0.75rem' }}>
-                    <ol style={{ backgroundColor: "#ced4da", height: "2.5rem", }}class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Overview</li>
-                    </ol>
-                </nav>
-              
+      <nav
+        aria-label="breadcrumb"
+        style={{ width: '89%', margin: '0 auto', marginTop: '0.75rem' }}
+      >
+        <ol
+          style={{ backgroundColor: '#ced4da', height: '2.5rem' }}
+          class="breadcrumb"
+        >
+          <li class="breadcrumb-item">
+            <a href="#">Home</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Overview
+          </li>
+        </ol>
+      </nav>
+
       {alert}
       <div class="row overflow-auto card-container">
         <div class="row text-center g-3" style={{ width: '90%' }}>
-      
-          
           {/* <h1>Contributors List {button}</h1> */}
           {activeAddContribForm}
           {activeUpdateContribForm}

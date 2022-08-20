@@ -1,4 +1,4 @@
-#articlesPost-main-container {
+ /* #articlesPost-main-container {
     display: flex; 
     justify-content: center;
     background-color: rgb(223, 221, 221);
@@ -11,13 +11,13 @@
 }
 
 .no-underline {
-    /* text-decoration:none; */
+    text-decoration:none; 
     display: inline-block;
     font-weight: normal;
     padding-left: 0.5rem; 
-}
+} 
 
-.dashboard-cards {
+ .dashboard-cards {
     display: flex; 
     flex-direction: row;
     justify-content: space-around;
@@ -28,7 +28,7 @@
     text-decoration: underline;
     font-weight: bold; 
     font-size: 16px;
-}
+} 
 
 .dashboard-text {
     font-size: 14px;
@@ -40,4 +40,4 @@
 
 #post-article-form-box {
     padding: 0 2rem 0 2rem; 
-}
+}   */
