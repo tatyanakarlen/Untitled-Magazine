@@ -2,7 +2,10 @@ import React from 'react';
 import * as Icon from 'react-bootstrap-icons';
 import './ArticlesList.css';
 import { useState, useEffect } from 'react';
+import Table from '../TableArticlesList/TableArticlesList'
+import { Link } from 'react-router-dom';
 import UpdateArticleForm from '../UpdateArticleForm/UpdateArticleForm.jsx';
+import TableArticlesList from '../TableArticlesList/TableArticlesList';
 
 const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
   const [updateArticleForm, setUpdateArticleForm] = useState(false);
@@ -145,7 +148,20 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
       <div class="row overflow-auto card-container">
         <div class="row text-center g-3" style={{ width: '90%' }}>
           {activeUpdateArticleForm}
-          <div class="table-responsive-md">
+          {/* table goes here */}
+
+          <TableArticlesList 
+          allArticles={allArticles}
+          setUpdateArticleForm={setUpdateArticleForm}
+          updateArticleForm={updateArticleForm}
+          updateSelectedArticle={updateSelectedArticle}
+          selectedArticle={selectedArticle}
+          setDeleteSelectedArticle={setDeleteSelectedArticle}
+          setDeleteArticleAlert={setDeleteArticleAlert}
+          deleteArticleAlert={deleteArticleAlert}
+          />
+          
+          {/* <div class="table-responsive-md">
             <p class="h3 text-left" style={{ textAlign: 'left' }}>
               All Articles
             </p>
@@ -160,14 +176,17 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
                 </tr>
               </thead>
               <tbody>
+               
                 {allArticles.map((m) => (
                   <tr>
                     <th scope="row">{m.title}</th>
                     <td>{m.contributor}</td>
                     <td>{m.createdAt}</td>
                     <td>
-                      <a
+                      <Link
+                        to=""
                         onClick={() => {
+                        
                           setUpdateArticleForm(!updateArticleForm);
                           updateSelectedArticle({
                             ...selectedArticle,
@@ -179,30 +198,31 @@ const ArticlesList = ({ allArticles, setArticles, user, getData }) => {
                             contributerId: m.contributorId,
                           });
                         }}
-                        href="#"
                         class="btn btn-sm btn-primary"
                       >
                         Update
-                      </a>
+                      </Link>
                     </td>
                     <td>
-                      <a
+                      <Link
+                        to=""
+                      
                         onMouseEnter={() => setDeleteSelectedArticle(m._id)}
-                        // onClick={deleteContributor}
+                     
                         onClick={() =>
                           setDeleteArticleAlert(!deleteArticleAlert)
                         }
-                        href="#"
+                        // href="#"
                         class="btn btn-sm btn-primary"
                       >
                         Delete
-                      </a>
+                      </Link>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

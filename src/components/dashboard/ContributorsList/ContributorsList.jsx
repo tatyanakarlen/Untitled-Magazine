@@ -6,6 +6,8 @@ import Button from 'react-bootstrap/Button';
 import { useState, useEffect, useCallback, useRef } from 'react';
 import AddContributorForm from '../AddContributorForm/AddContributorForm';
 import UpdateContributorForm from '../UpdateContributorForm/UpdateContributorForm.jsx';
+import TableContributors from '../TableContributors/TableContributors';
+import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import BreadCrumb from '../BreadCrumb/BreadCrumb';
 
@@ -33,9 +35,8 @@ const ContributorsList = ({
   const [formObj, setFormObj] = useState({});
   useEffect(() => {
     if (!(Object.keys(formObj).length === 0)) {
-      console.log('post contrib', formObj)
+      console.log('post contrib', formObj);
       postContributor();
-      
     }
   }, [formObj]);
 
@@ -70,13 +71,14 @@ const ContributorsList = ({
 
   const [addContributorForm, setAddContributorForm] = useState(false);
   const [updateContributorForm, setUpdateContributorForm] = useState(false);
-  const [deleteSelectedContributor, setDeleteSelectedContributor] = useState('');
+  const [deleteSelectedContributor, setDeleteSelectedContributor] =
+    useState('');
   const [deleteContributorAlert, setDeleteContributorAlert] = useState(false);
 
   const [selectedContributor, updateSelectedContributor] = useState({
     name: '',
     email: '',
-    bio:'',
+    bio: '',
     city: '',
     country: '',
     contributerId: '',
@@ -87,7 +89,6 @@ const ContributorsList = ({
   const navigate = useNavigate();
 
   const postContributor = async () => {
-    
     console.log(contributor);
 
     try {
@@ -132,7 +133,6 @@ const ContributorsList = ({
         });
         ref.current.value = '';
         setImg('');
-        // getData();
         setAddContributorForm(!addContributorForm);
       }
     } catch (err) {
@@ -314,12 +314,25 @@ const ContributorsList = ({
       {alert}
       <div class="row overflow-auto card-container">
         <div class="row text-center g-3" style={{ width: '90%' }}>
-          {/* <h1>Contributors List {button}</h1> */}
           {activeAddContribForm}
           {activeUpdateContribForm}
-          {/* table */}
-          <div class="table-responsive-md">
+          {/* table goes here */}
+
+          <TableContributors 
+          button={button}
+          allContributors={allContributors}
+          setUpdateContributorForm={setUpdateContributorForm}
+          updateContributorForm={updateContributorForm}
+          updateSelectedContributor={updateSelectedContributor}
+          selectedContributor={selectedContributor}
+          setDeleteSelectedContributor={setDeleteSelectedContributor}
+          setDeleteContributorAlert={setDeleteContributorAlert}
+          deleteContributorAlert={deleteContributorAlert}
+          />
+
+          {/* <div class="table-responsive-md">
             <p class="h3 text-left" style={{ textAlign: 'left' }}>
+             
               All contributors{button}
             </p>
             <table class="table table-bordered table-hover table-striped">
@@ -334,6 +347,7 @@ const ContributorsList = ({
                 </tr>
               </thead>
               <tbody>
+                
                 {allContributors.map((m) => (
                   <tr>
                     <th scope="row">{m.name}</th>
@@ -341,7 +355,10 @@ const ContributorsList = ({
                     <td>{m.country}</td>
                     <td>{m.email}</td>
                     <td>
-                      <a
+                      <Link
+                        to=""
+                       
+                        
                         onClick={() => {
                           setUpdateContributorForm(!updateContributorForm);
                           updateSelectedContributor({
@@ -354,24 +371,28 @@ const ContributorsList = ({
                             contributerId: m._id,
                           });
                         }}
-                        href="#"
+                        
                         class="btn btn-sm btn-primary"
                       >
                         Update
-                      </a>
+                      </Link>
+                      
                     </td>
                     <td>
-                      <a
+                    <Link
+                        to=""
+                       
                         onMouseEnter={() => setDeleteSelectedContributor(m._id)}
-                        // onClick={deleteContributor}
+                       
                         onClick={() =>
                           setDeleteContributorAlert(!deleteContributorAlert)
                         }
-                        href="#"
+                        
                         class="btn btn-sm btn-primary"
                       >
                         Delete
-                      </a>
+                     
+                      </Link>
                     </td>
                   </tr>
                 ))}
@@ -384,7 +405,7 @@ const ContributorsList = ({
             >
               View all
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
