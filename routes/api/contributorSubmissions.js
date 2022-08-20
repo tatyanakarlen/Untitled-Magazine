@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const contributorsCtrl = require('../../controllers/contributors');
 
-// router.post('/update', contributorsCtrl.update)
+
 router.post('/', contributorsCtrl.create)
 router.patch('/update/:id', contributorsCtrl.update)
 router.delete('/delete/:id', contributorsCtrl.deleteContributor)

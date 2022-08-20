@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 
-const AddContributorForm = ( {contributor, setContributor, postContributor, setAddContributorForm, addContributorForm } ) => {
+const AddContributorForm = ( {contributor, setContributor, postContributor, setAddContributorForm, addContributorForm, 
+  img, setImg, imgLink, setImgLink, formObj, setFormObj, onImgChange, setImage,
+ } ) => {
+
+
   
+  
+  const ref = useRef();
+  
+ 
   return (
     <div>
        <header class="d-flex justify-content-between">Add Contributor<button onClick={() => setAddContributorForm(!addContributorForm)}>x</button>
@@ -78,7 +86,14 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               >
               </input>
               <br/>
-              <button onClick={postContributor} type="submit" className="btn btn-dark text-light col-2 mt-2">Submit</button>
+
+              <br/>
+              
+              <input type='file' onChange={onImgChange}  ref={ref} />
+              <img src={img}  style={{width:"200px"}}/> 
+              
+             
+              <button onClick={setImage} type="submit" className="btn btn-dark text-light col-2 mt-2">Submit</button>
           </div>
           </form>
     </div>

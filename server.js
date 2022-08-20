@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const cloudinary = require('cloudinary').v2;
 
 // to ensure we can read secrets
 // from the .env file
@@ -12,7 +13,29 @@ require('./config/database')
 const app = express();
 
 app.use(logger('dev'));
-app.use(express.json());
+app.use(express.json({limit: '50mb'}));
+app.use(express.urlencoded({limit: '50mb', extended: true, parameterLimit: 50000}));
+
+cloudinary.config({ 
+  cloud_name: 'ggv', 
+  api_key: '379688755993376', 
+  api_secret: 'E5Um6LegEj1VXVAjReQzA3N03IQ' 
+});
+
+app.post("/img", function(req, res) {
+  try{
+    cloudinary.uploader.upload(req.body.photo, 
+    function(error, result) {
+
+      // require the post 
+
+      res.send({imageurl : result.url});    });
+    // res.send({message: "Hey"})
+    console.log("Success!")
+  }catch(e){
+    console.log(e)
+  }
+  });
 
 
 // Configure both serve-favicon & static middlewares

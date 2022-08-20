@@ -27,14 +27,14 @@ const NavMagazine = () => {
         </button>
     
         <div class="collapse navbar-collapse" id="navmenu">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
+          <ul class="navbar-nav ms-auto" style={{ width: "35%"}}>
+            <li class="nav-item" style={{ fontSize: '21px'}}>
               <a href="#learn" class="nav-link">Latest</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" style={{ fontSize: '21px'}}>
               <a href="#questions" class="nav-link">Subscribe</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" style={{ fontSize: '21px'}}>
               <a href="#instructors" class="nav-link">Something</a>
             </li>
           </ul>
