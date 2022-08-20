@@ -2,6 +2,7 @@ import React from 'react';
 import './TableMain.css';
 
 const TableMain = ({ allArticles, articleViewActive, setarticleViewActive }) => {
+ 
   if (!allArticles || !allArticles.length) {
     return (<div> No articles to display </div>)
  }
@@ -33,7 +34,10 @@ const TableMain = ({ allArticles, articleViewActive, setarticleViewActive }) => 
                   <td>{m.createdAt}</td>
                  
                   <td>
-                    <button class="btn btn-sm btn-primary">
+                    <button
+                    class="btn btn-sm btn-primary"
+                    onClick={() => setarticleViewActive(!articleViewActive)}
+                    >
                       View
                     </button>
                   </td>
@@ -43,9 +47,9 @@ const TableMain = ({ allArticles, articleViewActive, setarticleViewActive }) => 
             )}
           </tbody>
         </table>
-        <a href="#" class="btn btn-block btn-light" style={{ width: '100%' }}>
+        <button class="btn btn-block btn-light" style={{ width: '100%' }}>
           View all
-        </a>
+        </button>
       </div>
     </div>
   );

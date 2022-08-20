@@ -1,11 +1,13 @@
 import React from 'react'
 
-const ArticleView = () => {
+const ArticleView = ({ articleViewActive, setarticleViewActive }) => {
   return (
     <div>
-      I am article view component
+      I am article view component!!!!!
     </div>
   )
 }
+
+
 
 export default ArticleView
