@@ -1,24 +1,32 @@
 import React from 'react';
 import { useRef } from 'react';
 
-const PostArticleForm = ({user,allArticles,setArticles,postArticle,article,setArticle, img, setImg,imgLink, setImgLink,
-onImgChange}) => {
-
+const PostArticleForm = ({
+  user,
+  allArticles,
+  setArticles,
+  postArticle,
+  article,
+  setArticle,
+  img,
+  setImg,
+  imgLink,
+  setImgLink,
+  onImgChange,
+  forwardedRef,
+}) => {
+  const ref = useRef(null);
   
-
-const ref = useRef();
   return (
     <div class="col-md">
       <div class="card bg-light text-dark">
         <div class="card-body text-center">
-          <div class="h1 mb-1">{/* <Icon.ArrowRight /> */}</div>
+          <div class="h1 mb-1"></div>
           <h5 class="card-title mb-1">Post Article</h5>
           <form class="row g-3">
             <div id="post-article-form-box" class="col-md-12">
               {/* <br/> */}
               <label for="comments" class="form-label"></label>
-
-        
 
               <input
                 class="form-control title-place"
@@ -88,8 +96,13 @@ const ref = useRef();
                 }
               ></input>
               <br />
-              <input type='file' onChange={onImgChange} ref={ref} />
-              <img src={img}  style={{width:"200px"}}/>
+              <input
+                name="fileInput"
+                type="file"
+                onChange={onImgChange}
+                ref={forwardedRef}
+              />
+              <img src={img} style={{ width: '200px' }} />
               <button
                 onClick={postArticle}
                 type="submit"

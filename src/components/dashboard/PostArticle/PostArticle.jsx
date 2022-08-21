@@ -11,6 +11,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 const PostArticle = ({ user, allArticles, setArticles, getData }) => {
 
   const ref = useRef();
+  const fileInputRef = useRef(null)
   const [img, setImg] = useState();
   const [imgLink, setImgLink] = useState();
 
@@ -36,7 +37,9 @@ const PostArticle = ({ user, allArticles, setArticles, getData }) => {
       }, [])
 
       const postArticle = async (e) => {
+        console.log(e)
         e.preventDefault();
+        
         console.log(article);
         //Image sending starts here
         // telling the server - take this photo - send it to cloudinary - and give us the link of where it is stored 
@@ -81,10 +84,12 @@ const PostArticle = ({ user, allArticles, setArticles, getData }) => {
                 image: '',
                 postedBy: user._id, 
               });
-              // ref.current.value = "";
+              
               getData();
               setImg("")
-              setImgLink("")
+              // setImgLink("")
+              console.log(fileInputRef.current)
+              fileInputRef.current.value = "";
             }
           } catch (err) {
             console.log(err.message);
@@ -130,6 +135,7 @@ const PostArticle = ({ user, allArticles, setArticles, getData }) => {
         <div id="articlesPost-main-container" class="row overflow-auto">          
         <div id="articlesPost-container" class="row text-center g-3">
         <PostArticleForm  
+        forwardedRef={fileInputRef}
         user={user} 
         allArticles={allArticles} 
         setArticles={setArticles} 
