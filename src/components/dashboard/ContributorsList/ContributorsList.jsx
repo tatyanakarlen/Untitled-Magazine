@@ -92,27 +92,7 @@ const ContributorsList = ({
     console.log(contributor);
 
     try {
-      // const res = await fetch('/api/contributorSubmissions', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ contributor: contributor }),
-      // });
-      // console.log(res);
-      // if (res.statusText === 'OK') {
-      //   console.log('SUCCESSLY ADDED TO DB =>', contributor);
-      //   setContributor({
-      //     name: '',
-      //     email: '',
-      //     city: '',
-      //     country: '',
-      //     postedBy: user._id,
-      //   });
-
-      //   // allContributors.push(contributor);
-      //   // const newContribsList = [...allContributors, contributor];
-      //   // setContributors(newContribsList);
-      //   getData();
-      //   setAddContributorForm(!addContributorForm);
+      
       const res = await fetch('/api/contributorSubmissions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -131,9 +111,12 @@ const ContributorsList = ({
           image: '',
           postedBy: user._id,
         });
-        ref.current.value = '';
-        setImg('');
-        setAddContributorForm(!addContributorForm);
+        // ref.current.value = '';
+        setImg('')
+        console.log('image link is about to happen')
+        setImgLink('')
+        console.log('setImgLink just happaned')
+        setAddContributorForm(!addContributorForm)
       }
     } catch (err) {
       console.log(err.message);

@@ -81,9 +81,10 @@ const PostArticle = ({ user, allArticles, setArticles, getData }) => {
                 image: '',
                 postedBy: user._id, 
               });
-              ref.current.value = "";
+              // ref.current.value = "";
               getData();
               setImg("")
+              setImgLink("")
             }
           } catch (err) {
             console.log(err.message);
