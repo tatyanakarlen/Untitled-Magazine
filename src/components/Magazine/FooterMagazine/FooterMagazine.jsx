@@ -9,15 +9,38 @@ const FooterMagazine = () => {
          <div class="row g-4 d-flex justify-content-between">
          <div class="col-md-6 col-lg-6" style={{textAlign:'left'}}>
              <h2>UNTITLEDmagazine</h2>
-             <p>stuff stuff stuff stuff stuff stuff stuff</p>
+             <p>The latest fashion news, celebrity style, fashion week updates, culture reviews, and videos on UntitledMagazine.com.</p>
+             <i class="bi bi-twitter text-light mx-1 p-3"></i>
+                <i class="bi bi-facebook text-light mx-1 p-3"></i>
+                <i class="bi bi-linkedin text-light mx-1 p-3"></i>
+                <i class="bi bi-instagram text-light mx-1 p-3"></i>
              </div>
              <div class="col-md-3 col-lg-3">
-             <h2>some content here</h2>
-             <p>stuff stuff stuff stuff stuff stuff stuff</p>
+             <h4 class="h4">More from Untitled</h4>
+             <p>Newsletter</p>
+             <p>Contact Us</p>
+             <p>About Untitled</p>
+             
              </div>
              <div class="col-md-3 col-lg-3">
-             <h2>some content here</h2>
-             <p>stuff stuff stuff stuff stuff stuff stuff</p>
+             <h4 class="h4">Admin</h4>
+             <p><Link
+            
+            to="/login"
+          >
+            ADMIN LOGIN
+          </Link></p>
+
+          <p>
+          <Link to="/dashboard ">
+            DASHBOARD
+          </Link>
+          </p>
+          <p>
+          <Link to="">
+            DEVELOPERS
+          </Link>
+          </p>
              </div>
              </div>
 
