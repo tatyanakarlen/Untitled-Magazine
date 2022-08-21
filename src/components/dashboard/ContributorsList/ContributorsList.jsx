@@ -294,7 +294,7 @@ const ContributorsList = ({
       </nav>
 
       {alert}
-      <div class="row overflow-auto card-container">
+      <div class="row overflow-auto card-container d-flex justify-content-center">
         <div class="row text-center g-3" style={{ width: '90%' }}>
           {activeAddContribForm}
           {activeUpdateContribForm}

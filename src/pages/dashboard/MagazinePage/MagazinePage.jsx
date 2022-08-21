@@ -22,9 +22,9 @@ const MagazinePage = () => {
      <FooterMagazine />
 
      
-    <Link className="nav-left-link" to="/login">
+    {/* <Link className="nav-left-link" to="/login">
         ADMIN LOGIN
-      </Link>
+      </Link> */}
     </div>
   )
 }

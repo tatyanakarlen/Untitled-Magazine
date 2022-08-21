@@ -17,10 +17,11 @@ const ContributorCard = () => {
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Delectus, soluta! Officiis beatae deserunt sed asperiores.
                 </p>
-                <FaBeer />
-                <FaBeer />
-                <FaBeer />
-                <FaBeer />
+                <i class="bi bi-twitter text-dark mx-1"></i>
+                <i class="bi bi-facebook text-dark mx-1"></i>
+                <i class="bi bi-linkedin text-dark mx-1"></i>
+                <i class="bi bi-instagram text-dark mx-1"></i>
+               
                
               </div>
             </div>

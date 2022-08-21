@@ -34,13 +34,16 @@ const TableContributors = ({ button, allContributors,setUpdateContributorForm, u
       </thead>
       <tbody>
         {/* pass down allContributers */}
-        {allContributors.map((m) => (
+        {allContributors.map((m, i) => (
           <tr>
-            <th scope="row">{m.name}</th>
+            <th key={i} scope="row">{m.name}</th>
             <td>{m.city}</td>
             <td>{m.country}</td>
             <td>{m.email}</td>
             <td>
+
+  
+
               <Link
                 to=""
                

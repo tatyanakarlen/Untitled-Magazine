@@ -140,7 +140,7 @@ const ArticlesList = ({
     <div class="col d-flex flex-column h-sm-100">
       
       {alert}
-      <div class="row overflow-auto card-container">
+      <div class="row overflow-auto card-container d-flex justify-content-center">
       { articleViewActive ? (
            <ArticleView 
            articleViewActive={articleViewActive} 
