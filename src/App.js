@@ -16,15 +16,7 @@ function App() {
     setUser(incomingUserData);
   };
 
-  // const pushContributor = (obj) => {
-
-  // }
-
-  // const skills = [...this.state.skills, newObj];
-
-  // this.setState({
-  //   skills
-  // });
+ 
 
   console.log(user);
 
@@ -36,16 +28,24 @@ function App() {
     navigate('../login');
   };
 
+
+  // let jwt = localStorage.getItem('token')
+  // let fetchOrdersResponse = await fetch('/api/orders', {headers: {'Authorization': 'Bearer ' + jwt}})
+
   async function getData() {
     try {
+      let jwt = localStorage.getItem('token')
       let response1 = await fetch(
-        '/api/contributorSubmissions/allContributors'
+        '/api/contributorSubmissions/allContributors',
+        {headers: {'Authorization': 'Bearer ' + jwt}}
       );
       let contributors = await response1.json();
       setContributors(contributors);
-      let response2 = await fetch('/api/articleSubmissions/allArticles');
+      let response2 = await fetch('/api/articleSubmissions/allArticles',
+      {headers: {'Authorization': 'Bearer ' + jwt}});
       let articles = await response2.json();
       setArticles(articles);
+      
     } catch (err) {
       console.log("couldn't fetch posts");
     }

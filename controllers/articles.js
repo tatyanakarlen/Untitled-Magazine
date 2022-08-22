@@ -25,8 +25,11 @@ module.exports = {
      const author = await Contributer.findOne({ name: req.body.article.contributor}).exec()
      const authorId = author._id
      console.log(authorId)
+     console.log(req.user_id)
  
       try {
+
+
         
         const article = await Article.create({
            title: req.body.article.title, 
@@ -36,6 +39,7 @@ module.exports = {
            image: req.body.article.image,
            postedBy: req.body.article.postedBy, 
            contributorId: authorId,
+          //  user: req.user._id,
 
         })
            author.articles.push(article._id)

@@ -45,6 +45,8 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 // below routes for POST requests
 app.use('/api/users', require('./routes/api/users'));
+
+app.use(require('./config/auth'));//routes below are protected 
 app.use('/api/contributorSubmissions', require('./routes/api/contributorSubmissions.js'));
 
 app.use('/api/articleSubmissions', require('./routes/api/articleSubmissions.js'));

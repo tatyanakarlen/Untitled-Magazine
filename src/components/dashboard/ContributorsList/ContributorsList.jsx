@@ -102,6 +102,10 @@ const ContributorsList = ({
       if (res.statusText === 'OK') {
         console.log('SUCCESSLY ADDED TO DB =>', contributor);
         // getData();
+        // const newContributor = await res.json()
+        // console.log(newContributor)
+        // const newContribsList = [...allContributors, newContributor]
+        //  setContributors(newContribsList)
         setContributor({
           name: '',
           email: '',
@@ -111,7 +115,11 @@ const ContributorsList = ({
           image: '',
           postedBy: user._id,
         });
-        getData();
+
+
+       
+
+       
         // ref.current.value = '';
         setImg('')
         console.log('image link is about to happen')
@@ -142,12 +150,14 @@ const ContributorsList = ({
       console.log('response', res);
       if (res.statusText === 'OK') {
         getData();
-        //   const updatedContributor = await res.json()
-        //   console.log('updateContrib', updatedContributor.data)
+        // const updatedContributor = await res.json()
+        // const newContribsList = [...allContributors, updatedContributor]
+        //  setContributors(newContribsList)
 
         //  allContributors.push(selectedContributor);
         //   deleteContrib(selectedContributor.contributerId)
-        // const newContribsList = [...allContributors, updatedContributor.data ]
+
+        // const newContribsList = [...allContributors, updatedContributor]
         // setContributors(newContribsList)
 
         updateSelectedContributor({

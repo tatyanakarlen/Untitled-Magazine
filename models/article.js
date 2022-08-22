@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const User = require('../models/user.js')
 
 
 const articleSchema = new Schema({
@@ -20,7 +21,11 @@ const articleSchema = new Schema({
         type: Schema.Types.ObjectId,
         required: true,
         ref: 'Contributor',
-    }
+    },
+    // user: { 
+    //   type: Schema.Types.ObjectId, 
+    //    ref: 'User' 
+    // },
 }, 
 {
     timestamps: true  
