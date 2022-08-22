@@ -45,11 +45,11 @@ const PostArticle = ({ user, allArticles, setArticles, getData }) => {
         // telling the server - take this photo - send it to cloudinary - and give us the link of where it is stored 
         //  
         try {
-            
+          let jwt = localStorage.getItem('token')
             let responseOne = await fetch("/img", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
+                "Content-Type": "application/json", 'Authorization': 'Bearer ' + jwt
             },
             body: JSON.stringify({
                 photo: img // take this image, if all goes wel then ....

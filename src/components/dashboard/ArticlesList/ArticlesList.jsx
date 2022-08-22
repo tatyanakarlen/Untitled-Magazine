@@ -35,11 +35,12 @@ const ArticlesList = ({
     e.preventDefault();
 
     try {
+      let jwt = localStorage.getItem('token')
       const res = await fetch(
         `/api/articleSubmissions/update/${selectedArticle.articleId}`,
         {
           method: 'PATCH',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + jwt },
           body: JSON.stringify({ selectedArticle: selectedArticle }),
         }
       );
@@ -79,11 +80,12 @@ const ArticlesList = ({
     e.preventDefault();
 
     try {
+      let jwt = localStorage.getItem('token')
       const res = await fetch(
         `/api/articleSubmissions/delete/${deleteSelectedArticle}`,
         {
           method: 'DELETE',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + jwt},
           // body: JSON.stringify({ deleteSelectedArticle: deleteSelectedArticle }),
         }
       );

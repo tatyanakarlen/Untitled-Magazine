@@ -51,7 +51,24 @@ function App() {
     }
   }
 
+  
+  const verifyUserToken = () => {
+    let token = localStorage.getItem('token')
+    if (token) {
+      const payload = JSON.parse(atob(token.split('.')[1])); // decode token
+      if (payload.exp < Date.now() / 1000) {  // Check if our token is expired, and remove if it is (standard/boilerplate)
+        localStorage.removeItem('token');
+        token = null;
+      } else { // token not expired! our user is still 'logged in'. Put them into state.
+        let userDoc = payload.user // grab user details from token
+        setUser(userDoc) 
+      }
+    }
+  }
+
+
   useEffect(() => {
+    verifyUserToken()
     getData();
   }, []); // empty [](dependancy array), means useEffect will only run once on initial component mount (inital load)
 

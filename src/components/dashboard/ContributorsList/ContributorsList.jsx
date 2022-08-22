@@ -92,16 +92,16 @@ const ContributorsList = ({
     console.log(contributor);
 
     try {
-      
+      let jwt = localStorage.getItem('token')
       const res = await fetch('/api/contributorSubmissions', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + jwt},
         body: JSON.stringify({ contributor: formObj, img: formObj.image }),
       });
       console.log(res);
       if (res.statusText === 'OK') {
         console.log('SUCCESSLY ADDED TO DB =>', contributor);
-        getData();
+        // getData();
         setContributor({
           name: '',
           email: '',
@@ -111,6 +111,7 @@ const ContributorsList = ({
           image: '',
           postedBy: user._id,
         });
+        getData();
         // ref.current.value = '';
         setImg('')
         console.log('image link is about to happen')
@@ -129,11 +130,12 @@ const ContributorsList = ({
     e.preventDefault();
 
     try {
+      let jwt = localStorage.getItem('token')
       const res = await fetch(
         `/api/contributorSubmissions/update/${selectedContributor.contributerId}`,
         {
           method: 'PATCH',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + jwt},
           body: JSON.stringify({ selectedContributor: selectedContributor }),
         }
       );
@@ -176,11 +178,12 @@ const ContributorsList = ({
     e.preventDefault();
 
     try {
+      let jwt = localStorage.getItem('token')
       const res = await fetch(
         `/api/contributorSubmissions/delete/${deleteSelectedContributor}`,
         {
           method: 'DELETE',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + jwt },
           // body: JSON.stringify({ deleteSelectedContributor: deleteSelectedContributor }),
         }
       );
