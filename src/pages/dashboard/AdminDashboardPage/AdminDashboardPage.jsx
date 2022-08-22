@@ -26,7 +26,11 @@ const AdminDashboardPage = ({
     return el.postedBy === user._id
   });
 
-  // console.log('this is user owner articles', userOwnedArticles)
+  const userOwnedContributors = allContributors.filter(function (el) {
+    return el.postedBy === user._id
+  });
+
+  
 
   const [articleViewActive, setarticleViewActive] = useState(false);
   const [articleViewData, setarticleViewData] = useState({
@@ -57,6 +61,7 @@ const AdminDashboardPage = ({
   if (contributers) {
     activeNav = (
       <ContributorsList
+        userOwnedContributors={userOwnedContributors}
         user={user}
         allContributors={allContributors}
         setContributors={setContributors}
@@ -89,6 +94,7 @@ const AdminDashboardPage = ({
   } else {
     activeNav = (
       <Main
+        userOwnedContributors={userOwnedContributors}
         userOwnedArticles={userOwnedArticles}
         allArticles={allArticles}
         articleViewActive={articleViewActive}

@@ -13,6 +13,7 @@ import BreadCrumb from '../BreadCrumb/BreadCrumb';
 
 const ContributorsList = ({
   user,
+  userOwnedContributors,
   allContributors,
   setContributors,
   getData,
@@ -87,7 +88,7 @@ const ContributorsList = ({
   });
 
   const navigate = useNavigate();
-  
+
 
   const postContributor = async () => {
     console.log(contributor);
@@ -314,6 +315,7 @@ const ContributorsList = ({
           {/* table goes here */}
 
           <TableContributors
+            userOwnedContributors={userOwnedContributors}
             button={button}
             allContributors={allContributors}
             setUpdateContributorForm={setUpdateContributorForm}

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const TableContributors = ({ button, allContributors,setUpdateContributorForm, updateContributorForm, updateSelectedContributor, selectedContributor,
+const TableContributors = ({ userOwnedContributors, button, allContributors,setUpdateContributorForm, updateContributorForm, updateSelectedContributor, selectedContributor,
     setDeleteSelectedContributor, setDeleteContributorAlert, deleteContributorAlert
  }) => {
 
@@ -26,7 +26,7 @@ const TableContributors = ({ button, allContributors,setUpdateContributorForm, u
       </thead>
       <tbody>
         {/* pass down allContributers */}
-        {allContributors.map((m, i) => (
+        {userOwnedContributors.map((m, i) => (
           <tr>
             <th key={i} scope="row">{m.name}</th>
             <td>{m.city}</td>

@@ -6,7 +6,7 @@ import BreadCrumb from '../BreadCrumb/BreadCrumb.jsx';
 import ArticleView from '../ArticleView/ArticleView';
 import './Main.css';
 
-const Main = ({ allArticles, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData, userOwnedArticles }) => {
+const Main = ({ allArticles, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData, userOwnedArticles, userOwnedContributors }) => {
 
   // const showArticle = articleViewActive
 
@@ -14,6 +14,8 @@ const Main = ({ allArticles, articleViewActive, setarticleViewActive, articleVie
   //   articleViewActive={articleViewActive}
   //   setarticleViewActive={setarticleViewActive}
   // />;
+
+  let contrib = userOwnedContributors.length
 
   return (
     <div class="col d-flex flex-column h-sm-100">
@@ -29,9 +31,9 @@ const Main = ({ allArticles, articleViewActive, setarticleViewActive, articleVie
           <div class="row text-center g-3" style={{ width: '90%' }}>
             <BreadCrumb />
             <DashboardHeader />
-            <DashboardCardSm title={'Posts'} count={25} />
+            <DashboardCardSm title={'Posts'} count={25}/>
             <DashboardCardSm title={'Updates'} count={25} />
-            <DashboardCardSm title={'Contributors'} count={25} />
+            <DashboardCardSm title={'Contributors'} count={contrib} />
             <TableMain
              userOwnedArticles={userOwnedArticles}
               articleViewActive={articleViewActive}
