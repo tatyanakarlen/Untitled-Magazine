@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const TableArticlesList = ({ allArticles, setUpdateArticleForm, updateArticleForm, updateSelectedArticle,selectedArticle, setDeleteSelectedArticle,
+const TableArticlesList = ({ userOwnedArticles, allArticles, setUpdateArticleForm, updateArticleForm, updateSelectedArticle,selectedArticle, setDeleteSelectedArticle,
     setDeleteArticleAlert, deleteArticleAlert, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData
   }) => {
 
@@ -32,7 +32,7 @@ const TableArticlesList = ({ allArticles, setUpdateArticleForm, updateArticleFor
       </thead>
       <tbody>
         {/* have to pass down allArticles */}
-        {allArticles.map((m) => (
+        {userOwnedArticles.map((m) => (
           <tr>
             <th scope="row">{m.title}</th>
             <td>{m.contributor}</td>

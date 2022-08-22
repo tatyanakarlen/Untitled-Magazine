@@ -1,13 +1,13 @@
 import React from 'react';
 import './TableMain.css';
 
-const TableMain = ({ allArticles, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData }) => {
+const TableMain = ({ allArticles, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData, userOwnedArticles }) => {
   
  
   if (!allArticles || !allArticles.length) {
     return (<div> No articles to display </div>)
  }
-  let recentPosts = allArticles.slice(Math.max(allArticles.length - 5, 0));
+  let recentPosts = userOwnedArticles.slice(Math.max(userOwnedArticles.length - 5, 0));
 
   return (
     <div>

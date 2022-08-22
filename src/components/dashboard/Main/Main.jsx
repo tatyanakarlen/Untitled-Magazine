@@ -6,7 +6,7 @@ import BreadCrumb from '../BreadCrumb/BreadCrumb.jsx';
 import ArticleView from '../ArticleView/ArticleView';
 import './Main.css';
 
-const Main = ({ allArticles, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData }) => {
+const Main = ({ allArticles, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData, userOwnedArticles }) => {
 
   // const showArticle = articleViewActive
 
@@ -33,6 +33,7 @@ const Main = ({ allArticles, articleViewActive, setarticleViewActive, articleVie
             <DashboardCardSm title={'Updates'} count={25} />
             <DashboardCardSm title={'Contributors'} count={25} />
             <TableMain
+             userOwnedArticles={userOwnedArticles}
               articleViewActive={articleViewActive}
               setarticleViewActive={setarticleViewActive}
               allArticles={allArticles}

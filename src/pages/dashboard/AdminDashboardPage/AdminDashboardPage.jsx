@@ -12,12 +12,22 @@ import './AdminDashboardPage.css';
 const AdminDashboardPage = ({
   handleLogOut,
   user,
-  allArticles,
+  allArticles, 
   allContributors,
   setContributors,
   getData,
   setArticles,
 }) => {
+
+
+ // this is only the user articles posts!!!!
+
+  const userOwnedArticles = allArticles.filter(function (el) {
+    return el.postedBy === user._id
+  });
+
+  // console.log('this is user owner articles', userOwnedArticles)
+
   const [articleViewActive, setarticleViewActive] = useState(false);
   const [articleViewData, setarticleViewData] = useState({
     title: '',
@@ -56,6 +66,7 @@ const AdminDashboardPage = ({
   } else if (articles) {
     activeNav = (
       <ArticlesList
+        userOwnedArticles={userOwnedArticles}
         allArticles={allArticles}
         user={user}
         getData={getData}
@@ -78,6 +89,7 @@ const AdminDashboardPage = ({
   } else {
     activeNav = (
       <Main
+        userOwnedArticles={userOwnedArticles}
         allArticles={allArticles}
         articleViewActive={articleViewActive}
         setarticleViewActive={setarticleViewActive}

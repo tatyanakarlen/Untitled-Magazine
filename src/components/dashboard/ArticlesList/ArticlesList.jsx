@@ -17,7 +17,28 @@ const ArticlesList = ({
   setarticleViewActive,
   articleViewData,
   setarticleViewData,
+  userOwnedArticles
 }) => {
+
+
+  
+  // this is only the user articles posts!!!!
+
+  // const userOwnedArticles = allArticles.filter(function (el) {
+  //   return el.postedBy === user._id
+          
+  // });
+  // console.log('this is user owner articles', userOwnedArticles)
+  
+  
+
+
+ 
+
+ 
+  
+
+
   const [updateArticleForm, setUpdateArticleForm] = useState(false);
   const [deleteSelectedArticle, setDeleteSelectedArticle] = useState('');
   const [deleteArticleAlert, setDeleteArticleAlert] = useState(false);
@@ -152,7 +173,7 @@ const ArticlesList = ({
            />
           ) : (
         <div class="row text-center g-3" style={{ width: '90%' }}>
-          {/* {activeUpdateArticleForm} */}
+          
 
           
 
@@ -176,6 +197,7 @@ const ArticlesList = ({
           
 
           <TableArticlesList
+            userOwnedArticles={userOwnedArticles}
             allArticles={allArticles}
             setUpdateArticleForm={setUpdateArticleForm}
             updateArticleForm={updateArticleForm}
