@@ -12,19 +12,18 @@ import ContributorCard from '../../../components/Magazine/ContributorCard/Contri
 
 
 
-const MagazinePage = () => {
+
+const MagazinePage = ({ allArticles, allContributors}) => {
   return (
     <div>
       <NavMagazine />
       <HeroMagazine />
-     <ArticleCardGroup />
-     <ContributorCardGroup />
+     <ArticleCardGroup allArticles={allArticles}/>
+     <ContributorCardGroup allContributors={allContributors}/>
      <FooterMagazine />
 
      
-    {/* <Link className="nav-left-link" to="/login">
-        ADMIN LOGIN
-      </Link> */}
+  
     </div>
   )
 }

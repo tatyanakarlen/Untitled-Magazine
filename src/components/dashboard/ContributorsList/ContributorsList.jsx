@@ -87,6 +87,7 @@ const ContributorsList = ({
   });
 
   const navigate = useNavigate();
+  
 
   const postContributor = async () => {
     console.log(contributor);

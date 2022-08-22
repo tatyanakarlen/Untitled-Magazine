@@ -22,10 +22,10 @@ const articleSchema = new Schema({
         required: true,
         ref: 'Contributor',
     },
-    // user: { 
-    //   type: Schema.Types.ObjectId, 
-    //    ref: 'User' 
-    // },
+    user: { 
+      type: Schema.Types.ObjectId, 
+       ref: 'User' 
+    },
 }, 
 {
     timestamps: true  

@@ -13,7 +13,7 @@ module.exports = {
     try {
         let allContributors = await Contributor.find().sort({ _id: 'desc'})
         res.status(200).json(allContributors)
-        console.log(allContributors)
+
     } catch(err) {
         res.status(400).json("Couldn't get posts")
     }

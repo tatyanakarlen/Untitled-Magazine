@@ -14,7 +14,7 @@ module.exports = {
     try {
         let allArticles = await Article.find().sort({createdAt: 'desc'})
         res.status(200).json(allArticles)
-        console.log(allArticles)
+  
     } catch(err) {
         res.status(400).json("Couldn't get posts")
     }
@@ -25,12 +25,14 @@ module.exports = {
     async function create(req, res) {
      const author = await Contributer.findOne({ name: req.body.article.contributor}).exec()
      const authorId = author._id
-     console.log(authorId)
-     console.log(req.user_id)
+     console.log('this is author ID' + authorId)
+     
+     
+     console.log(req.body)
  
       try {
 
-
+        
         
         const article = await Article.create({
            title: req.body.article.title, 
@@ -40,7 +42,8 @@ module.exports = {
            image: req.body.article.image,
            postedBy: req.body.article.postedBy, 
            contributorId: authorId,
-          //  user: req.user._id,
+           user: req.body.userId,
+          
 
         })
            author.articles.push(article._id)

@@ -70,7 +70,7 @@ function App() {
   useEffect(() => {
     verifyUserToken()
     getData();
-  }, []); // empty [](dependancy array), means useEffect will only run once on initial component mount (inital load)
+  }, []); 
 
   return (
     <ThemeProvider
@@ -89,7 +89,7 @@ function App() {
               )
             }
           />
-          <Route path="/" element={<MagazinePage />} />
+          <Route path="/" element={<MagazinePage  allArticles={articles} allContributors={contributors}/>} />
           <Route path="*" element={<Navigate to="/" replace />} />
           <Route
             path="/dashboard"
