@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ArticleCard = ({title, contributor, body, image}) => {
+const ArticleCard = ({title, contributor, body, image, createdAt}) => {
   return (
 
 
@@ -15,9 +15,10 @@ const ArticleCard = ({title, contributor, body, image}) => {
           <div class="card-body">
             <h5 class="card-title">{title}</h5>
             <p class="card-text">
-              This is a wider card with supporting text below as a natural
+              {/* This is a wider card with supporting text below as a natural
               lead-in to additional content. This content is a little bit
-              longer.
+              longer. */}
+              {body.slice(0, 50)}
             </p>
             <p class="card-text">
               <small class="text-muted">{contributor}</small>

@@ -16,6 +16,7 @@ const Main = ({ allArticles, articleViewActive, setarticleViewActive, articleVie
   // />;
 
   let contrib = userOwnedContributors.length
+  let articles = userOwnedArticles.length
 
   return (
     <div class="col d-flex flex-column h-sm-100">
@@ -31,9 +32,9 @@ const Main = ({ allArticles, articleViewActive, setarticleViewActive, articleVie
           <div class="row text-center g-3" style={{ width: '90%' }}>
             <BreadCrumb />
             <DashboardHeader />
-            <DashboardCardSm title={'Posts'} count={25}/>
+            <DashboardCardSm title={'Articles'} count={articles} word={'articles'}/>
             <DashboardCardSm title={'Updates'} count={25} />
-            <DashboardCardSm title={'Contributors'} count={contrib} />
+            <DashboardCardSm title={'Contributors'} count={contrib} word={'contributors'}/>
             <TableMain
              userOwnedArticles={userOwnedArticles}
               articleViewActive={articleViewActive}
