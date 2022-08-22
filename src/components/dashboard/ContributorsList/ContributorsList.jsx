@@ -92,20 +92,23 @@ const ContributorsList = ({
     console.log(contributor);
 
     try {
-      let jwt = localStorage.getItem('token')
+      let jwt = localStorage.getItem('token');
       const res = await fetch('/api/contributorSubmissions', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + jwt},
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + jwt,
+        },
         body: JSON.stringify({ contributor: formObj, img: formObj.image }),
       });
       console.log(res);
       if (res.statusText === 'OK') {
         console.log('SUCCESSLY ADDED TO DB =>', contributor);
-        // getData();
-        // const newContributor = await res.json()
-        // console.log(newContributor)
-        // const newContribsList = [...allContributors, newContributor]
-        //  setContributors(newContribsList)
+        getData();
+
+        const newContributor = await res.json();
+        console.log('this is res.json', newContributor);
+
         setContributor({
           name: '',
           email: '',
@@ -116,16 +119,12 @@ const ContributorsList = ({
           postedBy: user._id,
         });
 
-
-       
-
-       
         // ref.current.value = '';
-        setImg('')
-        console.log('image link is about to happen')
-        setImgLink('')
-        console.log('setImgLink just happaned')
-        setAddContributorForm(!addContributorForm)
+        setImg('');
+        console.log('image link is about to happen');
+        setImgLink('');
+        console.log('setImgLink just happaned');
+        setAddContributorForm(!addContributorForm);
       }
     } catch (err) {
       console.log(err.message);
@@ -138,27 +137,25 @@ const ContributorsList = ({
     e.preventDefault();
 
     try {
-      let jwt = localStorage.getItem('token')
+      let jwt = localStorage.getItem('token');
       const res = await fetch(
         `/api/contributorSubmissions/update/${selectedContributor.contributerId}`,
         {
           method: 'PATCH',
-          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + jwt},
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + jwt,
+          },
           body: JSON.stringify({ selectedContributor: selectedContributor }),
         }
       );
       console.log('response', res);
       if (res.statusText === 'OK') {
         getData();
-        // const updatedContributor = await res.json()
+        // const updatedContributor = await res.json();
+        // console.log('this is res.json', updatedContributor);
         // const newContribsList = [...allContributors, updatedContributor]
         //  setContributors(newContribsList)
-
-        //  allContributors.push(selectedContributor);
-        //   deleteContrib(selectedContributor.contributerId)
-
-        // const newContribsList = [...allContributors, updatedContributor]
-        // setContributors(newContribsList)
 
         updateSelectedContributor({
           name: '',
@@ -188,12 +185,15 @@ const ContributorsList = ({
     e.preventDefault();
 
     try {
-      let jwt = localStorage.getItem('token')
+      let jwt = localStorage.getItem('token');
       const res = await fetch(
         `/api/contributorSubmissions/delete/${deleteSelectedContributor}`,
         {
           method: 'DELETE',
-          headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + jwt },
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + jwt,
+          },
           // body: JSON.stringify({ deleteSelectedContributor: deleteSelectedContributor }),
         }
       );
@@ -238,7 +238,6 @@ const ContributorsList = ({
   if (addContributorForm) {
     activeAddContribForm = activeContribForm;
   }
-
 
   const updateContribForm = (
     <UpdateContributorForm

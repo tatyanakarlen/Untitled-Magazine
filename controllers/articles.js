@@ -8,10 +8,11 @@ module.exports = {
     deleteArticle, 
   };
 
+  
 
   async function index(req,res) {
     try {
-        let allArticles = await Article.find()
+        let allArticles = await Article.find().sort({createdAt: 'desc'})
         res.status(200).json(allArticles)
         console.log(allArticles)
     } catch(err) {

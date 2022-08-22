@@ -5,15 +5,7 @@ const TableContributors = ({ button, allContributors,setUpdateContributorForm, u
     setDeleteSelectedContributor, setDeleteContributorAlert, deleteContributorAlert
  }) => {
 
-    // button={button}
-    // allContributors={allContributors}
-    // setUpdateContributorForm={setUpdateContributorForm}
-    // updateContributorForm={updateContributorForm}
-    // updateSelectedContributor={updateSelectedContributor}
-    // selectedContributor={selectedContributor}
-    // setDeleteSelectedContributor={setDeleteSelectedContributor}
-    // setDeleteContributorAlert={setDeleteContributorAlert}
-    // deleteContributorAlert={deleteContributorAlert}
+// const reversedContribsList = allContributors.reverse()
 
   return (
     <div class="table-responsive-md">
