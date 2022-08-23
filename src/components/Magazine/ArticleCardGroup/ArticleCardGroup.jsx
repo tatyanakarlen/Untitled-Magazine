@@ -23,6 +23,8 @@ const ArticleCardGroup = (props) => {
                   title={a.title}
                   contributor={a.contributor}
                   createdAt={a.createdAt}
+                  body={a.body}
+                  id={a._id}
                 />
 
                 /* {allArticles.map(m => 

@@ -1,14 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const ArticleCard = (props) => {
   // {title, contributor, body, image, createdAt}
+  const navigate = useNavigate();
   
   return (
 
 
    
     <div class="col-md-4 col-lg-4">
-      <div class="card">
+      <div class="card " onClick={()=> navigate(`/detail?id=${props.id}`)}>
+    
           <img
             src={props.image}
             class="card-img-top"

@@ -28,12 +28,12 @@ const NavMagazine = (props) => {
               style={{ height: '37px', width: '100x' }}
               onChange={handleChange}
             />
-            {isBelow && (
+            {/* {isBelow && (
               <h1 style={{ color: 'white' }}>
                 UNTITLED
                 <span class="text-warning">magazine</span>
               </h1>
-            )}
+            )} */}
             {/* <button
               class="btn btn-dark btn-lg"
               type="button"
@@ -54,6 +54,12 @@ const NavMagazine = (props) => {
             Contributor
           </label>
         </div>
+        {isBelow && (
+              <h1 style={{ color: 'white' }}>
+                UNTITLED
+                <span class="text-warning">magazine</span>
+              </h1>
+            )}
 
 
           </div>
