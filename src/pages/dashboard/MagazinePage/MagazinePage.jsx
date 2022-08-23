@@ -24,7 +24,7 @@ const MagazinePage = (allArticles) => {
       <NavMagazine setSearchInput={setSearchInput} checkArticle={checkArticle} setCheckArticle={setCheckArticle}/>
       <HeroMagazine />
      <ArticleCardGroup articles={allArticles} searchInput={searchInput} checkArticle={checkArticle}/>
-     <ContributorCardGroup />
+     <ContributorCardGroup contributors={allArticles.allContributors}/>
      <FooterMagazine />
 
      

@@ -6,6 +6,11 @@ const ArticleCardGroup = (props) => {
   const navigate = useNavigate();
 
   return (
+
+    // <div class="container my-5">
+    // <div class="row my-5">
+    //<div class="card-group" style="width: 80%">
+   // <div class="card">
     <div class="container my-5">
       <div class="row my-5">
         <div class="card-group">
@@ -17,6 +22,7 @@ const ArticleCardGroup = (props) => {
               props.searchInput.length === 0
             ) {
               return (
+              
                 <ArticleCard
                   onClick={() => navigate('/detail?id=' + a._id)}
                   image={a.image}
@@ -26,14 +32,16 @@ const ArticleCardGroup = (props) => {
                   body={a.body}
                   id={a._id}
                 />
-
+                 
+                
                 /* {allArticles.map(m => 
           <ArticleCard title={m.title} contributor={m.contributor} body={m.body} image={m.image} createdAt={m.createdAt} /> )} */
               );
             }
           })}
-        </div>
-      </div>
+       
+       </div>
+    </div>
     </div>
   );
 };
