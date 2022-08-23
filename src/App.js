@@ -5,6 +5,8 @@ import AdminDashboardPage from './pages/dashboard/AdminDashboardPage/AdminDashbo
 import MagazinePage from './pages/dashboard/MagazinePage/MagazinePage';
 import { Route, Routes, Navigate, Switch, Redirect } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Latest from './pages/dashboard/Latest/Latest';
+import ArticleDetail from './pages/dashboard/ArticleDetail/ArticleDetail';
 import ThemeProvider from 'react-bootstrap/ThemeProvider';
 
 function App() {
@@ -16,8 +18,6 @@ function App() {
     setUser(incomingUserData);
   };
 
- 
-
   console.log(user);
 
   const navigate = useNavigate();
@@ -28,72 +28,73 @@ function App() {
     navigate('../login');
   };
 
-
   // let jwt = localStorage.getItem('token')
   // let fetchOrdersResponse = await fetch('/api/orders', {headers: {'Authorization': 'Bearer ' + jwt}})
 
   async function getData() {
     try {
-      let jwt = localStorage.getItem('token')
+      let jwt = localStorage.getItem('token');
       let response1 = await fetch(
         '/api/contributorSubmissions/allContributors',
-        {headers: {'Authorization': 'Bearer ' + jwt}}
+        { headers: { Authorization: 'Bearer ' + jwt } }
       );
       let contributors = await response1.json();
       setContributors(contributors);
-      let response2 = await fetch('/api/articleSubmissions/allArticles',
-      {headers: {'Authorization': 'Bearer ' + jwt}});
+      let response2 = await fetch('/api/articleSubmissions/allArticles', {
+        headers: { Authorization: 'Bearer ' + jwt },
+      });
       let articles = await response2.json();
       setArticles(articles);
-      
     } catch (err) {
       console.log("couldn't fetch posts");
     }
   }
 
-  
   const verifyUserToken = () => {
-    let token = localStorage.getItem('token')
+    let token = localStorage.getItem('token');
     if (token) {
       const payload = JSON.parse(atob(token.split('.')[1])); // decode token
-      if (payload.exp < Date.now() / 1000) {  // Check if our token is expired, and remove if it is (standard/boilerplate)
+      if (payload.exp < Date.now() / 1000) {
+        // Check if our token is expired, and remove if it is (standard/boilerplate)
         localStorage.removeItem('token');
         token = null;
-      } else { // token not expired! our user is still 'logged in'. Put them into state.
-        let userDoc = payload.user // grab user details from token
-        setUser(userDoc) 
+      } else {
+        // token not expired! our user is still 'logged in'. Put them into state.
+        let userDoc = payload.user; // grab user details from token
+        setUser(userDoc);
       }
     }
-  }
-
+  };
 
   useEffect(() => {
-    verifyUserToken()
+    verifyUserToken();
     getData();
-  }, []); 
+  }, []);
 
   return (
     <ThemeProvider
       breakpoints={['1500', '1400', '1200', '1000', '900', '600', '550', '480']}
-   // breakpoints={['xxxl,   'xxl',  'xl',  'lg',   'md',  'sm',  'xs',  'xxs']}
+      // breakpoints={['xxxl,   'xxl',  'xl',  'lg',   'md',  'sm',  'xs',  'xxs']}
     >
       <div className="App">
         <Routes>
-          <Route
-            path="/login"
-            element={
-              user !== null ? (
-                <Navigate to="/dashboard" />
+          <Route path="/login" element={user !== null ? (<Navigate to="/dashboard" />
               ) : (
-                <AuthPage user={user} setUserInState={setUserInState} />
+              <AuthPage user={user} setUserInState={setUserInState} />
               )
             }
           />
-          <Route path="/" element={<MagazinePage  allArticles={articles} allContributors={contributors}/>} />
+          <Route path="/" element={
+              <MagazinePage allArticles={articles} allContributors={contributors}
+              />
+            }
+          />
           <Route path="*" element={<Navigate to="/" replace />} />
-          <Route
-            path="/dashboard"
-            element={
+          <Route path="/latest" element={<Latest allArticles={articles} />} />
+          <Route path="/detail"
+            element={<ArticleDetail allArticles={articles} />}
+          />
+          <Route path="/dashboard" element={
               <AdminDashboardPage
                 user={user}
                 handleLogOut={handleLogOut}

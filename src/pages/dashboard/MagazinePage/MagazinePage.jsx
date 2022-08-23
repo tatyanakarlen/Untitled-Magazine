@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { FaBeer } from 'react-icons/fa'
 import NavMagazine from '../../../components/Magazine/NavMagazine/NavMagazine'
@@ -13,13 +13,18 @@ import ContributorCard from '../../../components/Magazine/ContributorCard/Contri
 
 
 
-const MagazinePage = ({ allArticles, allContributors}) => {
+const MagazinePage = (allArticles) => {
+
+  const [searchInput, setSearchInput] = useState("");
+
+  let [checkArticle, setCheckArticle] = useState(false)
+
   return (
     <div>
-      <NavMagazine />
+      <NavMagazine setSearchInput={setSearchInput} checkArticle={checkArticle} setCheckArticle={setCheckArticle}/>
       <HeroMagazine />
-     <ArticleCardGroup allArticles={allArticles}/>
-     <ContributorCardGroup allContributors={allContributors}/>
+     <ArticleCardGroup articles={allArticles} searchInput={searchInput} checkArticle={checkArticle}/>
+     <ContributorCardGroup />
      <FooterMagazine />
 
      

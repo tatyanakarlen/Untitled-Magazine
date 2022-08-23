@@ -1,9 +1,20 @@
 import React from 'react';
 import './NavMagazine.css';
 import useIsBelow from '../../../hooks';
+import { Link } from 'react-router-dom';
 
-const NavMagazine = () => {
+const NavMagazine = (props) => {
   const { isBelow } = useIsBelow();
+
+  const handleChange = (e) => {
+    console.log(e.target.value)
+    e.preventDefault();
+    props.setSearchInput(e.target.value);
+  };
+
+  const clickHandle = () => {
+    props.setCheckArticle(!props.checkArticle);
+  };
 
   return (
     <div>
@@ -15,6 +26,7 @@ const NavMagazine = () => {
               class="form-control news-input"
               placeholder="Search"
               style={{ height: '37px', width: '100x' }}
+              onChange={handleChange}
             />
             {isBelow && (
               <h1 style={{ color: 'white' }}>
@@ -22,14 +34,33 @@ const NavMagazine = () => {
                 <span class="text-warning">magazine</span>
               </h1>
             )}
-            <button
+            {/* <button
               class="btn btn-dark btn-lg"
               type="button"
               id="button-addon2"
             >
               {/* <i class="bi bi-search"></i> */}
-            </button>
+            {/* </button>  */}
+
+            <div className="radio">
+          <label style={{color: "white", margin:"5px"}} >
+            <input type="radio" value="Article" onClick={clickHandle} checked={!props.checkArticle} />
+            Article
+          </label>
+        </div>
+        <div className="radio">
+          <label style={{color: "white", margin:"5px"}}>
+            <input type="radio" value="Contributor" onClick={clickHandle} checked={props.checkArticle} />
+            Contributor
+          </label>
+        </div>
+
+
           </div>
+           
+
+
+
           <button
             class="navbar-toggler"
             type="button"
@@ -42,9 +73,7 @@ const NavMagazine = () => {
           <div class="collapse navbar-collapse" id="navmenu">
             <ul class="navbar-nav ms-auto" >
               <li class="nav-item" style={{ fontSize: '21px' }}>
-                <a href="#learn" class="nav-link">
-                  Latest
-                </a>
+              <Link class="nav-item" style={{ fontSize: '21px'}} to="/latest">Latest</Link>
               </li>
               <li class="nav-item" style={{ fontSize: '21px' }}>
                 <a href="#questions" class="nav-link">

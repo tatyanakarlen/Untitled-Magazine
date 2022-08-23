@@ -1,6 +1,8 @@
 import React from 'react'
 
-const ArticleCard = ({title, contributor, body, image, createdAt}) => {
+const ArticleCard = (props) => {
+  // {title, contributor, body, image, createdAt}
+  
   return (
 
 
@@ -8,20 +10,20 @@ const ArticleCard = ({title, contributor, body, image, createdAt}) => {
     <div class="col-md-4 col-lg-4">
       <div class="card">
           <img
-            src={image}
+            src={props.image}
             class="card-img-top"
             alt="..."
           />
           <div class="card-body">
-            <h5 class="card-title">{title}</h5>
+            <h5 class="card-title">{props.title}</h5>
             <p class="card-text">
               {/* This is a wider card with supporting text below as a natural
               lead-in to additional content. This content is a little bit
               longer. */}
-              {body.slice(0, 50)}
+              {props.body.slice(0, 50)}
             </p>
             <p class="card-text">
-              <small class="text-muted">{contributor}</small>
+              <small class="text-muted">{props.contributor}</small>
             </p>
           </div>
         </div>
