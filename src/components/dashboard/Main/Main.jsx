@@ -6,7 +6,7 @@ import BreadCrumb from '../BreadCrumb/BreadCrumb.jsx';
 import ArticleView from '../ArticleView/ArticleView';
 import './Main.css';
 
-const Main = ({ allArticles, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData, userOwnedArticles, userOwnedContributors }) => {
+const Main = ({ user, allArticles, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData, userOwnedArticles, userOwnedContributors }) => {
 
   // const showArticle = articleViewActive
 
@@ -17,6 +17,10 @@ const Main = ({ allArticles, articleViewActive, setarticleViewActive, articleVie
 
   let contrib = userOwnedContributors.length
   let articles = userOwnedArticles.length
+
+  const colorRed = "#D62747"
+  const colorGreen = "#1FA43D"
+  const colorBlue = "#4285F4"
 
   return (
     <div class="col d-flex flex-column h-sm-100">
@@ -31,10 +35,11 @@ const Main = ({ allArticles, articleViewActive, setarticleViewActive, articleVie
         ) : (
           <div class="row text-center g-3" style={{ width: '90%' }}>
             <BreadCrumb />
-            <DashboardHeader />
-            <DashboardCardSm title={'Articles'} count={articles} word={'articles'}/>
-            <DashboardCardSm title={'Updates'} count={25} />
-            <DashboardCardSm title={'Contributors'} count={contrib} word={'contributors'}/>
+            <DashboardHeader user={user}/>
+            <DashboardCardSm title={'Articles'} count={articles} word={'articles'} color={colorRed}/>
+            <DashboardCardSm title={'Contributors'} count={contrib} word={'contributors'} color={colorBlue}/>
+            <DashboardCardSm title={'Updates'} count={25} color={colorGreen}/>
+            
             <TableMain
              userOwnedArticles={userOwnedArticles}
               articleViewActive={articleViewActive}

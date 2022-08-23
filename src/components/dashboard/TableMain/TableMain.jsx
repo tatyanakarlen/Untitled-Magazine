@@ -7,7 +7,10 @@ const TableMain = ({ allArticles, articleViewActive, setarticleViewActive, artic
   if (!allArticles || !allArticles.length) {
     return (<div> No articles to display </div>)
  }
-  let recentPosts = userOwnedArticles.slice(Math.max(userOwnedArticles.length - 5, 0));
+  // let recentPosts = userOwnedArticles.slice(Math.max(userOwnedArticles.length - 5, 0));
+
+  const recentPosts = userOwnedArticles.slice(0, 6)
+
 
   return (
     <div>

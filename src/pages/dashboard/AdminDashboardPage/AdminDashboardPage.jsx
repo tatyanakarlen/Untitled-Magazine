@@ -94,6 +94,7 @@ const AdminDashboardPage = ({
   } else {
     activeNav = (
       <Main
+        user={user}
         userOwnedContributors={userOwnedContributors}
         userOwnedArticles={userOwnedArticles}
         allArticles={allArticles}

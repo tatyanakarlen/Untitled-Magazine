@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import UpdateArticleForm from '../UpdateArticleForm/UpdateArticleForm.jsx';
 import TableArticlesList from '../TableArticlesList/TableArticlesList';
 import ArticleView from '../ArticleView/ArticleView';
+// import { Breadcrumb } from 'react-bootstrap';
+import BreadCrumb from '../BreadCrumb/BreadCrumb';
 
 const ArticlesList = ({
   allArticles,
@@ -174,27 +176,13 @@ const ArticlesList = ({
           ) : (
         <div class="row text-center g-3" style={{ width: '90%' }}>
           
+          <BreadCrumb />
 
           
 
-          <nav
-            aria-label="breadcrumb"
-            style={{ width: '89%', margin: '0 auto', marginTop: '0.75rem' }}
-          >
-            <ol
-              style={{ backgroundColor: '#ced4da', height: '2.5rem' }}
-              class="breadcrumb"
-            >
-              <li class="breadcrumb-item">
-                <a href="#">Home</a>
-              </li>
-              <li class="breadcrumb-item active" aria-current="page">
-                Overview
-              </li>
-            </ol>
-          </nav>
+         
           {activeUpdateArticleForm}
-          
+         
 
           <TableArticlesList
             userOwnedArticles={userOwnedArticles}

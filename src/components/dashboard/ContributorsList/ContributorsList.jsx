@@ -290,7 +290,7 @@ const ContributorsList = ({
 
   return (
     <div class="col d-flex flex-column h-sm-100">
-      <nav
+      {/* <nav
         aria-label="breadcrumb"
         style={{ width: '89%', margin: '0 auto', marginTop: '0.75rem' }}
       >
@@ -305,11 +305,13 @@ const ContributorsList = ({
             Overview
           </li>
         </ol>
-      </nav>
+      </nav> */}
+      
 
       {alert}
       <div class="row overflow-auto card-container d-flex justify-content-center">
         <div class="row text-center g-3" style={{ width: '90%' }}>
+        <BreadCrumb />
           {activeAddContribForm}
           {activeUpdateContribForm}
           {/* table goes here */}
