@@ -151,6 +151,7 @@ const ContributorsList = ({
           body: JSON.stringify({ selectedContributor: selectedContributor }),
         }
       );
+      // let newObj = await res.json()
       console.log('response', res);
       if (res.statusText === 'OK') {
         getData();

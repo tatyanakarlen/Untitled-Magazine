@@ -37,7 +37,7 @@ const Main = ({ user, allArticles, articleViewActive, setarticleViewActive, arti
             <BreadCrumb />
             <DashboardHeader user={user}/>
             <DashboardCardSm title={'Articles'} count={articles} word={'articles'} color={colorRed}/>
-            <DashboardCardSm title={'Contributors'} count={contrib} word={'contributors'} color={colorBlue}/>
+            <DashboardCardSm title={'Contributors'} count={contrib} word={'contributors'} color={colorGreen}/>
             <DashboardCardSm title={'Updates'} count={25} color={colorGreen}/>
             
             <TableMain

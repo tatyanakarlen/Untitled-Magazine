@@ -15,9 +15,9 @@ const Nav = ({ handleLogOut, navActive, setNavActive }) => {
         <span class="fs-5">
           <span
             class="d-none d-md-inline"
-            style={{ fontWeight: 'bold', fontSize: '20px' }}
+            style={{ fontSize: '25px', marginTop: '2rem' }}
           >
-            Untitled Magazine
+            Untitled
           </span>
         </span>
       </a>
@@ -28,7 +28,8 @@ const Nav = ({ handleLogOut, navActive, setNavActive }) => {
       >
         <li class="nav-item">
           <Link
-            className="nav-left-link"
+            style={{textDecoration: 'none'}}
+            className="nav-left-link text-dark"
             to=""
             onClick={() =>
               setNavActive({
@@ -46,7 +47,8 @@ const Nav = ({ handleLogOut, navActive, setNavActive }) => {
         </li>
         <li>
           <Link
-            className="nav-left-link"
+          style={{textDecoration: 'none'}}
+            className="nav-left-link text-dark"
             to=""
             onClick={() =>
               setNavActive({
@@ -65,7 +67,8 @@ const Nav = ({ handleLogOut, navActive, setNavActive }) => {
 
         <li>
           <Link
-            className="nav-left-link"
+          style={{textDecoration: 'none'}}
+            className="nav-left-link text-dark"
             to=""
             onClick={() =>
               setNavActive({
@@ -83,7 +86,8 @@ const Nav = ({ handleLogOut, navActive, setNavActive }) => {
         </li>
         <li>
           <Link
-            className="nav-left-link"
+          style={{textDecoration: 'none'}}
+            className="nav-left-link text-dark"
             to=""
             onClick={() =>
               setNavActive({
@@ -101,13 +105,17 @@ const Nav = ({ handleLogOut, navActive, setNavActive }) => {
         </li>
 
         <li class="nav-item">
-          <Link className="nav-left-link" to="/">
+          <Link 
+          style={{textDecoration: 'none'}}
+          className="nav-left-link text-dark" to="/">
             <i class="fs-5 bi-house"></i>
             <span class={SPAN_CLASS}>Magazine</span>
           </Link>
         </li>
         <li>
-          <Link className="nav-left-link" to="/login" onClick={handleLogOut}>
+          <Link 
+          style={{textDecoration: 'none'}}
+          className="nav-left-link text-dark" to="/login" onClick={handleLogOut}>
             <i class="fs-5 bi-grid"></i>
             <span class={SPAN_CLASS}>Log Out</span>
           </Link>

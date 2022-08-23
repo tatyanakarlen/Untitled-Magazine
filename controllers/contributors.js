@@ -21,7 +21,7 @@ module.exports = {
 
 
   async function create(req, res) {
-    console.log('this is req.user id ' + req.body.contributor.postedBy)
+    console.log('this is req.user id ', req.user)
       let obj = (req.body.contributor)
     //   console.log(req.body.postedBy)
       try {
@@ -35,8 +35,8 @@ module.exports = {
     //       country: req.body.contributor.country, 
     //       postedBy: req.body.contributor.postedBy,
     //   })
-      await Contributor.create(obj)
-      res.status(200).json('ok. submissions added to DB!' + req.body.contributor)
+      const newContributor = await Contributor.create(obj)
+      res.status(200).json(newContributor)
     } catch(err) {
       res.json(err)
     }
