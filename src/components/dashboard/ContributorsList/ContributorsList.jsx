@@ -263,8 +263,8 @@ const ContributorsList = ({
   let button = '';
   if (!addContributorForm) {
     button = (
-      <button class="btn btn-sm btn-primary" style={{ marginLeft: '2px'}}onClick={() => setAddContributorForm(!addContributorForm)}>
-        <BsPlusLg />
+      <button class="btn btn-sm btn-primary" style={{ marginLeft: '3px', borderRadius: '15px'}}onClick={() => setAddContributorForm(!addContributorForm)}>
+        <BsPlusLg /> ADD
       </button>
     );
   }
@@ -294,6 +294,11 @@ const ContributorsList = ({
     );
   }
 
+  let breadCrumbActive = <BreadCrumb text={'Contributors'}/>
+  if (deleteContributorAlert) {
+    breadCrumbActive = ""
+  }
+
   return (
     <div class="col d-flex flex-column h-sm-100">
       {/* <nav
@@ -317,7 +322,8 @@ const ContributorsList = ({
       {alert}
       <div class="row overflow-auto card-container d-flex justify-content-center">
         <div class="row text-center g-3" style={{ width: '90%' }}>
-        <BreadCrumb text={'Contributors'}/>
+        
+        {breadCrumbActive}
           {activeAddContribForm}
           {activeUpdateContribForm}
           {/* table goes here */}

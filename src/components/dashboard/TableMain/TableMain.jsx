@@ -66,9 +66,7 @@ const TableMain = ({ allArticles, articleViewActive, setarticleViewActive, artic
             )}
           </tbody>
         </table>
-        <button class="btn btn-block btn-light" style={{ width: '100%' }}>
-          View all
-        </button>
+        
       </div>
     </div>
   );

@@ -35,11 +35,6 @@ const ArticlesList = ({
   
 
 
- 
-
- 
-  
-
 
   const [updateArticleForm, setUpdateArticleForm] = useState(false);
   const [deleteSelectedArticle, setDeleteSelectedArticle] = useState('');
@@ -164,7 +159,7 @@ const ArticlesList = ({
   return (
     <div class="col d-flex flex-column h-sm-100">
       
-      {alert}
+      
       <div class="row overflow-auto card-container d-flex justify-content-center">
       { articleViewActive ? (
            <ArticleView 
@@ -175,7 +170,7 @@ const ArticlesList = ({
            />
           ) : (
         <div class="row text-center g-3" style={{ width: '90%' }}>
-          
+          {alert}
           <BreadCrumb text={'Articles'}/>
 
           

@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { BsFillPencilFill } from "react-icons/bs"
+import { BsFillTrashFill } from "react-icons/bs"
+import { BsEyeFill } from 'react-icons/bs'
 
 const TableArticlesList = ({ userOwnedArticles, allArticles, setUpdateArticleForm, updateArticleForm, updateSelectedArticle,selectedArticle, setDeleteSelectedArticle,
     setDeleteArticleAlert, deleteArticleAlert, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData
@@ -25,7 +28,7 @@ const TableArticlesList = ({ userOwnedArticles, allArticles, setUpdateArticleFor
           <th scope="col">Title</th>
           <th scope="col">Contributor</th>
           <th scope="col">Posted</th>
-          <th scope="col">View</th>
+          <th scope="col"><BsEyeFill /></th>
           <th scope="col">Update</th>
           <th scope="col">Delete</th>
         </tr>
@@ -73,9 +76,9 @@ const TableArticlesList = ({ userOwnedArticles, allArticles, setUpdateArticleFor
                     contributerId: m.contributorId,
                   });
                 }}
-                class="btn btn-sm btn-primary"
+                class="btn btn-sm btn-success"
               >
-                Update
+                <BsFillPencilFill />
               </Link>
             </td>
             <td>
@@ -88,9 +91,9 @@ const TableArticlesList = ({ userOwnedArticles, allArticles, setUpdateArticleFor
                   setDeleteArticleAlert(!deleteArticleAlert)
                 }
                 // href="#"
-                class="btn btn-sm btn-primary"
+                class="btn btn-sm btn-danger"
               >
-                Delete
+                <BsFillTrashFill />
               </Link>
             </td>
           </tr>

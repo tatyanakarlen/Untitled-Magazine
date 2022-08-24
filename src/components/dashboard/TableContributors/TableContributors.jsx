@@ -86,13 +86,7 @@ const TableContributors = ({ userOwnedContributors, button, allContributors,setU
         ))}
       </tbody>
     </table>
-    <a
-      href="#"
-      class="btn btn-block btn-light"
-      style={{ width: '100%' }}
-    >
-      View all
-    </a>
+    
   </div>
   )
 }

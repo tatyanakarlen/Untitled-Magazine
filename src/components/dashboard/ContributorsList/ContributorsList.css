@@ -1,4 +1,4 @@
-#contributers-list-main-container {
+/* #contributers-list-main-container {
     display: flex; 
     justify-content: center;
     background-color: rgb(223, 221, 221);
@@ -11,7 +11,7 @@
 }
 
 .no-underline {
-    /* text-decoration:none; */
+   
     display: inline-block;
     font-weight: normal;
     padding-left: 0.5rem; 
@@ -44,15 +44,13 @@
     justify-content: center;
 }
 
-/* .reg_name {
-    max-width:500px;
-} */
+
 
 #form-box {
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* padding: 0 2rem 0 2rem;  */
+    
     
 }
 
@@ -65,12 +63,9 @@
 
 .left-p {
     margin-bottom: 0;
-}
-
-/* #data-div {
-    display: flex; 
-    align-items: center;
 } */
+
+
 
 
 
