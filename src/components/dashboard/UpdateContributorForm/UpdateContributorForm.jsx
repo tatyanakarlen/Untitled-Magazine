@@ -4,12 +4,12 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
   
   return (
     <div>
-      <header class="d-flex justify-content-between">Edit Contributor<button onClick={() => setUpdateContributorForm(!updateContributorForm)}>x</button>
+      <header class="d-flex justify-content-between"><span class="h4">Edit Contributor</span><button onClick={() => setUpdateContributorForm(!updateContributorForm)}>x</button>
       </header>
       <form class="row g-3">
           <div id="form-box" class="col-md-12">
               {/* <br/> */}
-             <label class="float-left" for="comments" class="form-label"></label>
+             <label class="float-left" for="comments" class="form-label">Name:</label>
                <input 
               class="form-control title-place" 
               type="text" 
@@ -29,7 +29,7 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
                  
               >
               </input>
-              <label for="comments" class="form-label"></label>
+              <label for="comments" class="form-label">E-mail:</label>
               <input 
               class="form-control body-place"  
               rows="10" cols="40" 

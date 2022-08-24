@@ -23,6 +23,7 @@ module.exports = {
 
 
     async function create(req, res) {
+    console.log(req.body.article.contributor)
      const author = await Contributer.findOne({ name: req.body.article.contributor}).exec()
      const authorId = author._id
      console.log('this is author ID' + authorId)
