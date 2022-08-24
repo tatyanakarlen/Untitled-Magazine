@@ -1,5 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { BsFillTrashFill } from "react-icons/bs"
+import { BsFillPencilFill} from "react-icons/bs"
+import { BsPlusLg} from "react-icons/bs"
+
+
+
+
 
 const TableContributors = ({ userOwnedContributors, button, allContributors,setUpdateContributorForm, updateContributorForm, updateSelectedContributor, selectedContributor,
     setDeleteSelectedContributor, setDeleteContributorAlert, deleteContributorAlert
@@ -53,9 +60,9 @@ const TableContributors = ({ userOwnedContributors, button, allContributors,setU
                   });
                 }}
                 
-                class="btn btn-sm btn-primary"
+                class="btn btn-sm btn-success"
               >
-                Update
+                <BsFillPencilFill />
               </Link>
               
             </td>
@@ -69,9 +76,9 @@ const TableContributors = ({ userOwnedContributors, button, allContributors,setU
                   setDeleteContributorAlert(!deleteContributorAlert)
                 }
                 
-                class="btn btn-sm btn-primary"
+                class="btn btn-sm btn-danger"
               >
-                Delete
+                <BsFillTrashFill />
              
               </Link>
             </td>

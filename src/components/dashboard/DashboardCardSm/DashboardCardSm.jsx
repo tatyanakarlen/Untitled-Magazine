@@ -12,7 +12,7 @@ const DashboardCardSm = ({ title, count, word, color }) => {
               <h5 class="card-header" style={{ textAlign:"left"}}>{title}</h5>
               <div class="card-body">
                 <h5 class="card-title" style={{ textAlign:"left"}}>{count}</h5>
-                <p class="h6 text-left" style={{textAlign:'left', color: color}}>Currently managing {count} {word}</p>
+                <p class="h6 text-left" style={{textAlign:'left', color: color}}>{word} </p>
               </div>
             </div>
           </div>

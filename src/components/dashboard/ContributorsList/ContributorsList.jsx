@@ -10,6 +10,9 @@ import TableContributors from '../TableContributors/TableContributors';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import BreadCrumb from '../BreadCrumb/BreadCrumb';
+import { BsPlusLg} from "react-icons/bs"
+import { BsPersonPlusFill} from "react-icons/bs"
+
 
 const ContributorsList = ({
   user,
@@ -260,11 +263,13 @@ const ContributorsList = ({
   let button = '';
   if (!addContributorForm) {
     button = (
-      <button onClick={() => setAddContributorForm(!addContributorForm)}>
-        Add
+      <button class="btn btn-sm btn-primary" style={{ marginLeft: '2px'}}onClick={() => setAddContributorForm(!addContributorForm)}>
+        <BsPlusLg />
       </button>
     );
   }
+
+  // btn btn-sm btn-primary
 
   // const [deleteAlert, setDeleteAlert] = useState(false)
 
@@ -312,7 +317,7 @@ const ContributorsList = ({
       {alert}
       <div class="row overflow-auto card-container d-flex justify-content-center">
         <div class="row text-center g-3" style={{ width: '90%' }}>
-        <BreadCrumb />
+        <BreadCrumb text={'Contributors'}/>
           {activeAddContribForm}
           {activeUpdateContribForm}
           {/* table goes here */}
@@ -337,32 +342,3 @@ const ContributorsList = ({
 
 export default ContributorsList;
 
-// props examples:
-// in App.js, passing props and giving it a value to a profileCard
-// <ProfileCard name={'Homer'} pic={homer} description={'Homer is fat and lazy'} email={'Homer@Simpsons.com'}/>
-
-// export default function ProfileCard(props) {
-//   return(
-//       <div id="single-article-1" className="single-article">
-//           <div id="card-front-1" className="front-card tb-card">
-//               <img src={props.pic} className="profile-image" alt='' />
-//               <div className="single-content">
-//                   <div className="card-middle">
-//                       <h1>{props.name}</h1>
-//                       <p className="team-p1">
-//                           {props.description}
-//                       </p>
-//                   </div>
-//                   <div className="card-bottom">
-//                       <div className="card-email">
-//                           {props.email}
-//                       </div>
-//                       <div className="card-icon profile-trigger" data-id="single-article-1" >
-//                           <i className="fa fa-chevron-right"></i>
-//                       </div>
-//                   </div>
-//               </div>
-//           </div>
-//       </div>
-//   )
-// }

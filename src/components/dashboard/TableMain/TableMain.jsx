@@ -1,5 +1,6 @@
 import React from 'react';
 import './TableMain.css';
+import { BsEyeFill } from 'react-icons/bs'
 
 const TableMain = ({ allArticles, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData, userOwnedArticles }) => {
   
@@ -25,7 +26,7 @@ const TableMain = ({ allArticles, articleViewActive, setarticleViewActive, artic
               <th scope="col">Author</th>
               <th scope="col">Posted</th>
               
-              <th scope="col">View</th>
+              <th scope="col">< BsEyeFill /></th>
             </tr>
           </thead>
           <tbody>

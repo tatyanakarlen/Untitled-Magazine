@@ -176,7 +176,7 @@ const ArticlesList = ({
           ) : (
         <div class="row text-center g-3" style={{ width: '90%' }}>
           
-          <BreadCrumb />
+          <BreadCrumb text={'Articles'}/>
 
           
 

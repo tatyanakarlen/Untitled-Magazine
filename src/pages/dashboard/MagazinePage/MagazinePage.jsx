@@ -13,7 +13,7 @@ import ContributorCard from '../../../components/Magazine/ContributorCard/Contri
 
 
 
-const MagazinePage = (allArticles) => {
+const MagazinePage = (allArticles, user) => {
 
   const [searchInput, setSearchInput] = useState("");
 
@@ -25,7 +25,7 @@ const MagazinePage = (allArticles) => {
       <HeroMagazine />
      <ArticleCardGroup articles={allArticles} searchInput={searchInput} checkArticle={checkArticle}/>
      <ContributorCardGroup contributors={allArticles.allContributors}/>
-     <FooterMagazine />
+     <FooterMagazine user={user}/>
 
      
   

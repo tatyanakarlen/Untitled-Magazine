@@ -50,9 +50,7 @@ app.use(require('./config/auth'));//routes below are protected
 app.use('/api/contributorSubmissions', require('./routes/api/contributorSubmissions.js'));
 
 app.use('/api/articleSubmissions', require('./routes/api/articleSubmissions.js'));
-// below routes for GET requests
-// app.use('/api', require('./routes/api/contributorSubmissions.js'));
-// app.use('/api', require('./routes/api/articleSubmissions.js'));
+
 
 
 

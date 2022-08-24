@@ -1,7 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const FooterMagazine = () => {
+const FooterMagazine = ( {user} ) => {
+
+  let link = ''
+  
+  const dashboardLink =  <p>
+  <Link to="/dashboard ">
+    DASHBOARD
+  </Link>
+  </p>
+
+  if (user) {
+     link = dashboardLink
+  }
+
   return (
     <div>
       <footer class="p-5 bg-dark text-white text-center position-relative">
@@ -30,12 +43,12 @@ const FooterMagazine = () => {
           >
             ADMIN LOGIN
           </Link></p>
-
-          <p>
+          {link}
+          {/* <p>
           <Link to="/dashboard ">
             DASHBOARD
           </Link>
-          </p>
+          </p> */}
           <p>
           <Link to="">
             DEVELOPERS

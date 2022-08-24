@@ -85,7 +85,7 @@ function App() {
             }
           />
           <Route path="/" element={
-              <MagazinePage allArticles={articles} allContributors={contributors}
+              <MagazinePage  allArticles={articles} allContributors={contributors}
               />
             }
           />

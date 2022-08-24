@@ -34,11 +34,11 @@ const Main = ({ user, allArticles, articleViewActive, setarticleViewActive, arti
           />
         ) : (
           <div class="row text-center g-3" style={{ width: '90%' }}>
-            <BreadCrumb />
+            <BreadCrumb text={'Main'}/>
             <DashboardHeader user={user}/>
-            <DashboardCardSm title={'Articles'} count={articles} word={'articles'} color={colorRed}/>
-            <DashboardCardSm title={'Contributors'} count={contrib} word={'contributors'} color={colorGreen}/>
-            <DashboardCardSm title={'Updates'} count={25} color={colorGreen}/>
+            <DashboardCardSm title={'Articles'} count={articles} word={'currently managed articles'} color={colorRed}/>
+            <DashboardCardSm title={'Contributors'} count={contrib} word={'currently managed contributors'} color={colorGreen}/>
+            <DashboardCardSm title={'Updates'} count={25} color={colorGreen} word={'recent updates'}/>
             
             <TableMain
              userOwnedArticles={userOwnedArticles}

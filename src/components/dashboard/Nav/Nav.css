@@ -1,3 +1,7 @@
 .nav-link {
     color: white; 
 }
+
+#menu li {
+    padding: 5px; 
+}
