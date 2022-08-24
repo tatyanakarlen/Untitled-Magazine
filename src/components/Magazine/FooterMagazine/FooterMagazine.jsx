@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const FooterMagazine = ( {user} ) => {
+const FooterMagazine = ({user}) => {
 
   let link = ''
   
@@ -11,7 +11,7 @@ const FooterMagazine = ( {user} ) => {
   </Link>
   </p>
 
-  if (user) {
+  if (user != null) {
      link = dashboardLink
   }
 

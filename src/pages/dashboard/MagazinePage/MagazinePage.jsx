@@ -25,7 +25,7 @@ const MagazinePage = (allArticles, user) => {
       <HeroMagazine />
      <ArticleCardGroup articles={allArticles} searchInput={searchInput} checkArticle={checkArticle}/>
      <ContributorCardGroup contributors={allArticles.allContributors}/>
-     <FooterMagazine user={user}/>
+     <FooterMagazine user={allArticles.user}/>
 
      
   

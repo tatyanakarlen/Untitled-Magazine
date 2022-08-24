@@ -31,24 +31,37 @@ function App() {
   // let jwt = localStorage.getItem('token')
   // let fetchOrdersResponse = await fetch('/api/orders', {headers: {'Authorization': 'Bearer ' + jwt}})
 
-  async function getData() {
-    try {
-      let jwt = localStorage.getItem('token');
-      let response1 = await fetch(
-        '/api/contributorSubmissions/allContributors',
-        { headers: { Authorization: 'Bearer ' + jwt } }
-      );
-      let contributors = await response1.json();
-      setContributors(contributors);
-      let response2 = await fetch('/api/articleSubmissions/allArticles', {
-        headers: { Authorization: 'Bearer ' + jwt },
-      });
-      let articles = await response2.json();
-      setArticles(articles);
-    } catch (err) {
-      console.log("couldn't fetch posts");
-    }
+  // async function getData() {
+  //   try {
+  //     let jwt = localStorage.getItem('token');
+  //     let response1 = await fetch(
+  //       '/api/contributorSubmissions/allContributors',
+  //       { headers: { Authorization: 'Bearer ' + jwt } }
+  //     );
+  //     let contributors = await response1.json();
+  //     setContributors(contributors);
+  //     let response2 = await fetch('/api/articleSubmissions/allArticles', {
+  //       headers: { Authorization: 'Bearer ' + jwt },
+  //     });
+  //     let articles = await response2.json();
+  //     setArticles(articles);
+  //   } catch (err) {
+  //     console.log("couldn't fetch posts");
+  //   }
+  // }
+
+  async function getData() { 
+    try { 
+    let response1 = await fetch('/api/contributorSubmissions/allContributors') 
+    let contributors = await response1.json() 
+    setContributors(contributors) 
+    let response2 = await fetch('/api/articleSubmissions/allArticles') 
+    let articles = await response2.json() 
+    setArticles(articles) } catch(err) { 
+      console.log("couldn't fetch posts") 
+    } 
   }
+
 
   const verifyUserToken = () => {
     let token = localStorage.getItem('token');
@@ -85,7 +98,7 @@ function App() {
             }
           />
           <Route path="/" element={
-              <MagazinePage  allArticles={articles} allContributors={contributors}
+              <MagazinePage  allArticles={articles} allContributors={contributors} user={user}
               />
             }
           />
