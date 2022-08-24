@@ -22,6 +22,7 @@ const TableArticlesList = ({ userOwnedArticles, allArticles, setUpdateArticleFor
     <p class="h3 text-left" style={{ textAlign: 'left' }}>
       All Articles
     </p>
+    
     <table class="table table-bordered table-hover table-striped">
       <thead>
         <tr>

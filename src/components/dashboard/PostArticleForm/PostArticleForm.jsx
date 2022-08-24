@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRef } from 'react';
-import './PostArticleForm.css'
+import './PostArticleForm.css';
 
 const PostArticleForm = ({
   user,
@@ -24,17 +24,25 @@ const PostArticleForm = ({
       <div class="card bg-light text-dark">
         <div class="card-body text-center">
           <div class="h1 mb-1"></div>
-          <h3 class="card-title mb-1" style={{ textAlign: 'left'}}>Post Article</h3>
+          <h4 class="card-title mb-1" style={{ textAlign: 'left' }}>
+            Post Article
+          </h4>
           <hr />
           <form class="row g-3">
             <div class="col-md-12">
               {/* <br/> */}
-              <label for="comments"    class="form-label"  style={{ float: 'left'}}  >Title:</label>
+              <label
+                for="comments"
+                class="form-label"
+                style={{ float: 'left' }}
+              >
+                Title:
+              </label>
               {/* style={{ float: 'left'}} */}
               {/* class="form-label"  */}
 
               <input
-                class="form-control title-place border shadow"
+                class="form-control title-place shadow"
                 type="text"
                 name="title"
                 rows="2"
@@ -50,9 +58,14 @@ const PostArticleForm = ({
                 }
               ></input>
 
-              <label class="form-label" for="exampleFormControlSelect1" style={{ float: 'left', marginTop: '20px'}}>Select contributor:</label>
+              <label
+                class="form-label"
+                for="exampleFormControlSelect1"
+                style={{ float: 'left', marginTop: '20px' }}
+              >
+                Select contributor:
+              </label>
               <select
-              
                 class="form-control shadow"
                 name="contributor"
                 required
@@ -66,9 +79,7 @@ const PostArticleForm = ({
                 }
               >
                 {allContributors.map((m) => (
-                  <option
-                  placeholder="Contributor"
-                  >{m.name}</option>
+                  <option placeholder="Contributor">{m.name}</option>
                 ))}
               </select>
 
@@ -89,9 +100,15 @@ const PostArticleForm = ({
                   })
                 }
               ></input> */}
-              <label  class="float-left" for="comments" class="form-label" style={{marginTop: '20px'}}>Body:</label>
+              <label
+                class="float-left"
+                for="comments"
+                class="form-label"
+                style={{ marginTop: '20px' }}
+              >
+                Body:
+              </label>
               <textarea
-
                 class="form-control body-place shadow"
                 rows="10"
                 cols="40"
@@ -107,7 +124,14 @@ const PostArticleForm = ({
                   })
                 }
               ></textarea>
-              <label class="float-left" for="comments" class="form-label" style={{marginTop: '20px'}}>Tags:</label>
+              <label
+                class="float-left"
+                for="comments"
+                class="form-label"
+                style={{ marginTop: '20px' }}
+              >
+                Tags:
+              </label>
               <input
                 class="form-control body-place shadow"
                 rows="10"
@@ -125,38 +149,32 @@ const PostArticleForm = ({
                 }
               ></input>
               <br />
-              
-             <div class="row">
-               <div class="col-5">
-              <input
-                id="fileInput"
-               class="d-flex flex-column"
-                name="fileInput"
-                type="file"
-                onChange={onImgChange}
-                ref={forwardedRef}
-              />
-              <img src={img} style={{ width: '100px' }} />
-              </div>
-             
-           
-           <div class="col-7">
-              <button
 
-               style={{ float: 'left'}}
-                onClick={postArticle}
-                type="submit"
-                className="btn btn-dark text-light"
-                // col-2 mt-2
-              >
-                Submit
-              </button>
-              </div>
-              </div>
-             
+              <div class="row">
+                <div class="col-5">
+                  <input
+                    id="fileInput"
+                    class="d-flex flex-column"
+                    name="fileInput"
+                    type="file"
+                    onChange={onImgChange}
+                    ref={forwardedRef}
+                  />
+                  <img src={img} style={{ width: '100px' }} />
+                </div>
 
-              
-             
+                <div class="col-7">
+                  <button
+                    style={{ float: 'left' }}
+                    onClick={postArticle}
+                    type="submit"
+                    className="btn btn-dark text-light"
+                    // col-2 mt-2
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
             </div>
           </form>
         </div>

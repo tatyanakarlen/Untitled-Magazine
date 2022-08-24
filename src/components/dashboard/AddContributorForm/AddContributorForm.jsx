@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react'
+import './AddContrinbutorForm.css'
 
 const AddContributorForm = ( {contributor, setContributor, postContributor, setAddContributorForm, addContributorForm, 
   img, setImg, imgLink, setImgLink, formObj, setFormObj, onImgChange, setImage,
@@ -12,14 +13,15 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
  
   return (
     <div>
-       <header class="d-flex justify-content-between">Add Contributor<button onClick={() => setAddContributorForm(!addContributorForm)}>x</button>
+       <header class="d-flex justify-content-between"><span class="h4">Add Contributor</span><button class="btn" onClick={() => setAddContributorForm(!addContributorForm)}>x</button>
       </header>
+      <hr/>
       <form class="row g-3">
           <div id="form-box" class="col-md-12">
               {/* <br/> */}
-             <label for="comments" class="form-label"></label>
+             <label for="comments" class="form-label">Name:</label>
                <input 
-              class="form-control title-place" 
+              class="form-control title-place shadow" 
               type="text" 
               name= "name"
               rows="2" 
@@ -37,9 +39,9 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
                  
               >
               </input>
-              <label for="comments" class="form-label"></label>
+              <label style={{ marginTop: '20px'}}for="comments" class="form-label">E-mail:</label>
               <input 
-              class="form-control body-place"  
+              class="form-control body-place shadow"  
               rows="10" cols="40" 
               type="text" 
               name= "email"
@@ -54,9 +56,9 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               >
               </input>
               
-              <label for="comments" class="form-label"></label>
+              <label style={{ marginTop: '20px'}} for="comments" class="form-label">Bio:</label>
               <input 
-              class="form-control body-place"  
+              class="form-control body-place shadow"  
               rows="10" cols="40" 
               type="text" 
               name= "bio"
@@ -71,9 +73,9 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               >
               </input>
 
-              <label for="comments" class="form-label"></label>
+              <label style={{ marginTop: '20px'}} for="comments" class="form-label">City:</label>
               <input 
-              class="form-control body-place"  
+              class="form-control body-place shadow"  
               rows="10" cols="40" 
               type="text" 
               name= "city"
@@ -87,9 +89,9 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               }
               >
               </input>
-              <label for="comments" class="form-label"></label>
+              <label style={{ marginTop: '20px'}} for="comments" class="form-label">Country:</label>
               <input 
-              class="form-control body-place"  
+              class="form-control body-place shadow"  
               rows="10" cols="40" 
               type="text" 
               name= "country"
@@ -103,31 +105,27 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               }
               >
               </input>
-              {/* <label for="comments" class="form-label"></label>
-              <input 
-              class="form-control body-place"  
-              rows="10" cols="40" 
-              type="text" 
-              name= "bio"
-              required placeholder="Bio"
-              value={contributor.bio}
-              onChange={(e) => 
-                setContributor({
-                    ...contributor, 
-                    bio: e.target.value
-                })
-              }
-              >
-              </input> */}
+            
               <br/>
 
-              <br/>
+              <div class="row">
+              <div class="col-5">
               
-              <input type='file' onChange={onImgChange}  ref={ref} />
-              <img src={img}  style={{width:"200px"}}/> 
+              <input style={{ float: 'left' }}type='file' onChange={onImgChange}  ref={ref} />
+              <img src={img}  style={{width:"100px"}}/> 
+              </div>
               
-             
-              <button onClick={setImage} type="submit" className="btn btn-dark text-light col-2 mt-2">Submit</button>
+              <div class="col-7">
+              <button 
+              id="fileInputAddContrib"
+              onClick={setImage} 
+              style={{ float: 'left' }}
+              type="submit" 
+              className="btn btn-dark text-light">
+                Submit
+                </button>
+          </div>
+          </div>
           </div>
           </form>
     </div>
