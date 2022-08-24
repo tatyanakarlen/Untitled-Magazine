@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 import PostArticleForm from '../PostArticleForm/PostArticleForm';
 import { useState, useEffect, useCallback, useRef } from 'react';
 
-const PostArticle = ({ user, allArticles, setArticles, getData }) => {
+const PostArticle = ({ user, allArticles, setArticles, getData, allContributors }) => {
   const ref = useRef();
   const fileInputRef = useRef(null);
   const [img, setImg] = useState();
@@ -129,6 +129,7 @@ const PostArticle = ({ user, allArticles, setArticles, getData }) => {
       <div id="articlesPost-main-container" class="row overflow-auto">
         <div id="articlesPost-container" class="row text-center g-3">
           <PostArticleForm
+            allContributors={allContributors}
             forwardedRef={fileInputRef}
             user={user}
             allArticles={allArticles}

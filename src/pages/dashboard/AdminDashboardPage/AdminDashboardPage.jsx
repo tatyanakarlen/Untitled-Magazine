@@ -89,6 +89,7 @@ const AdminDashboardPage = ({
         allArticles={allArticles}
         setArticles={setArticles}
         getData={getData}
+        allContributors={allContributors}
       />
     );
   } else {
