@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import SignUpForm from '../../../components/Dashboard/SignUpForm/SignUpForm'
-import LoginForm from '../../../components/Dashboard/LoginForm/LoginForm';
+import SignUpForm from '../../../components/dashboard/SignUpForm/SignUpForm'
+import LoginForm from '../../../components/dashboard/LoginForm/LoginForm';
 
 
 
