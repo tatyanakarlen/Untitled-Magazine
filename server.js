@@ -51,7 +51,7 @@ app.use('/api/contributorSubmissions', require('./routes/api/contributorSubmissi
 
 app.use('/api/articleSubmissions', require('./routes/api/articleSubmissions.js'));
 
-
+//test
 
 
 
