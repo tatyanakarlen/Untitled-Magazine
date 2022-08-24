@@ -284,8 +284,8 @@ const ContributorsList = ({
         <h4 class="alert-heading">
           Are you sure you want to delete this contributer?
         </h4>
-        <button onClick={deleteContributor}>Yes</button>
-        <button
+        <button class='btn btn-outline-dark' style={{ marginRight: '5px'}} onClick={deleteContributor}>Yes</button>
+        <button class='btn btn-outline-dark'
           onClick={() => setDeleteContributorAlert(!deleteContributorAlert)}
         >
           No

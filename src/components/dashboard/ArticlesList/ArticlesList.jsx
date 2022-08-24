@@ -148,12 +148,17 @@ const ArticlesList = ({
         <h4 class="alert-heading">
           Are you sure you want to delete this article?
         </h4>
-        <button onClick={deleteArticle}>Yes</button>
-        <button onClick={() => setDeleteArticleAlert(!deleteArticleAlert)}>
+        <button class='btn btn-outline-dark' style={{ marginRight: '5px'}} onClick={deleteArticle}>Yes</button>
+        <button class='btn btn-outline-dark' onClick={() => setDeleteArticleAlert(!deleteArticleAlert)}>
           No
         </button>
       </div>
     );
+  }
+
+  let breadCrumbActive = <BreadCrumb text={'Articles'}/>
+  if (deleteArticleAlert) {
+    breadCrumbActive = ""
   }
 
   return (
@@ -171,7 +176,8 @@ const ArticlesList = ({
           ) : (
         <div class="row text-center g-3" style={{ width: '90%' }}>
           {alert}
-          <BreadCrumb text={'Articles'}/>
+          {/* <BreadCrumb text={'Articles'}/> */}
+          {breadCrumbActive}
 
           
 
