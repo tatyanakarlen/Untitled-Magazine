@@ -125,26 +125,37 @@ const PostArticleForm = ({
                 }
               ></input>
               <br />
-             <div>
+              
+             <div class="row">
+               <div class="col-5">
               <input
                 id="fileInput"
-               
+               class="d-flex flex-column"
                 name="fileInput"
                 type="file"
                 onChange={onImgChange}
                 ref={forwardedRef}
               />
               <img src={img} style={{ width: '100px' }} />
-            
+              </div>
+             
+           
+           <div class="col-7">
               <button
-               style={{ margin: '0 auto'}}
+
+               style={{ float: 'left'}}
                 onClick={postArticle}
                 type="submit"
-                className="btn btn-dark text-light col-2 mt-2"
+                className="btn btn-dark text-light"
+                // col-2 mt-2
               >
                 Submit
               </button>
               </div>
+              </div>
+             
+
+              
              
             </div>
           </form>
