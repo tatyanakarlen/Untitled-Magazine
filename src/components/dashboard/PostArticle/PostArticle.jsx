@@ -126,7 +126,7 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors 
 
   return (
     <div class="col d-flex flex-column h-sm-100">
-      <div id="articlesPost-main-container" class="row overflow-auto">
+      <div  class="row overflow-auto">
         <div id="articlesPost-container" class="row text-center g-3">
           <PostArticleForm
             allContributors={allContributors}

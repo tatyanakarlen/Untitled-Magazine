@@ -24,12 +24,13 @@ const PostArticleForm = ({
       <div class="card bg-light text-dark">
         <div class="card-body text-center">
           <div class="h1 mb-1"></div>
-          <h5 class="card-title mb-1">Post Article</h5>
+          <h3 class="card-title mb-1" style={{ textAlign: 'left'}}>Post Article</h3>
           <hr />
           <form class="row g-3">
-            <div id="post-article-form-box" class="col-md-12">
+            <div class="col-md-12">
               {/* <br/> */}
-              <label for="comments"   class="float-left" class="form-label" style={{ float: 'left'}}>Title</label>
+              <label for="comments"    class="form-label"  style={{ float: 'left'}}  >Title:</label>
+              {/* style={{ float: 'left'}} */}
               {/* class="form-label"  */}
 
               <input
@@ -49,7 +50,7 @@ const PostArticleForm = ({
                 }
               ></input>
 
-              <label class="form-label" for="exampleFormControlSelect1" style={{marginTop: '20px'}}>Select contributor</label>
+              <label class="form-label" for="exampleFormControlSelect1" style={{ float: 'left', marginTop: '20px'}}>Select contributor:</label>
               <select
               
                 class="form-control shadow"
@@ -88,7 +89,7 @@ const PostArticleForm = ({
                   })
                 }
               ></input> */}
-              <label  class="float-left" for="comments" class="form-label" style={{marginTop: '20px'}}>Body</label>
+              <label  class="float-left" for="comments" class="form-label" style={{marginTop: '20px'}}>Body:</label>
               <textarea
 
                 class="form-control body-place shadow"
@@ -106,7 +107,7 @@ const PostArticleForm = ({
                   })
                 }
               ></textarea>
-              <label class="float-left" for="comments" class="form-label" style={{marginTop: '20px'}}>Tags</label>
+              <label class="float-left" for="comments" class="form-label" style={{marginTop: '20px'}}>Tags:</label>
               <input
                 class="form-control body-place shadow"
                 rows="10"
@@ -124,20 +125,27 @@ const PostArticleForm = ({
                 }
               ></input>
               <br />
+             <div>
               <input
+                id="fileInput"
+               
                 name="fileInput"
                 type="file"
                 onChange={onImgChange}
                 ref={forwardedRef}
               />
-              <img src={img} style={{ width: '200px' }} />
+              <img src={img} style={{ width: '100px' }} />
+            
               <button
+               style={{ margin: '0 auto'}}
                 onClick={postArticle}
                 type="submit"
                 className="btn btn-dark text-light col-2 mt-2"
               >
                 Submit
               </button>
+              </div>
+             
             </div>
           </form>
         </div>
