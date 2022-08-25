@@ -3,6 +3,7 @@ import React from 'react';
 import './NavMagazine.css';
 import useIsBelow from '../../../hooks';
 import { Link } from 'react-router-dom';
+import {BsSearch} from "react-icons/bs"
 
 const NavMagazine = (props) => {
   const { isBelow } = useIsBelow();
@@ -26,26 +27,23 @@ const NavMagazine = (props) => {
               style={{ height: '37px', width: '100x' }}
               onChange={handleChange}
             />
-            {/* {isBelow && (
-              <h1 style={{ color: 'white' }}>
-                UNTITLED
-                <span class="text-warning">magazine</span>
-              </h1>
-            )} */}
-            {/* <button
-              class="btn btn-dark btn-lg"
-              type="button"
-              id="button-addon2"
+            <button 
+            class='btn btn-dark'
+            style={{marginBottom: '1rem'}}
             >
-              {/* <i class="bi bi-search"></i> */}
-            {/* </button>  */}
+            <BsSearch style={{fontSize: '21px'}}/>
+            </button>
+
+            
+           
+           
 
            
         {isBelow && (
-              <h1 style={{ color: 'white' }}>
+              <h2 style={{ color: 'white', marginLeft: '1rem' }}>
                 UNTITLED
                 <span class="text-warning">magazine</span>
-              </h1>
+              </h2>
             )}
 
 

@@ -18,20 +18,22 @@ const ArticleDetail = (props) => {
     <div class="col d-flex flex-column h-sm-100">
       <div
         class="row overflow-auto d-flex justify-content-center"
-        style={{ width: '65%', margin: '0 auto', padding: '10px' }}
+        style={{ width: '55%', margin: '0 auto' }}
       >
         {/* <div>
           <Link class="nav-item" style={{ fontSize: '21px' }} to="/">
             Home
           </Link>
         </div> */}
-        <div class="row text-center">
+        <div class="row text-center g-3">
           <h3 class="h3" style={{ textAlign: 'right' }}>
-          <Link class="nav-item" style={{ fontSize: '21px' }} to="/">
+          <Link 
+         
+          class="nav-item text-dark" style={{ fontSize: '25px', textDecoration: 'none' }} to="/">
             UNTITLEDmagazine
           </Link>
           </h3>
-          <hr style={{ height: '5px' }} />
+          <hr style={{ height: '5px', marginTop: '0.3rem' }} />
         </div>
 
         {props.allArticles.map((a) => {
@@ -48,7 +50,7 @@ const ArticleDetail = (props) => {
                       class="text-secondary"
                       style={{ paddingLeft: '1rem' }}
                     >
-                      createdAt
+                      {a.createdAt.slice(0,16)}
                     </span>
                   </p>
 
@@ -71,7 +73,7 @@ const ArticleDetail = (props) => {
                     <div class="card-body">
                       <p class="card-text">{a.body}</p>
                       <p class="card-text">
-                        <small class="text-muted">Updated at:</small>
+                        <small class="text-muted">Updated At:<span style={{marginLeft:"0.25rem"}}>{a.updatedAt.slice(0,16)}</span></small>
                       </p>
                       <FacebookShareButton
                     url="www.google.com"
