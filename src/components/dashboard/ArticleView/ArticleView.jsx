@@ -1,4 +1,6 @@
 import React from 'react';
+import { BsXLg } from "react-icons/bs"
+import './ArticleView.css'
 
 const ArticleView = ({
   articleViewActive,
@@ -9,8 +11,18 @@ const ArticleView = ({
   return (
     <div class="col d-flex flex-column h-sm-100">
       <div class="row overflow-auto d-flex justify-content-center" style={{ width: '65%', margin: '0 auto', padding: '10px'}}>
-        I am article view component!!!!!
-        <button
+        <div class="row">
+        {/* .button_example {
+  position:absolute;
+  top: 10px;
+  right:0;
+} */}
+          <div style={{position: 'relative', width: '100%', float: 'right', textAlign: 'end'}}>
+        {/* <button
+        class="btn btn-sm btn-danger" */}
+         <BsXLg
+         id="Xicon"
+         style={{color: 'red'}}
           onClick={() => {
             setarticleViewActive(!articleViewActive);
             setarticleViewData({
@@ -21,12 +33,16 @@ const ArticleView = ({
               body: '',
               tags: '',
               image: '',
+              createdAt: '', 
+              updatedAt: '',
             });
           }}
-        >
-          Close
-        </button>
-        <div class="row text-center g-3" >
+        />
+          
+        {/* </button> */}
+        </div>
+        </div>
+        <div class="row text-center" >
           <h3 class="h3" style={{ textAlign: 'right'}}>UNTITLEDmagazine 
             </h3>
             <hr style={{ height: '5px'}}/>
@@ -61,17 +77,8 @@ const ArticleView = ({
      <div class="card mb-3" style={{border: 'none'}}>
   <img class="card-img-top" style={{height: '25%'}}src={articleViewData.image} alt="Card image cap"/>
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-  </div>
-{/* </div> */}
-            <p>
-              {articleViewData.title}
-              {articleViewData.contributor}
-            </p>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
+   
+    <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
               type and scrambled it to make a type specimen book. It has
@@ -89,7 +96,13 @@ const ArticleView = ({
               use Lorem Ipsum as their default model text, and a search for
               'lorem ipsum' will uncover many web sites still in their infancy.
               Various versions have evolved over the years, sometimes by
-              accident, sometimes on purpose (injected humour and the like).
+              accident, sometimes on purpose (injected humour and the like).</p>
+    <p class="card-text"><small class="text-muted">Updated at:{articleViewData.updatedAt}</small></p>
+  </div>
+{/* </div> */}
+           
+            <p>
+              
             </p>
           </div>
         </div>

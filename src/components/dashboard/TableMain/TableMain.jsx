@@ -53,6 +53,9 @@ const TableMain = ({ allArticles, articleViewActive, setarticleViewActive, artic
                         body: m.body,
                         tags: m.tags,
                         image: m.image,
+                        createdAt: m.createdAt, 
+                        updatedAt: m.updatedAt, 
+
                       });
                     }}
                     class="btn btn-sm btn-primary"
