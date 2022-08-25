@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import './AddContrinbutorForm.css'
 import { BsXLg } from "react-icons/bs"
+import { BsFillFilePersonFill } from "react-icons/bs"
 
 const AddContributorForm = ( {contributor, setContributor, postContributor, setAddContributorForm, addContributorForm, 
   img, setImg, imgLink, setImgLink, formObj, setFormObj, onImgChange, setImage,
@@ -14,7 +15,7 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
  
   return (
     <div>
-       <header class="d-flex justify-content-between"><span class="h4">Add Contributor</span><button class='btn btn-danger btn-sm' onClick={() => setAddContributorForm(!addContributorForm)}><BsXLg /></button>
+       <header class="d-flex justify-content-between"><span class="h4">Add Contributor</span><button class='btn btn-danger btn-sm' onClick={() => setAddContributorForm(!addContributorForm)}><BsXLg/></button>
       </header>
       <hr/>
       <form class="row g-3">
@@ -26,7 +27,7 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               type="text" 
               name= "name"
               rows="2" 
-              required placeholder="Contributor name here"
+              required 
               pattern="[A-Za-z]{2,}"
               value={contributor.name}
               onChange={(e) => 
@@ -46,7 +47,7 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               rows="10" cols="40" 
               type="text" 
               name= "email"
-              required placeholder="E-Mail"
+              required 
               value={contributor.email}
               onChange={(e) => 
                 setContributor({
@@ -63,7 +64,7 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               rows="10" cols="40" 
               type="text" 
               name= "bio"
-              required placeholder="Bio"
+              required 
               value={contributor.bio}
               onChange={(e) => 
                 setContributor({
@@ -80,7 +81,7 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               rows="10" cols="40" 
               type="text" 
               name= "city"
-              required placeholder="City"
+              required 
               value={contributor.city}
               onChange={(e) => 
                 setContributor({
@@ -96,7 +97,7 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               rows="10" cols="40" 
               type="text" 
               name= "country"
-              required placeholder="Country"
+              required 
               value={contributor.country}
               onChange={(e) => 
                 setContributor({

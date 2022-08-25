@@ -277,15 +277,15 @@ const ContributorsList = ({
   if (deleteContributorAlert) {
     alert = (
       <div
-        class="alert alert-success"
+        class="alert alert-primary"
         role="alert"
         style={{ width: '89%', margin: '0 auto' }}
       >
         <h4 class="alert-heading">
           Are you sure you want to delete this contributer?
         </h4>
-        <button class='btn btn-outline-dark' style={{ marginRight: '5px'}} onClick={deleteContributor}>Yes</button>
-        <button class='btn btn-outline-dark'
+        <button class='btn btn-outline-primary' style={{ marginRight: '5px'}} onClick={deleteContributor}>Yes</button>
+        <button class='btn btn-outline-primary'
           onClick={() => setDeleteContributorAlert(!deleteContributorAlert)}
         >
           No
@@ -301,22 +301,7 @@ const ContributorsList = ({
 
   return (
     <div class="col d-flex flex-column h-sm-100">
-      {/* <nav
-        aria-label="breadcrumb"
-        style={{ width: '89%', margin: '0 auto', marginTop: '0.75rem' }}
-      >
-        <ol
-          style={{ backgroundColor: '#ced4da', height: '2.5rem' }}
-          class="breadcrumb"
-        >
-          <li class="breadcrumb-item">
-            <a href="#">Home</a>
-          </li>
-          <li class="breadcrumb-item active" aria-current="page">
-            Overview
-          </li>
-        </ol>
-      </nav> */}
+     
       
 
       {alert}

@@ -144,12 +144,12 @@ const ArticlesList = ({
   let alert = '';
   if (deleteArticleAlert) {
     alert = (
-      <div class="alert alert-success" role="alert">
+      <div style={{width: '90%', margin: '0 auto'}}class="alert alert-primary" role="alert">
         <h4 class="alert-heading">
           Are you sure you want to delete this article?
         </h4>
-        <button class='btn btn-outline-dark' style={{ marginRight: '5px'}} onClick={deleteArticle}>Yes</button>
-        <button class='btn btn-outline-dark' onClick={() => setDeleteArticleAlert(!deleteArticleAlert)}>
+        <button class='btn btn-outline-primary' style={{ marginRight: '5px'}} onClick={deleteArticle}>Yes</button>
+        <button class='btn btn-outline-primary' onClick={() => setDeleteArticleAlert(!deleteArticleAlert)}>
           No
         </button>
       </div>
@@ -163,7 +163,7 @@ const ArticlesList = ({
 
   return (
     <div class="col d-flex flex-column h-sm-100">
-      
+      {alert}
       
       <div class="row overflow-auto card-container d-flex justify-content-center">
       { articleViewActive ? (
@@ -175,7 +175,7 @@ const ArticlesList = ({
            />
           ) : (
         <div class="row text-center g-3" style={{ width: '90%' }}>
-          {alert}
+          {/* {alert} */}
           {/* <BreadCrumb text={'Articles'}/> */}
           {breadCrumbActive}
 
