@@ -17,13 +17,13 @@ const MagazinePage = (allArticles, user) => {
 
   const [searchInput, setSearchInput] = useState("");
 
-  let [checkArticle, setCheckArticle] = useState(false)
+  
 
   return (
     <div>
-      <NavMagazine setSearchInput={setSearchInput} checkArticle={checkArticle} setCheckArticle={setCheckArticle}/>
+      <NavMagazine setSearchInput={setSearchInput} />
       <HeroMagazine />
-     <ArticleCardGroup articles={allArticles} searchInput={searchInput} checkArticle={checkArticle}/>
+     <ArticleCardGroup articles={allArticles} searchInput={searchInput} />
      <ContributorCardGroup contributors={allArticles.allContributors}/>
      <FooterMagazine user={allArticles.user}/>
 

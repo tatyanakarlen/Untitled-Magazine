@@ -43,7 +43,7 @@ const ArticleView = ({
           }}
         />
           
-        {/* </button> */}
+       
         </div>
         </div>
         <div class="row text-center" >
@@ -51,9 +51,7 @@ const ArticleView = ({
             </h3>
             <hr style={{ height: '5px'}}/>
         </div>
-        {/* <div class="row">
-          <p style={{textAlign: 'left'}}>By Jane Smith <div class="vr" style={{ width: '2px' }}></div>published on this date</p>
-        </div> */}
+      
         <div class="jumbotron" >
           <p style={{ textAlign:"left"}}>By:<span style={{marginLeft: '0.25rem'}}>{articleViewData.contributor}</span><span class="text-secondary" style={{paddingLeft: '1rem'}}>{slicedCreatedAt}</span></p>
           
@@ -64,29 +62,15 @@ const ArticleView = ({
         
           <div class="row text-center g-1 ">
             
-          {/* style={{ width: '60%', margin: '0 auto' }} */}
-            {/* I am article view component!!!!! 
-      <button 
-      onClick={() => {
-                     setarticleViewActive(!articleViewActive)
-                      setarticleViewData({
-                        ...articleViewData,
-                        title: '',
-                        contributor: '',
-                        body: '',
-                        tags: '',
-                        image: '',
-                      });
-      }}>Close
-      </button> */}
+        
      <div class="card mb-3" style={{border: 'none'}}>
-  <img class="card-img-top" style={{height: '25%'}}src={articleViewData.image} alt="Card image cap"/>
+  <img class="card-img-top" style={{height: '35%'}}src={articleViewData.image} alt="Card image cap"/>
   <div class="card-body">
    
     <p class="card-text">{articleViewData.body}</p>
     <p class="card-text"><small class="text-muted">Updated at:{slicedUpdatedAt}</small></p>
   </div>
-{/* </div> */}
+
            
             <p>
               
