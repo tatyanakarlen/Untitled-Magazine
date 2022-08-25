@@ -54,7 +54,7 @@ const ArticleDetail = (props) => {
                     </span>
                   </p>
 
-                  <h3 class="display-7" style={{ textAlign: 'left' }}>
+                  <h3 class="display-7 text" style={{ textAlign: 'left' }}>
                     {a.title}
                   </h3>
                   <p class="" style={{ textAlign: 'left' }}>

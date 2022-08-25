@@ -50,7 +50,7 @@ const NavMagazine = (props, setHamburgerBtnActive, hamburgerBtnActive ) => {
           </button>
 
           <div 
-          onClick={props.setHamburgerBtnActive(!hamburgerBtnActive)}
+          // onClick={props.setHamburgerBtnActive(!hamburgerBtnActive)}
           class="collapse navbar-collapse" id="navmenu"
           >
             <ul class="navbar-nav ms-auto nav-links">

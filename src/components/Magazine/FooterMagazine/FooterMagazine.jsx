@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './FooterMagazine.css'
 
 const FooterMagazine = ({user}) => {
 
   let link = ''
   
   const dashboardLink =  <p>
-  <Link to="/dashboard ">
-    DASHBOARD
+  <Link class="text-light magNav-links" 
+  to="/dashboard ">
+    Dashboard
   </Link>
   </p>
 
@@ -19,7 +21,7 @@ const FooterMagazine = ({user}) => {
     <div>
       <footer class="p-5 bg-dark text-white text-center position-relative">
          <div class='container' style={{margin: '0 auto'}}>
-         <div class="row g-4 d-flex justify-content-between">
+         <div class="row g-4 d-flex justify-content-between align-items-baseline">
          <div class="col-md-6 col-lg-6" style={{textAlign:'left'}}>
              <h2>UNTITLEDmagazine</h2>
              <p>The latest fashion news, celebrity style, fashion week updates, culture reviews, and videos on UntitledMagazine.com.</p>
@@ -28,20 +30,21 @@ const FooterMagazine = ({user}) => {
                 <i class="bi bi-linkedin text-light mx-1 p-3"></i>
                 <i class="bi bi-instagram text-light mx-1 p-3"></i>
              </div>
-             <div class="col-md-3 col-lg-3">
-             <h4 class="h4">More from Untitled</h4>
+             <div class="col-md-3 col-lg-3 small-div"
+             style={{minHeight: '100%'}}>
+             <h5 class="h5"><u>More</u></h5>
              <p>Newsletter</p>
              <p>Contact Us</p>
              <p>About Untitled</p>
              
              </div>
-             <div class="col-md-3 col-lg-3">
-             <h4 class="h4">Admin</h4>
-             <p><Link
-            
-            to="/login"
-          >
-            ADMIN LOGIN
+             <div class="col-md-3 col-lg-3 small-div">
+             <h5 class="h5"><u>Admin</u></h5>
+             <p>
+               <Link to="/login"
+               class="text-light  magNav-links"
+               >
+            Admin Login
           </Link></p>
           {link}
           {/* <p>
@@ -50,8 +53,10 @@ const FooterMagazine = ({user}) => {
           </Link>
           </p> */}
           <p>
-          <Link to="">
-            DEVELOPERS
+          <Link to=""
+          class="text-light  magNav-links"
+          >
+            Developers
           </Link>
           </p>
              </div>

@@ -19,12 +19,12 @@ const ArticleCard = (props) => {
             alt="..."
           />
           <div class="card-body">
-            <h5 class="card-title">{props.title}</h5>
-            <p class="card-text">
+            <h4 class="card-title">{props.title}</h4>
+            <p class="card-text text-secondary h6">
               {props.headline}
             </p>
-            <p class="card-text">
-              <small class="text-muted">{props.contributor}</small>
+            <p class="card-text" style={{fontWeight: 'bold'}}>
+              <small style={{fontSize: '12px'}}class="text-dark">{props.contributor.toUpperCase()}</small>
             </p>
           </div>
         </div>

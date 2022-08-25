@@ -16,9 +16,6 @@ const ContributorCard = (props) => {
                 <p class="card-text">
                   {props.bio}
                 </p>
-                <p class="card-text" style={{fontWeight: 'bold'}}>
-                  {props.city},<span>{props.country}</span>
-                </p>
                 <i class="bi bi-twitter text-dark mx-1"></i>
                 <i class="bi bi-facebook text-dark mx-1"></i>
                 <i class="bi bi-linkedin text-dark mx-1"></i>
