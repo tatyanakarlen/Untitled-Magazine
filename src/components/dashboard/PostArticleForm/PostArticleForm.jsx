@@ -2,6 +2,8 @@ import React from 'react';
 import { useRef } from 'react';
 import './PostArticleForm.css';
 
+
+
 const PostArticleForm = ({
   user,
   allArticles,
@@ -168,7 +170,7 @@ const PostArticleForm = ({
                     style={{ float: 'left' }}
                     onClick={postArticle}
                     type="submit"
-                    className="btn btn-dark text-light"
+                    class="btn btn-primary"
                     // col-2 mt-2
                   >
                     Submit

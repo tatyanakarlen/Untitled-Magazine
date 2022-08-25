@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import './AddContrinbutorForm.css'
+import { BsXLg } from "react-icons/bs"
 
 const AddContributorForm = ( {contributor, setContributor, postContributor, setAddContributorForm, addContributorForm, 
   img, setImg, imgLink, setImgLink, formObj, setFormObj, onImgChange, setImage,
@@ -13,7 +14,7 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
  
   return (
     <div>
-       <header class="d-flex justify-content-between"><span class="h4">Add Contributor</span><button class="btn" onClick={() => setAddContributorForm(!addContributorForm)}>x</button>
+       <header class="d-flex justify-content-between"><span class="h4">Add Contributor</span><button class='btn btn-danger btn-sm' onClick={() => setAddContributorForm(!addContributorForm)}><BsXLg /></button>
       </header>
       <hr/>
       <form class="row g-3">
@@ -121,7 +122,7 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               onClick={setImage} 
               style={{ float: 'left' }}
               type="submit" 
-              className="btn btn-dark text-light">
+              class="btn btn-primary">
                 Submit
                 </button>
           </div>

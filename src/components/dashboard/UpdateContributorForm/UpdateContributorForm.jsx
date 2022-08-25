@@ -1,10 +1,11 @@
 import React from 'react'
+import { BsXLg } from "react-icons/bs"
 
 const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor, updateContributor, updateContributorForm, setUpdateContributorForm} ) => {
   
   return (
     <div>
-      <header class="d-flex justify-content-between"><span class="h4">Edit Contributor</span><button onClick={() => setUpdateContributorForm(!updateContributorForm)}>x</button>
+      <header class="d-flex justify-content-between"><span class="h4">Edit Contributor</span><button class='btn btn-danger btn-sm' onClick={() => setUpdateContributorForm(!updateContributorForm)}><BsXLg /></button>
       </header>
       <hr/>
       <form class="row g-3">
@@ -95,7 +96,7 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
               >
               </input>
               <br/>
-              <button onClick={updateContributor} type="submit" className="btn btn-dark text-light col-2 mt-2">Update</button>
+              <button onClick={updateContributor} type="submit" class="btn btn-primary">Update</button>
           </div>
           </form>
     </div>
