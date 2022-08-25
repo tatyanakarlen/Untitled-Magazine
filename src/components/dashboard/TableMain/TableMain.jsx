@@ -48,6 +48,7 @@ const TableMain = ({ allArticles, articleViewActive, setarticleViewActive, artic
                       setarticleViewData({
                         ...articleViewData,
                         title: m.title,
+                        headline: m.headline,
                         contributor: m.contributor,
                         body: m.body,
                         tags: m.tags,
