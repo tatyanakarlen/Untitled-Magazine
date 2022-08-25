@@ -36,6 +36,7 @@ const AdminDashboardPage = ({
   const [articleViewData, setarticleViewData] = useState({
     title: '',
     contributor: '',
+    headline: '', 
     body: '',
     tags: '',
     image: '',
@@ -85,6 +86,7 @@ const AdminDashboardPage = ({
   } else if (post) {
     activeNav = (
       <PostArticle
+        userOwnedContributors={userOwnedContributors}
         user={user}
         allArticles={allArticles}
         setArticles={setArticles}

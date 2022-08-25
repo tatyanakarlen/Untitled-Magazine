@@ -224,6 +224,7 @@ const ContributorsList = ({
 
   const activeContribForm = (
     <AddContributorForm
+   
       contributor={contributor}
       setContributor={setContributor}
       postContributor={postContributor}

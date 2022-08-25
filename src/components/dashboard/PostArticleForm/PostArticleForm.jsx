@@ -18,6 +18,7 @@ const PostArticleForm = ({
   onImgChange,
   forwardedRef,
   allContributors,
+  userOwnedContributors,
 }) => {
   const ref = useRef(null);
 
@@ -80,7 +81,7 @@ const PostArticleForm = ({
                   })
                 }
               >
-                {allContributors.map((m) => (
+                {userOwnedContributors.map((m) => (
                   <option placeholder="Contributor">{m.name}</option>
                 ))}
               </select>

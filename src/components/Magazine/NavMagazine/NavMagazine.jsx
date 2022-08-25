@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './NavMagazine.css';
 import useIsBelow from '../../../hooks';
@@ -12,9 +13,6 @@ const NavMagazine = (props) => {
     props.setSearchInput(e.target.value);
   };
 
-  const clickHandle = () => {
-    props.setCheckArticle(!props.checkArticle);
-  };
 
   return (
     <div>
@@ -42,18 +40,7 @@ const NavMagazine = (props) => {
               {/* <i class="bi bi-search"></i> */}
             {/* </button>  */}
 
-            <div className="radio">
-          <label style={{color: "white", margin:"5px"}} >
-            <input type="radio" value="Article" onClick={clickHandle} checked={!props.checkArticle} />
-            Article
-          </label>
-        </div>
-        <div className="radio">
-          <label style={{color: "white", margin:"5px"}}>
-            <input type="radio" value="Contributor" onClick={clickHandle} checked={props.checkArticle} />
-            Contributor
-          </label>
-        </div>
+           
         {isBelow && (
               <h1 style={{ color: 'white' }}>
                 UNTITLED

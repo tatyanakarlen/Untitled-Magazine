@@ -4,7 +4,7 @@ import { BsXLg } from "react-icons/bs"
 import { BsFillFilePersonFill } from "react-icons/bs"
 
 const AddContributorForm = ( {contributor, setContributor, postContributor, setAddContributorForm, addContributorForm, 
-  img, setImg, imgLink, setImgLink, formObj, setFormObj, onImgChange, setImage,
+  img, setImg, imgLink, setImgLink, formObj, setFormObj, onImgChange, setImage, 
  } ) => {
 
 

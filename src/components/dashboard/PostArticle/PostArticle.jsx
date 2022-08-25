@@ -7,7 +7,8 @@ import PostArticleForm from '../PostArticleForm/PostArticleForm';
 import { useState, useEffect, useCallback, useRef } from 'react';
 import BreadCrumb from '../BreadCrumb/BreadCrumb'
 
-const PostArticle = ({ user, allArticles, setArticles, getData, allContributors }) => {
+const PostArticle = ({ user, allArticles, setArticles, getData, allContributors, userOwnedContributors }) => {
+  
   const ref = useRef();
   const fileInputRef = useRef(null);
   const [img, setImg] = useState();
@@ -132,6 +133,7 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors 
       <div  class="row overflow-auto">
         <div id="articlesPost-container" class="row text-center g-3">
           <PostArticleForm
+            userOwnedContributors={userOwnedContributors}
             allContributors={allContributors}
             forwardedRef={fileInputRef}
             user={user}

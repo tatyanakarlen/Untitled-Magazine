@@ -1,3 +1,4 @@
+
 import React from 'react';
 import ArticleCard from '../ArticleCard/ArticleCard';
 import { useNavigate } from 'react-router-dom';
@@ -5,20 +6,18 @@ import { useNavigate } from 'react-router-dom';
 const ArticleCardGroup = (props) => {
   const navigate = useNavigate();
 
-  return (
+  function checkProps(tags){
+    console.log(tags)
+  }
 
-    // <div class="container my-5">
-    // <div class="row my-5">
-    //<div class="card-group" style="width: 80%">
-   // <div class="card">
+  return (
     <div class="container my-5">
       <div class="row my-5">
         <div class="card-group">
-          {/* style={{ flexFlow: "unset"}} */}
+         
           {props.articles.allArticles.map(a => {
             if (
-              (props.searchInput === a.contributor && props.checkArticle) ||
-              (props.searchInput === a.title && !props.checkArticle) ||
+              ( a.tags.includes(props.searchInput)) ||
               props.searchInput.length === 0
             ) {
               return (
@@ -32,16 +31,15 @@ const ArticleCardGroup = (props) => {
                   body={a.body}
                   id={a._id}
                 />
-                 
+                
                 
                 /* {allArticles.map(m => 
           <ArticleCard title={m.title} contributor={m.contributor} body={m.body} image={m.image} createdAt={m.createdAt} /> )} */
               );
             }
           })}
-       
-       </div>
-    </div>
+        </div>
+      </div>
     </div>
   );
 };
