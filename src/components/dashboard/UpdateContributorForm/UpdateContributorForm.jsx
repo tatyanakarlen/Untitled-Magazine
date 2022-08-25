@@ -1,17 +1,19 @@
 import React from 'react'
+import { BsXLg } from "react-icons/bs"
 
 const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor, updateContributor, updateContributorForm, setUpdateContributorForm} ) => {
   
   return (
     <div>
-      <header class="d-flex justify-content-between"><span class="h4">Edit Contributor</span><button onClick={() => setUpdateContributorForm(!updateContributorForm)}>x</button>
+      <header class="d-flex justify-content-between"><span class="h4">Edit Contributor</span><button class='btn btn-primary btn-sm' onClick={() => setUpdateContributorForm(!updateContributorForm)}><BsXLg /></button>
       </header>
+      <hr/>
       <form class="row g-3">
           <div id="form-box" class="col-md-12">
               {/* <br/> */}
              <label class="float-left" for="comments" class="form-label">Name:</label>
                <input 
-              class="form-control title-place" 
+              class="form-control title-place shadow" 
               type="text" 
               name= "name"
               rows="2" 
@@ -29,9 +31,9 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
                  
               >
               </input>
-              <label for="comments" class="form-label">E-mail:</label>
+              <label style={{ marginTop: '20px'}} for="comments" class="form-label">E-mail:</label>
               <input 
-              class="form-control body-place"  
+              class="form-control body-place shadow"  
               rows="10" cols="40" 
               type="text" 
               name= "email"
@@ -45,9 +47,9 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
               }
               >
               </input>
-              <label for="comments" class="form-label"></label>
+              <label style={{ marginTop: '20px'}} for="comments" class="form-label">Bio:</label>
               <input 
-              class="form-control body-place"  
+              class="form-control body-place shadow"  
               rows="10" cols="40" 
               type="text" 
               name= "bio"
@@ -61,9 +63,9 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
               }
               >
               </input>
-              <label for="comments" class="form-label"></label>
+              <label style={{ marginTop: '20px'}} for="comments" class="form-label">City:</label>
               <input 
-              class="form-control body-place"  
+              class="form-control body-place shadow"  
               rows="10" cols="40" 
               type="text" 
               name= "city"
@@ -77,9 +79,9 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
               }
               >
               </input>
-              <label for="comments" class="form-label"></label>
+              <label for="comments" style={{ marginTop: '20px'}} class="form-label">Country:</label>
               <input 
-              class="form-control body-place"  
+              class="form-control body-place shadow"  
               rows="10" cols="40" 
               type="text" 
               name= "country"
@@ -94,7 +96,7 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
               >
               </input>
               <br/>
-              <button onClick={updateContributor} type="submit" className="btn btn-dark text-light col-2 mt-2">Update</button>
+              <button onClick={updateContributor} type="submit" class="btn btn-primary">Update</button>
           </div>
           </form>
     </div>

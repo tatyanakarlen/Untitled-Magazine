@@ -1,4 +1,5 @@
 import React from 'react'
+import { BsXLg } from "react-icons/bs"
 
 const UpdateArticleForm = ({ selectedArticle, updateSelectedArticle, updateArticle, updateArticleForm, setUpdateArticleForm }) => {
 
@@ -16,14 +17,15 @@ const UpdateArticleForm = ({ selectedArticle, updateSelectedArticle, updateArtic
 
   return (
     <div>
-      <header class="d-flex justify-content-between">Edit Article<button onClick={() => setUpdateArticleForm(!updateArticleForm)}>x</button>
+      <header class="d-flex justify-content-between"><span class="h4">Edit Article</span><button class='btn btn-primary btn-sm' onClick={() => setUpdateArticleForm(!updateArticleForm)}><BsXLg /></button>
       </header>
+      <hr/>
       <form class="row g-3">
           <div id="form-box" class="col-md-12">
               {/* <br/> */}
-             <label for="comments" class="form-label"></label>
+             <label for="comments" class="form-label">Title:</label>
                <input 
-              class="form-control title-place reg_name" 
+              class="form-control title-place shadow" 
               type="text" 
               name= "title"
               rows="2" 
@@ -42,9 +44,9 @@ const UpdateArticleForm = ({ selectedArticle, updateSelectedArticle, updateArtic
               >
               </input>
               
-              <label for="comments" class="form-label"></label>
+              <label style={{ marginTop: '20px'}} for="comments" class="form-label">Body:</label>
               <textarea
-              class="form-control body-place reg_name"  
+              class="form-control body-place shadow"  
               rows="10" cols="40" 
               type="text" 
               name= "body"
@@ -58,9 +60,9 @@ const UpdateArticleForm = ({ selectedArticle, updateSelectedArticle, updateArtic
               }
               >
               </textarea>
-              <label for="comments" class="form-label"></label>
+              <label style={{ marginTop: '20px'}} for="comments" class="form-label">Tags:</label>
               <input 
-              class="form-control body-place reg_name"  
+              class="form-control body-place shadow"  
               rows="10" cols="40" 
               type="text" 
               name= "tags"
@@ -75,7 +77,7 @@ const UpdateArticleForm = ({ selectedArticle, updateSelectedArticle, updateArtic
               >
               </input>
               <br/>
-              <button onClick={updateArticle} type="submit" className="btn btn-dark text-light col-2 mt-2">Update</button>
+              <button onClick={updateArticle} type="submit" className="btn btn-primary">Update</button>
           </div>
           </form>
     </div>

@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import PostArticleForm from '../PostArticleForm/PostArticleForm';
 import { useState, useEffect, useCallback, useRef } from 'react';
+import BreadCrumb from '../BreadCrumb/BreadCrumb'
 
 const PostArticle = ({ user, allArticles, setArticles, getData, allContributors }) => {
   const ref = useRef();
@@ -14,7 +15,8 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors 
 
   const [article, setArticle] = useState({
     title: '',
-    contributor: '',
+    contributor: allContributors[0].name,
+    headline: '',
     body: '',
     tags: '',
     image: '',
@@ -76,6 +78,7 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors 
         setArticle({
           title: '',
           contributor: '',
+          headline: '',
           body: '',
           tags: '',
           image: '',
@@ -85,7 +88,7 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors 
 
         setImg('');
         // setImgLink("")
-        console.log(fileInputRef.current);
+        // console.log(fileInputRef.current);
         fileInputRef.current.value = '';
       }
       getData();

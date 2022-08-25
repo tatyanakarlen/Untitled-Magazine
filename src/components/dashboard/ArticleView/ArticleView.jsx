@@ -3,7 +3,9 @@ import React from 'react';
 const ArticleView = ({ articleViewActive, setarticleViewActive, articleViewData, setarticleViewData }) => {
 
    return (
-    <div>
+    <div class="col d-flex flex-column h-sm-100">
+      <div class="row overflow-auto d-flex justify-content-center">
+      <div class="row text-center g-3" style={{ width: '90%' }}>
       I am article view component!!!!! 
       <button 
       onClick={() => {
@@ -23,6 +25,8 @@ const ArticleView = ({ articleViewActive, setarticleViewActive, articleViewData,
           {articleViewData.contributor}
 
      </p>
+    </div>
+    </div>
     </div>
   );
 };

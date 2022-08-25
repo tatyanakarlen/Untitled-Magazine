@@ -2,6 +2,8 @@ import React from 'react';
 import { useRef } from 'react';
 import './PostArticleForm.css';
 
+
+
 const PostArticleForm = ({
   user,
   allArticles,
@@ -83,23 +85,30 @@ const PostArticleForm = ({
                 ))}
               </select>
 
-              {/* <label for="comments" class="form-label"></label>
+              <label
+                class="float-left"
+                for="comments"
+                class="form-label"
+                style={{ marginTop: '20px' }}
+              >
+                Headline:
+              </label>
               <input
-                class="form-control body-place"
+                class="form-control body-place shadow"
                 rows="10"
                 cols="40"
                 type="text"
-                name="contributor"
+                name="headline"
                 required
-                placeholder="Contributor"
-                value={article.contributor}
+                placeholder="headline"
+                value={article.headline}
                 onChange={(e) =>
                   setArticle({
                     ...article,
-                    contributor: e.target.value,
+                    headline: e.target.value,
                   })
                 }
-              ></input> */}
+              ></input>
               <label
                 class="float-left"
                 for="comments"
@@ -168,7 +177,7 @@ const PostArticleForm = ({
                     style={{ float: 'left' }}
                     onClick={postArticle}
                     type="submit"
-                    className="btn btn-dark text-light"
+                    class="btn btn-primary"
                     // col-2 mt-2
                   >
                     Submit
