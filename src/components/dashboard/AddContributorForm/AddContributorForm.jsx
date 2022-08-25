@@ -15,7 +15,7 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
  
   return (
     <div>
-       <header class="d-flex justify-content-between"><span class="h4">Add Contributor</span><button class='btn btn-danger btn-sm' onClick={() => setAddContributorForm(!addContributorForm)}><BsXLg/></button>
+       <header class="d-flex justify-content-between"><span class="h4">Add Contributor</span><button class='btn btn-primary btn-sm' onClick={() => setAddContributorForm(!addContributorForm)}><BsXLg/></button>
       </header>
       <hr/>
       <form class="row g-3">

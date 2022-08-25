@@ -263,8 +263,8 @@ const ContributorsList = ({
   let button = '';
   if (!addContributorForm) {
     button = (
-      <button class="btn btn-sm btn-primary" style={{ marginLeft: '3px', borderRadius: '15px'}}onClick={() => setAddContributorForm(!addContributorForm)}>
-        <BsPlusLg /> ADD
+      <button class="btn btn-sm btn-primary" style={{ marginLeft: '5px', borderRadius: '15px'}}onClick={() => setAddContributorForm(!addContributorForm)}>
+        <BsPlusLg /> Add
       </button>
     );
   }

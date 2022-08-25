@@ -17,7 +17,7 @@ const UpdateArticleForm = ({ selectedArticle, updateSelectedArticle, updateArtic
 
   return (
     <div>
-      <header class="d-flex justify-content-between"><span class="h4">Edit Article</span><button class='btn btn-danger btn-sm' onClick={() => setUpdateArticleForm(!updateArticleForm)}><BsXLg /></button>
+      <header class="d-flex justify-content-between"><span class="h4">Edit Article</span><button class='btn btn-primary btn-sm' onClick={() => setUpdateArticleForm(!updateArticleForm)}><BsXLg /></button>
       </header>
       <hr/>
       <form class="row g-3">

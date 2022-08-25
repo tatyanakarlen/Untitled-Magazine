@@ -13,6 +13,7 @@ const articleSchema = new Schema({
         required: true
     }, 
     body: {type: String, required: true}, 
+    headline: {type: String, required: true}, 
     tags: [], 
     image: {type: String, required: false},
     // timestamps: { createdAt: 'created_at', updatedAt: 'updated_at' },

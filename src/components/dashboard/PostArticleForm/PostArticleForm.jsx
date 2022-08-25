@@ -85,23 +85,30 @@ const PostArticleForm = ({
                 ))}
               </select>
 
-              {/* <label for="comments" class="form-label"></label>
+              <label
+                class="float-left"
+                for="comments"
+                class="form-label"
+                style={{ marginTop: '20px' }}
+              >
+                Headline:
+              </label>
               <input
-                class="form-control body-place"
+                class="form-control body-place shadow"
                 rows="10"
                 cols="40"
                 type="text"
-                name="contributor"
+                name="headline"
                 required
-                placeholder="Contributor"
-                value={article.contributor}
+                placeholder="headline"
+                value={article.headline}
                 onChange={(e) =>
                   setArticle({
                     ...article,
-                    contributor: e.target.value,
+                    headline: e.target.value,
                   })
                 }
-              ></input> */}
+              ></input>
               <label
                 class="float-left"
                 for="comments"

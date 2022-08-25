@@ -24,7 +24,7 @@ const Main = ({ user, allArticles, articleViewActive, setarticleViewActive, arti
 
   return (
     <div class="col d-flex flex-column h-sm-100">
-      <div class="row overflow-auto card-container d-flex justify-content-center">
+      <div class="row overflow-auto d-flex justify-content-center">
         {articleViewActive ? (
           <ArticleView 
           articleViewActive={articleViewActive} 

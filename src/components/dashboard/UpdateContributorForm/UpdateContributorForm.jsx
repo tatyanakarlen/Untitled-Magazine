@@ -5,7 +5,7 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
   
   return (
     <div>
-      <header class="d-flex justify-content-between"><span class="h4">Edit Contributor</span><button class='btn btn-danger btn-sm' onClick={() => setUpdateContributorForm(!updateContributorForm)}><BsXLg /></button>
+      <header class="d-flex justify-content-between"><span class="h4">Edit Contributor</span><button class='btn btn-primary btn-sm' onClick={() => setUpdateContributorForm(!updateContributorForm)}><BsXLg /></button>
       </header>
       <hr/>
       <form class="row g-3">
