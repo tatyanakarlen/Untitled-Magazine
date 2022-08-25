@@ -16,7 +16,7 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors,
 
   const [article, setArticle] = useState({
     title: '',
-    contributor: allContributors[0].name,
+    contributor: userOwnedContributors[0].name,
     headline: '',
     body: '',
     tags: '',

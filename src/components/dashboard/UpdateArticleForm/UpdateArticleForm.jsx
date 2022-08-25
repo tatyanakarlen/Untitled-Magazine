@@ -43,6 +43,26 @@ const UpdateArticleForm = ({ selectedArticle, updateSelectedArticle, updateArtic
                  
               >
               </input>
+              <label for="comments" class="form-label">Headline:</label>
+               <input 
+              class="form-control title-place shadow" 
+              type="text" 
+              name= "headline"
+              rows="2" 
+              required placeholder={selectedArticle.headline}
+              pattern="[A-Za-z]{2,}"
+              value={selectedArticle.headline}
+              onChange={(e) => 
+                updateSelectedArticle({
+                    ...selectedArticle, 
+                    headline: e.target.value
+                })
+              }
+
+            
+                 
+              >
+              </input>
               
               <label style={{ marginTop: '20px'}} for="comments" class="form-label">Body:</label>
               <textarea

@@ -43,6 +43,7 @@ const ArticlesList = ({
   const [selectedArticle, updateSelectedArticle] = useState({
     title: '',
     contributor: '',
+    headline: '',
     body: '',
     tags: '',
     articleId: '',
@@ -76,6 +77,7 @@ const ArticlesList = ({
         updateSelectedArticle({
           title: '',
           contributor: '',
+          headline: '',
           body: '',
           tags: '',
           articleId: '',

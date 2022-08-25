@@ -10,6 +10,7 @@ const ArticleCard = (props) => {
 
    
     <div class="col-md-4 col-lg-4">
+      
       <div class="card" style={{minHeight: '100%'}} onClick={()=> navigate(`/detail?id=${props.id}`)}>
     
           <img
@@ -20,10 +21,7 @@ const ArticleCard = (props) => {
           <div class="card-body">
             <h5 class="card-title">{props.title}</h5>
             <p class="card-text">
-              {/* This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer. */}
-              {props.body.slice(0, 50)}
+              {props.headline}
             </p>
             <p class="card-text">
               <small class="text-muted">{props.contributor}</small>

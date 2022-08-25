@@ -64,7 +64,7 @@ const ArticleView = ({
             
         
      <div class="card mb-3" style={{border: 'none'}}>
-  <img class="card-img-top" style={{height: '35%'}}src={articleViewData.image} alt="Card image cap"/>
+  <img class="card-img-top" style={{height: '50%'}}src={articleViewData.image} alt="Card image cap"/>
   <div class="card-body">
    
     <p class="card-text">{articleViewData.body}</p>
