@@ -55,8 +55,8 @@ const ArticleView = ({
         <div class="jumbotron" >
           <p style={{ textAlign:"left"}}>By:<span style={{marginLeft: '0.25rem'}}>{articleViewData.contributor}</span><span class="text-secondary" style={{paddingLeft: '1rem'}}>{slicedCreatedAt}</span></p>
           
-  <h3 class="display-6" style={{ textAlign:"left"}}>{articleViewData.title}</h3>
-  <p class="lead" style={{ textAlign:"left"}}>{articleViewData.headline}</p>
+  <h3 class="display-7" style={{ textAlign:"left"}}>{articleViewData.title}</h3>
+  <p class="" style={{ textAlign:"left"}}>{articleViewData.headline}</p>
   
 </div>
         
