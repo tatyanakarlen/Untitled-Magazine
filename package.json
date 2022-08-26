@@ -1,7 +1,10 @@
 {
   "name": "untitledmagazine",
   "proxy": "http://localhost:3001",
-  "version": "0.1.0",
+  "version": "0.1.0", 
+  "engines": {
+    "node": "18.0.0"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
