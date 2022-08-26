@@ -30,6 +30,7 @@ const ArticleCardGroup = (props) => {
                   createdAt={a.createdAt}
                   body={a.body}
                   id={a._id}
+                  headline={a.headline}
                 />
                 
                 

@@ -1,18 +1,17 @@
-
 import React from 'react';
 import './NavMagazine.css';
 import useIsBelow from '../../../hooks';
 import { Link } from 'react-router-dom';
+import { BsSearch } from 'react-icons/bs';
 
-const NavMagazine = (props) => {
+const NavMagazine = (props, setHamburgerBtnActive, hamburgerBtnActive ) => {
   const { isBelow } = useIsBelow();
 
   const handleChange = (e) => {
-    console.log(e.target.value)
+    console.log(e.target.value);
     e.preventDefault();
     props.setSearchInput(e.target.value);
   };
-
 
   return (
     <div>
@@ -26,54 +25,53 @@ const NavMagazine = (props) => {
               style={{ height: '37px', width: '100x' }}
               onChange={handleChange}
             />
-            {/* {isBelow && (
-              <h1 style={{ color: 'white' }}>
-                UNTITLED
-                <span class="text-warning">magazine</span>
-              </h1>
-            )} */}
-            {/* <button
-              class="btn btn-dark btn-lg"
-              type="button"
-              id="button-addon2"
-            >
-              {/* <i class="bi bi-search"></i> */}
-            {/* </button>  */}
+            <button class="btn btn-dark" style={{ marginBottom: '1rem' }}>
+              <BsSearch style={{ fontSize: '23px' }} />
+            </button>
 
-           
-        {isBelow && (
-              <h1 style={{ color: 'white' }}>
+            {isBelow && (
+              <h2 style={{ color: 'white' }}>
                 UNTITLED
                 <span class="text-warning">magazine</span>
-              </h1>
+              </h2>
             )}
-
-
           </div>
-           
-
-
 
           <button
+            // onClick={props.setHamburgerBtnActive(!hamburgerBtnActive)}
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navmenu"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span 
+            
+            class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="collapse navbar-collapse" id="navmenu">
-            <ul class="navbar-nav ms-auto" >
+          <div 
+          // onClick={props.setHamburgerBtnActive(!hamburgerBtnActive)}
+          class="collapse navbar-collapse" id="navmenu"
+          >
+            <ul class="navbar-nav ms-auto nav-links">
               <li class="nav-item" style={{ fontSize: '21px' }}>
-              <Link class="nav-item" style={{ fontSize: '21px'}} to="/latest">Latest</Link>
+                <Link
+                  class="nav-item text-light"
+                  style={{ fontSize: '21px', textDecoration: 'none' }}
+                  to="/latest"
+                >
+                  Latest
+                </Link>
               </li>
               <li class="nav-item" style={{ fontSize: '21px' }}>
-                <a href="#questions" class="nav-link">
+                <Link
+                  class="nav-item text-light"
+                  style={{ fontSize: '21px', textDecoration: 'none' }}
+                  to="/latest"
+                >
                   Subscribe
-                </a>
+                </Link>
               </li>
-             
             </ul>
           </div>
         </div>

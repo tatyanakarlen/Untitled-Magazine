@@ -71,6 +71,7 @@ const TableArticlesList = ({ userOwnedArticles, allArticles, setUpdateArticleFor
                     ...selectedArticle,
                     title: m.title,
                     contributor: m.contributor,
+                    headline: m.headline, 
                     body: m.body,
                     tags: m.tags,
                     articleId: m._id,

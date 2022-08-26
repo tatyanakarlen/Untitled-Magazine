@@ -9,9 +9,10 @@ const HeroMagazine = () => {
         <div class="d-sm-flex align-items-center justify-content-between" style={{ marginTop: '4rem'}}>
           <div>
             <h1>UNTITLED<span class="text-warning">magazine</span></h1>
-            <p class="lead my-4">
+            <p class="lead my-3">
               Your best source for daily content from our print edition
             </p>
+           
            
           </div>
       

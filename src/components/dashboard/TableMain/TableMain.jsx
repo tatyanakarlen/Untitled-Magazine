@@ -10,7 +10,7 @@ const TableMain = ({ allArticles, articleViewActive, setarticleViewActive, artic
  }
   // let recentPosts = userOwnedArticles.slice(Math.max(userOwnedArticles.length - 5, 0));
 
-  const recentPosts = userOwnedArticles.slice(0, 6)
+  const recentPosts = userOwnedArticles.slice(0, 5)
 
 
   return (
