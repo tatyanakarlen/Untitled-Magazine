@@ -32,14 +32,14 @@ const FooterMagazine = ({user}) => {
              </div>
              <div class="col-md-3 col-lg-3 small-div"
              style={{minHeight: '100%'}}>
-             <h5 class="h5"><u>More</u></h5>
+             <h5 style={{ marginTop:'1rem'}}class="h5"><u>More</u></h5>
              <p>Newsletter</p>
              <p>Contact Us</p>
              <p>About Untitled</p>
              
              </div>
              <div class="col-md-3 col-lg-3 small-div">
-             <h5 class="h5"><u>Admin</u></h5>
+             <h5 style={{ marginTop:'1rem'}} class="h5"><u>Admin</u></h5>
              <p>
                <Link to="/login"
                class="text-light  magNav-links"
