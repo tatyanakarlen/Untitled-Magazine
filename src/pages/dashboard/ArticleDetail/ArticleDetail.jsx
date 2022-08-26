@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import './ArticleDetail.css'
 import {
   FacebookIcon,
   FacebookShareButton,
@@ -17,8 +18,9 @@ const ArticleDetail = (props) => {
   return (
     <div class="col d-flex flex-column h-sm-100">
       <div
-        class="row overflow-auto d-flex justify-content-center"
-        style={{ width: '55%', margin: '0 auto' }}
+       id="detailContainer"
+        class="row overflow-auto d-flex justify-content-center col-10 col-md-7 col-sm-11 col-lg-5"
+        style={{ margin: '0 auto' }}
       >
         {/* <div>
           <Link class="nav-item" style={{ fontSize: '21px' }} to="/">
@@ -66,7 +68,7 @@ const ArticleDetail = (props) => {
                   <div class="card mb-3" style={{ border: 'none' }}>
                     <img
                       class="card-img-top"
-                      style={{ minHeight: '25%' }}
+                      style={{ minHeight: '30%', maxHeight: '40%' }}
                       src={a.image}
                       alt="Card image cap"
                     />

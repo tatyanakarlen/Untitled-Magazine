@@ -70,7 +70,7 @@ const LoginForm = ({ setUserInState, user }) => {
             required />
             <label>Password</label>
             <input 
-            type="text" 
+            type="password" 
             name="password" 
             value={userLogin.password} 
             onChange={(e) =>

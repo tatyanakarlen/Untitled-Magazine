@@ -14,7 +14,7 @@ const ArticleView = ({
 
   return (
     <div class="col d-flex flex-column h-sm-100">
-      <div class="row overflow-auto d-flex justify-content-center" style={{ width: '65%', margin: '0 auto', padding: '10px'}}>
+      <div class="row overflow-auto d-flex justify-content-center col-10 col-md-9 col-sm-11 col-lg-7" style={{margin: '0 auto', padding: '10px'}}>
         <div class="row">
         {/* .button_example {
   position:absolute;
