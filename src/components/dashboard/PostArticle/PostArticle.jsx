@@ -9,6 +9,10 @@ import BreadCrumb from '../BreadCrumb/BreadCrumb'
 
 const PostArticle = ({ user, allArticles, setArticles, getData, allContributors, userOwnedContributors }) => {
   
+  // const formRef = React.createRef();
+  const [formValid, setFormValid] = useState(false)
+  const [errorMsg, setErrorMsg] = useState('')
+
   const ref = useRef();
   const fileInputRef = useRef(null);
   const [img, setImg] = useState();
@@ -132,7 +136,17 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors,
     <div class="col d-flex flex-column h-sm-100">
       <div  class="row overflow-auto">
         <div id="articlesPost-container" class="row text-center g-3">
+
+
+        
+  
           <PostArticleForm
+         
+          errorMsg={errorMsg}
+          setErrorMsg={setErrorMsg}
+            
+            formValid={formValid}
+            setFormValid={setFormValid}
             userOwnedContributors={userOwnedContributors}
             allContributors={allContributors}
             forwardedRef={fileInputRef}

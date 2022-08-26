@@ -1,10 +1,16 @@
 import React from 'react';
-import { useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import './PostArticleForm.css';
 
 
 
+
 const PostArticleForm = ({
+
+  errorMsg,
+  setErrorMsg,
+  formValid,
+  setFormValid,
   user,
   allArticles,
   setArticles,
@@ -21,6 +27,35 @@ const PostArticleForm = ({
   userOwnedContributors,
 }) => {
   const ref = useRef(null);
+  const formRef = React.createRef();
+  const [valid, setValid] = useState('false')
+
+
+  // formRef,
+  // formValid,
+  // setFormValid,
+  // errorMsg,
+  //setErrorMsg,
+
+  // const isFieldValid = e.target.checkValidity();
+  //   let errorMsg = "";
+  //   if (!isFieldValid) {
+  //     errorMsg = `${e.target.name} is not valid`;
+  //   }
+
+  // stateChanges.errorMsg = errorMsg;
+    // stateChanges.formValid = this.formRef.current.checkValidity();
+
+    //end handle change 
+
+
+    // {this.state.errorMsg}
+    //   <form ref={this.formRef}>
+
+    //pattern="[A-Za-z]{2,}"
+
+    //disabled={!this.state.formValid}
+  
 
   return (
     <div class="col-md">
@@ -30,8 +65,11 @@ const PostArticleForm = ({
           <h4 class="card-title mb-1" style={{ textAlign: 'left' }}>
             Post Article
           </h4>
+          {errorMsg}
           <hr />
-          <form class="row g-3">
+          <form 
+          ref={formRef}
+          class="row g-3">
             <div class="col-md-12">
               {/* <br/> */}
               <label
@@ -49,16 +87,39 @@ const PostArticleForm = ({
                 type="text"
                 name="title"
                 rows="2"
-                required
+                required='true'
                 placeholder="Title"
                 pattern="[A-Za-z]{2,}"
                 value={article.title}
-                onChange={(e) =>
+                // useEffect(() => {
+                  
+                // }, []) 
+                onChange={(e) => {
+                  console.log(e.target.value)
+                  const isFieldValid = e.target.value.length
+                  if (isFieldValid < 3) {
+                  setErrorMsg(`${e.target.name} is not valid`)
+                  } else {
+                    setErrorMsg('')
+                  }
+                  
+                  setValid(!valid)
+                  console.log(valid)
+
+
+                  // const [valid, setValid] = useState('false')
+                  
+                  
+                  
+                  
+
                   setArticle({
                     ...article,
                     title: e.target.value,
                   })
                 }
+              }
+              
               ></input>
 
               <label
@@ -100,7 +161,7 @@ const PostArticleForm = ({
                 cols="40"
                 type="text"
                 name="headline"
-                required
+                required='true'
                 placeholder="headline"
                 value={article.headline}
                 onChange={(e) =>
@@ -124,7 +185,7 @@ const PostArticleForm = ({
                 cols="40"
                 type="text"
                 name="body"
-                required
+                required='true'
                 placeholder="Article body here"
                 value={article.body}
                 onChange={(e) =>
@@ -148,7 +209,7 @@ const PostArticleForm = ({
                 cols="40"
                 type="text"
                 name="tags"
-                required
+                required='true'
                 placeholder="Tags"
                 value={article.tags}
                 onChange={(e) =>
