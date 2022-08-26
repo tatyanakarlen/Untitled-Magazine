@@ -76,21 +76,21 @@ const ArticleDetail = (props) => {
                         <small class="text-muted">Updated At:<span style={{marginLeft:"0.25rem"}}>{a.updatedAt.slice(0,16)}</span></small>
                       </p>
                       <FacebookShareButton
-                    url="www.google.com"
+                    url={"https://untitled-magazine.herokuapp.com/detail?id=" + a._id}
                     quote={a.body}
                     hashtag="#news"
                   >
                     <FacebookIcon logoFillColor="white" />
                   </FacebookShareButton>
                   <TwitterShareButton
-                    url="www.google.com"
+                    url={"https://untitled-magazine.herokuapp.com/detail?id=" + a._id}
                     title={a.title + ': ' + a.body}
                     related={[a.contributor]}
                     hashtag={['#news', '#interesting']}
                   >
                     <TwitterIcon logoFillColor="white" />
                   </TwitterShareButton>
-                  <WhatsappShareButton url="www.google.com" title={a.title}>
+                  <WhatsappShareButton url={"https://untitled-magazine.herokuapp.com/detail?id=" + a._id}  title={a.title}>
                     <WhatsappIcon logoFillColor="white" />
                   </WhatsappShareButton>
                     </div>
