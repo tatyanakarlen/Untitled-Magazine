@@ -125,32 +125,3 @@ export default SignUpForm
 
 
 
-// export default function SignUpForm(props) {
-//     let [content, setContent] = useState("")
-
-//     let handleChange = (e) => {
-//         setContent(e.target.value)
-//     } // just for form data goes in state
-
-//     async function handleSubmit() {
-//         let response1 = await fetch("/api/posts", {
-//             method:"POST",
-//             headers: {"Content-Type": "application/json"},
-//             body:JSON.stringify({content:content})
-//         })
-//         let allPosts = await response1.json()
-//         // todo: PUT the entirety of msgs INTO STATE
-//         props.setPosts(allPosts)
-//         setContent("")
-//     }
-
-//     return(
-//       <div>
-//         <textarea onChange={handleChange}
-//           name="content" value={content}>
-//           </textarea>
-//         <br/>
-//         <button onClick={()=>{handleSubmit()}}>Submit!</button>
-//       </div>
-//     )
-// }
