@@ -6,11 +6,13 @@ import './PostArticleForm.css';
 
 
 const PostArticleForm = ({
-
-  errorMsg,
-  setErrorMsg,
+  checkValid, 
+  articleFormValidation,
+  setArticleFormValidation, 
   formValid,
   setFormValid,
+  errorMsg,
+  setErrorMsg,
   user,
   allArticles,
   setArticles,
@@ -28,7 +30,26 @@ const PostArticleForm = ({
 }) => {
   const ref = useRef(null);
   const formRef = React.createRef();
-  const [valid, setValid] = useState('false')
+  const [formValidMsg, setFormValidMsg] = useState(false)
+
+
+  // const [articleFormValidation, setArticleFormValidation] = useState({
+  //   title: '',
+  //   contributor: '',
+  //   headline: '',
+  //   body: '',
+  //   tags: '',
+  // });
+
+  // const [formValid, setFormValid] = useState(false)
+
+  // if (
+  //   articleFormValidation.title > 4 && articleFormValidation.contributor > 4 && articleFormValidation.headline > 4
+  //   && articleFormValidation.body > 4 && articleFormValidation.tags > 4 ) {
+  //   setFormValid(true)
+  //   }
+    
+  
 
 
   // formRef,
@@ -55,7 +76,8 @@ const PostArticleForm = ({
     //pattern="[A-Za-z]{2,}"
 
     //disabled={!this.state.formValid}
-  
+
+    
 
   return (
     <div class="col-md">
@@ -68,7 +90,7 @@ const PostArticleForm = ({
           {errorMsg}
           <hr />
           <form 
-          ref={formRef}
+          // ref={formRef}
           class="row g-3">
             <div class="col-md-12">
               {/* <br/> */}
@@ -91,32 +113,24 @@ const PostArticleForm = ({
                 placeholder="Title"
                 pattern="[A-Za-z]{2,}"
                 value={article.title}
-                // useEffect(() => {
-                  
-                // }, []) 
                 onChange={(e) => {
-                  console.log(e.target.value)
                   const isFieldValid = e.target.value.length
                   if (isFieldValid < 3) {
                   setErrorMsg(`${e.target.name} is not valid`)
                   } else {
                     setErrorMsg('')
                   }
-                  
-                  setValid(!valid)
-                  console.log(valid)
-
-
-                  // const [valid, setValid] = useState('false')
-                  
-                  
-                  
-                  
-
+                  setFormValidMsg(!formValidMsg)
                   setArticle({
                     ...article,
                     title: e.target.value,
                   })
+                  setArticleFormValidation({
+                     ...articleFormValidation, 
+                     title: e.target.value,
+                  })
+                  checkValid()
+                  console.log(articleFormValidation.title.length)
                 }
               }
               
@@ -164,12 +178,25 @@ const PostArticleForm = ({
                 required='true'
                 placeholder="headline"
                 value={article.headline}
-                onChange={(e) =>
+                onChange={(e) => {
+                  const isFieldValid = e.target.value.length
+                  if (isFieldValid < 3) {
+                  setErrorMsg(`${e.target.name} is not valid`)
+                  } else {
+                    setErrorMsg('')
+                  }
+                  setFormValidMsg(!formValidMsg)
                   setArticle({
                     ...article,
                     headline: e.target.value,
                   })
+                  setArticleFormValidation({
+                    ...articleFormValidation, 
+                    headline: e.target.value,
+                 })
+                 checkValid()
                 }
+              }
               ></input>
               <label
                 class="float-left"
@@ -188,12 +215,25 @@ const PostArticleForm = ({
                 required='true'
                 placeholder="Article body here"
                 value={article.body}
-                onChange={(e) =>
+                onChange={(e) => {
+                  const isFieldValid = e.target.value.length
+                  if (isFieldValid < 3) {
+                  setErrorMsg(`${e.target.name} is not valid`)
+                  } else {
+                    setErrorMsg('')
+                  }
+                  setFormValidMsg(!formValidMsg)
                   setArticle({
                     ...article,
                     body: e.target.value,
                   })
+                  setArticleFormValidation({
+                    ...articleFormValidation, 
+                    body: e.target.value,
+                 })
+                 checkValid()
                 }
+              }
               ></textarea>
               <label
                 class="float-left"
@@ -212,12 +252,25 @@ const PostArticleForm = ({
                 required='true'
                 placeholder="Tags"
                 value={article.tags}
-                onChange={(e) =>
+                onChange={(e) => {
+                  const isFieldValid = e.target.value.length
+                  if (isFieldValid < 3) {
+                  setErrorMsg(`${e.target.name} is not valid`)
+                  } else {
+                    setErrorMsg('')
+                  }
+                  setFormValidMsg(!formValidMsg)
                   setArticle({
                     ...article,
                     tags: e.target.value,
                   })
+                  setArticleFormValidation({
+                    ...articleFormValidation, 
+                    tags: e.target.value,
+                 })
+                 checkValid()
                 }
+              }
               ></input>
               <br />
 
@@ -237,7 +290,7 @@ const PostArticleForm = ({
                 <div class="col-7">
                   <button
                     style={{ float: 'left' }}
-                    onClick={postArticle}
+                    onClick={postArticle} disabled={!formValid}
                     type="submit"
                     class="btn btn-primary"
                     // col-2 mt-2

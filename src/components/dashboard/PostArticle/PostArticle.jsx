@@ -10,7 +10,7 @@ import BreadCrumb from '../BreadCrumb/BreadCrumb'
 const PostArticle = ({ user, allArticles, setArticles, getData, allContributors, userOwnedContributors }) => {
   
   // const formRef = React.createRef();
-  const [formValid, setFormValid] = useState(false)
+  // const [formValid, setFormValid] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
 
   const ref = useRef();
@@ -27,6 +27,24 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors,
     image: '',
     postedBy: user._id,
   });
+
+  const [articleFormValidation, setArticleFormValidation] = useState({
+    title: '',
+    headline: '',
+    body: '',
+    tags: '',
+  });
+
+  const [formValid, setFormValid] = useState(false)
+
+  const checkValid = () => {
+   if ( (articleFormValidation.title.length >= 2 && articleFormValidation.headline.length >= 2) 
+   && (articleFormValidation.body.length >= 2 && articleFormValidation.tags.length >= 2)) {
+    setFormValid(true)
+    // console.log('form valid')
+    }
+  }
+
 
   const onImgChange = useCallback((e) => {
     const [file] = e.target.files;
@@ -141,7 +159,9 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors,
         
   
           <PostArticleForm
-         
+          checkValid={checkValid}
+          articleFormValidation={articleFormValidation}
+          setArticleFormValidation={setArticleFormValidation}
           errorMsg={errorMsg}
           setErrorMsg={setErrorMsg}
             

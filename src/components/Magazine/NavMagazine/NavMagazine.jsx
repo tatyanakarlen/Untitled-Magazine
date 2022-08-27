@@ -13,6 +13,8 @@ const NavMagazine = (props, setHamburgerBtnActive, hamburgerBtnActive ) => {
     props.setSearchInput(e.target.value);
   };
 
+ 
+
   return (
     <div>
       <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
@@ -38,7 +40,8 @@ const NavMagazine = (props, setHamburgerBtnActive, hamburgerBtnActive ) => {
           </div>
 
           <button
-            // onClick={props.setHamburgerBtnActive(!hamburgerBtnActive)}
+           
+            onClick={props.setHamburgerBtnActive(!hamburgerBtnActive)}
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
