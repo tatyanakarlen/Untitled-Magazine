@@ -1,8 +1,5 @@
-![clone](https://imgur.com/RNtmZuH.png)
+![clone](https://imgur.com/kTtQx4X.png)
 
-# "A" - the online magazine
-
-## by Tatyana, Gabe
 
 _____________________________________________________________________________________
 
@@ -14,28 +11,28 @@ ________________________________________________________________________________
 
 <br>
 
-### "A" is the place to go for your daily niche news fix
+### UNTITLEDmagazine is the place to go for your daily niche news fix
 
 <br>
 
-### Visit "A" on Heroku now! <em><a href="https://google.com">Click here</a></em> 
+### Visit <em><a href="https://untitled-magazine.herokuapp.com/">UNTITLEDmagazine</a>.</em> 
 
 
 <br>
 
-### Link to the project's GitHub repo can be found <em><a href="https://github.com/gabevela/projectFour">here</a>.</em>
+### Link to the project's GitHub repo can be found <em><a href="https://github.com/tatyanakarlen/Untitled-Magazine">here</a>.</em>
 
 <br>
 
-## Here is our original wireframe:
+## Admin dashboard:
 
 <br>
 
-![clone](https://imgur.com/53tvIa5.png)
+![clone](https://imgur.com/04Xrz9t.png)
 
 <br>
 
-![clone](https://imgur.com/wNUV4fF.png)
+![clone](https://imgur.com/LjiQqaF.png)
 
 <br>
 
@@ -96,4 +93,4 @@ ________________________________________________________________________________
 <br>
 
 
-![clone](https://imgur.com/PMN9rX4.png)
+![clone](https://imgur.com/9k1V3D2.png)
