@@ -17,7 +17,7 @@ const NavMagazine = (props, setHamburgerBtnActive, hamburgerBtnActive ) => {
   return (
     <div>
       <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
-        <div class="container d-flex flex-row align-items-baseline">
+        <div class="container d-flex flex-row">
           <div class="d-flex flex-row">
             <input
               type="text"
