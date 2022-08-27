@@ -13,6 +13,8 @@ const NavMagazine = (props, setHamburgerBtnActive, hamburgerBtnActive ) => {
     props.setSearchInput(e.target.value);
   };
 
+ 
+
   return (
     <div>
       <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">

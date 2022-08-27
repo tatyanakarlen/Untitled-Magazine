@@ -31,6 +31,24 @@ const ContributorsList = ({
     postedBy: user._id,
   });
 
+  const [contributorFormValidation, setContributorFormValidation] = useState({
+    name: '',
+    email: '',
+    bio: '',
+    city: '',
+    country: '',
+  });
+
+  const [formValid, setFormValid] = useState(false)
+
+  const checkValid = () => {
+    if ( (contributorFormValidation.name.length >= 2 && contributorFormValidation.email.length >= 2) 
+    && (contributorFormValidation.city.length >= 2 && contributorFormValidation.country.length >= 2)) {
+     setFormValid(true)
+     // console.log('form valid')
+     }
+   }
+
   // related to photo upload
   const ref = useRef();
   const [img, setImg] = useState();
@@ -110,6 +128,14 @@ const ContributorsList = ({
       if (res.statusText === 'OK') {
         console.log('SUCCESSLY ADDED TO DB =>', contributor);
         getData();
+        setContributorFormValidation({
+          name: '',
+          email: '',
+          bio: '',
+          city: '',
+          country: '',
+        })
+        setFormValid(false)
 
         const newContributor = await res.json();
         console.log('this is res.json', newContributor);
@@ -224,7 +250,12 @@ const ContributorsList = ({
 
   const activeContribForm = (
     <AddContributorForm
-   
+      contributorFormValidation={contributorFormValidation}
+      setContributorFormValidation={setContributorFormValidation}
+      formValid={formValid} 
+      setFormValid={setFormValid}
+      checkValid={checkValid}
+
       contributor={contributor}
       setContributor={setContributor}
       postContributor={postContributor}

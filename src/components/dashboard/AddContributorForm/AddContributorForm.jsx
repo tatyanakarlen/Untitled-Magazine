@@ -1,15 +1,19 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import './AddContrinbutorForm.css'
 import { BsXLg } from "react-icons/bs"
 import { BsFillFilePersonFill } from "react-icons/bs"
 
 const AddContributorForm = ( {contributor, setContributor, postContributor, setAddContributorForm, addContributorForm, 
-  img, setImg, imgLink, setImgLink, formObj, setFormObj, onImgChange, setImage, 
+  img, setImg, imgLink, setImgLink, formObj, setFormObj, onImgChange, setImage, contributorFormValidation, setContributorFormValidation, 
+  formValid, setFormValid, checkValid,
+ 
  } ) => {
 
 
   
-  
+  const [errorMsg, setErrorMsg] = useState('')
+  const [formValidMsg, setFormValidMsg] = useState(false)
+
   const ref = useRef();
   
  
@@ -17,6 +21,7 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
     <div>
        <header class="d-flex justify-content-between"><span class="h4">Add Contributor</span><button class='btn btn-primary btn-sm' onClick={() => setAddContributorForm(!addContributorForm)}><BsXLg/></button>
       </header>
+      {errorMsg}
       <hr/>
       <form class="row g-3">
           <div id="form-box" class="col-md-12">
@@ -30,12 +35,25 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               required 
               pattern="[A-Za-z]{2,}"
               value={contributor.name}
-              onChange={(e) => 
+              onChange={(e) => {
+                const isFieldValid = e.target.value.length
+                  if (isFieldValid < 3) {
+                  setErrorMsg(`${e.target.name} is not valid`)
+                  } else {
+                    setErrorMsg('')
+                  }
+                  setFormValidMsg(!formValidMsg)
                 setContributor({
                     ...contributor, 
                     name: e.target.value
                 })
+                setContributorFormValidation({
+                  ...contributorFormValidation, 
+                  name: e.target.value,
+               })
+                checkValid()
               }
+            }
 
             
                  
@@ -49,12 +67,26 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               name= "email"
               required 
               value={contributor.email}
-              onChange={(e) => 
+              onChange={(e) => {
+                const isFieldValid = e.target.value.length
+                  if (isFieldValid < 3) {
+                  setErrorMsg(`${e.target.name} is not valid`)
+                  } else {
+                    setErrorMsg('')
+                  }
+                  setFormValidMsg(!formValidMsg)
                 setContributor({
                     ...contributor, 
                     email: e.target.value
                 })
+                
+              setContributorFormValidation({
+                ...contributorFormValidation, 
+                email: e.target.value,
+             })
+              checkValid()
               }
+            }
               >
               </input>
               
@@ -66,12 +98,27 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               name= "bio"
               required 
               value={contributor.bio}
-              onChange={(e) => 
+              onChange={(e) => {
+                const isFieldValid = e.target.value.length
+                  if (isFieldValid < 3) {
+                  setErrorMsg(`${e.target.name} is not valid`)
+                  } else {
+                    setErrorMsg('')
+                  }
+                  setFormValidMsg(!formValidMsg)
                 setContributor({
                     ...contributor, 
                     bio: e.target.value
                 })
+                setContributorFormValidation({
+                  ...contributorFormValidation, 
+                  bio: e.target.value,
+               })
+                checkValid()
+
+                
               }
+            }
               >
               </input>
 
@@ -83,12 +130,25 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               name= "city"
               required 
               value={contributor.city}
-              onChange={(e) => 
+              onChange={(e) => {
+                const isFieldValid = e.target.value.length
+                  if (isFieldValid < 3) {
+                  setErrorMsg(`${e.target.name} is not valid`)
+                  } else {
+                    setErrorMsg('')
+                  }
+                  setFormValidMsg(!formValidMsg)
                 setContributor({
                     ...contributor, 
                     city: e.target.value
                 })
+                setContributorFormValidation({
+                  ...contributorFormValidation, 
+                  city: e.target.value,
+               })
+                checkValid()
               }
+            }
               >
               </input>
               <label style={{ marginTop: '20px'}} for="comments" class="form-label">Country:</label>
@@ -99,12 +159,25 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               name= "country"
               required 
               value={contributor.country}
-              onChange={(e) => 
+              onChange={(e) => {
+                const isFieldValid = e.target.value.length
+                  if (isFieldValid < 3) {
+                  setErrorMsg(`${e.target.name} is not valid`)
+                  } else {
+                    setErrorMsg('')
+                  }
+                  setFormValidMsg(!formValidMsg)
                 setContributor({
                     ...contributor, 
                     country: e.target.value
                 })
+                setContributorFormValidation({
+                  ...contributorFormValidation, 
+                  country: e.target.value,
+               })
+                checkValid()
               }
+            }
               >
               </input>
             
@@ -119,6 +192,7 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
               
               <div class="col-7">
               <button 
+              disabled={!formValid}
               id="fileInputAddContrib"
               onClick={setImage} 
               style={{ float: 'left' }}

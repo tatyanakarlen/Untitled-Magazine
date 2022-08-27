@@ -9,6 +9,9 @@ import BreadCrumb from '../BreadCrumb/BreadCrumb'
 
 const PostArticle = ({ user, allArticles, setArticles, getData, allContributors, userOwnedContributors }) => {
   
+ 
+  const [errorMsg, setErrorMsg] = useState('')
+
   const ref = useRef();
   const fileInputRef = useRef(null);
   const [img, setImg] = useState();
@@ -23,6 +26,24 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors,
     image: '',
     postedBy: user._id,
   });
+
+  const [articleFormValidation, setArticleFormValidation] = useState({
+    title: '',
+    headline: '',
+    body: '',
+    tags: '',
+  });
+
+  const [formValid, setFormValid] = useState(false)
+
+  const checkValid = () => {
+   if ( (articleFormValidation.title.length >= 2 && articleFormValidation.headline.length >= 2) 
+   && (articleFormValidation.body.length >= 2 && articleFormValidation.tags.length >= 2)) {
+    setFormValid(true)
+    // console.log('form valid')
+    }
+  }
+
 
   const onImgChange = useCallback((e) => {
     const [file] = e.target.files;
@@ -75,6 +96,14 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors,
       console.log(res);
       if (res.statusText === 'OK') {
         console.log('SUCCESSLY ADDED TO DB =>', article);
+        setArticleFormValidation({
+          title: '',
+          headline: '',
+          body: '',
+          tags: '',
+        });
+      
+        setFormValid(false)
 
         setArticle({
           title: '',
@@ -132,7 +161,19 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors,
     <div class="col d-flex flex-column h-sm-100">
       <div  class="row overflow-auto">
         <div id="articlesPost-container" class="row text-center g-3">
+
+
+        
+  
           <PostArticleForm
+          checkValid={checkValid}
+          articleFormValidation={articleFormValidation}
+          setArticleFormValidation={setArticleFormValidation}
+          errorMsg={errorMsg}
+          setErrorMsg={setErrorMsg}
+            
+            formValid={formValid}
+            setFormValid={setFormValid}
             userOwnedContributors={userOwnedContributors}
             allContributors={allContributors}
             forwardedRef={fileInputRef}
