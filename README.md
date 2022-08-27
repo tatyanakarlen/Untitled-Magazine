@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+![clone](https://imgur.com/RNtmZuH.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# "A" - the online magazine
 
-## Available Scripts
+## by Tatyana, Gabe
 
-In the project directory, you can run:
+_____________________________________________________________________________________
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- ![clone](https://imgur.com/2wai22O.png) -->
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Welcome to our ReadMe. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `npm run build`
+### "A" is the place to go for your daily niche news fix
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Visit "A" on Heroku now! <em><a href="https://google.com">Click here</a></em> 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<br>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Link to the project's GitHub repo can be found <em><a href="https://github.com/gabevela/projectFour">here</a>.</em>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Here is our original wireframe:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<br>
 
-## Learn More
+![clone](https://imgur.com/53tvIa5.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![clone](https://imgur.com/wNUV4fF.png)
 
-### Code Splitting
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## If you subscribe, you may
 
-### Analyzing the Bundle Size
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Save articles to your User Profile
 
-### Making a Progressive Web App
+- Subscribe for email updates
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Search article by Author
 
-### Advanced Configuration
+- Go Ad Free!!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+<br>
 
-### Deployment
+![clone](https://imgur.com/UaPgSwC.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<br>
+<br>
 
-### `npm run build` fails to minify
+## Main data that our online magazine requires:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<br>
+
+![clone](https://imgur.com/KH95owh.png)
+
+<br>
+<br>
+<br>
+
+<!-- ## We then went on to create the ERD to visualize the relationships between our data: -->
+
+<br>
+
+<!-- ![clone](https://imgur.com/kDv6PyL.png) -->
+
+<br>
+<!-- ![clone](https://imgur.com/VryyRAS.png) -->
+
+## Technologies used to develop Online Magazine
+
+### We relied on the following tech to make this app possible:
+<br>
+
+1. HTML
+
+2. CSS
+
+3. JavaScript
+
+4. React
+
+<br>
+<br>
+<br>
+<br>
+
+
+![clone](https://imgur.com/PMN9rX4.png)
