@@ -40,8 +40,7 @@ const NavMagazine = (props, setHamburgerBtnActive, hamburgerBtnActive ) => {
           </div>
 
           <button
-           
-            onClick={props.setHamburgerBtnActive(!hamburgerBtnActive)}
+            onClick={props.handleBtnActive}
             class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
