@@ -9,11 +9,13 @@ const ArticleCard = (props) => {
 
 
    
-    <div class="col-md-6 col-lg-4">
+    <div class="col-md-6 col-lg-4 col-sm-12">
       
       <div class="card" style={{minHeight: '100%'}} onClick={()=> navigate(`/detail?id=${props.id}`)}>
     
           <img
+          class="card-img-top img-fluid"
+            style={{minHeight: '30%', maxHeight: '30%'}}
             src={props.image}
             class="card-img-top"
             alt="..."
