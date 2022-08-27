@@ -4,7 +4,7 @@ import { FaBeer } from 'react-icons/fa'
 const ContributorCard = (props) => {
   return (
     
-      <div class="col-md-3 col-lg-3">
+      <div class="col-md-3 col-lg-3 col-sm-6">
             <div class="card bg-light" style={{minHeight: '100%'}}>
               <div class="card-body text-center">
                 <img
