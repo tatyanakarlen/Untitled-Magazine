@@ -2,8 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import './ArticleCard.css'
 const ArticleCard = (props) => {
-  // {title, contributor, body, image, createdAt}
-  const navigate = useNavigate();
+const navigate = useNavigate();
   
   return (
 

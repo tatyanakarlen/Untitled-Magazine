@@ -14,11 +14,6 @@ const NavMagazine = (props, setHamburgerBtnActive, hamburgerBtnActive ) => {
   };
 
 
-  
-  // hamburgerBtnActive
-
- 
-
   return (
     <div>
       <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
@@ -56,7 +51,6 @@ const NavMagazine = (props, setHamburgerBtnActive, hamburgerBtnActive ) => {
           </button>
 
           <div 
-          // onClick={props.setHamburgerBtnActive(!hamburgerBtnActive)}
           class="collapse navbar-collapse" id="navmenu"
           >
             <ul class="navbar-nav ms-auto nav-links">

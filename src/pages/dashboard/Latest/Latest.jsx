@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Latest = (props) => {
-  //  allArticles are passed here
+
 
   const articlesReversed = props.allArticles.reverse()
-  // hello hello
+  
 
     return(    
     <div class="container my-5">
