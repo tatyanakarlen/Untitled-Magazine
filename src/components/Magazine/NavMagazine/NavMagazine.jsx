@@ -14,15 +14,10 @@ const NavMagazine = (props, setHamburgerBtnActive, hamburgerBtnActive ) => {
   };
 
 
-  
-  // hamburgerBtnActive
-
- 
-
   return (
     <div>
       <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
-        <div class="container d-flex flex-row">
+        <div class="container d-flex flex-row align-items-baseline">
           <div class="d-flex flex-row">
             <input
               type="text"
@@ -56,7 +51,6 @@ const NavMagazine = (props, setHamburgerBtnActive, hamburgerBtnActive ) => {
           </button>
 
           <div 
-          // onClick={props.setHamburgerBtnActive(!hamburgerBtnActive)}
           class="collapse navbar-collapse" id="navmenu"
           >
             <ul class="navbar-nav ms-auto nav-links">

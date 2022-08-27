@@ -47,11 +47,6 @@ const FooterMagazine = ({user}) => {
             Admin Login
           </Link></p>
           {link}
-          {/* <p>
-          <Link to="/dashboard ">
-            DASHBOARD
-          </Link>
-          </p> */}
           <p>
           <Link to=""
           class="text-light  magNav-links"

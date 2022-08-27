@@ -9,11 +9,6 @@ const ContributorCardGroup = (props) => {
         <div class="row g-3" style={{marginTop: '1rem'}}>
         {props.contributors.map(m => 
           <ContributorCard name={m.name} bio={m.bio}  image={m.image} city={m.city} country={m.country}/> )} 
-         {/* <ContributorCard />
-         <ContributorCard />
-         <ContributorCard />
-         <ContributorCard /> */}
-
         </div>
 
       </div>

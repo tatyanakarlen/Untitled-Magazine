@@ -32,10 +32,7 @@ const ArticleCardGroup = (props) => {
                   id={a._id}
                   headline={a.headline}
                 />
-                
-                
-                /* {allArticles.map(m => 
-          <ArticleCard title={m.title} contributor={m.contributor} body={m.body} image={m.image} createdAt={m.createdAt} /> )} */
+              
               );
             }
           })}
