@@ -13,6 +13,10 @@ const NavMagazine = (props, setHamburgerBtnActive, hamburgerBtnActive ) => {
     props.setSearchInput(e.target.value);
   };
 
+
+  
+  // hamburgerBtnActive
+
  
 
   return (

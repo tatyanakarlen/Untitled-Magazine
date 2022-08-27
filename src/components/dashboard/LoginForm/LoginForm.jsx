@@ -50,44 +50,55 @@ const LoginForm = ({ setUserInState, user }) => {
       }
 
    return (
-    <div>
-       <div>
-           <h3>I am Login page</h3>
-        <div className="form-container">
-          <form autoComplete="off" onSubmit={handleSubmit}>
-
-            <label>Email</label>
-            <input 
-            type="text" 
-            name="email" 
-            value={userLogin.email} 
-            onChange={(e) =>
-              setUserLogin({
-              ...userLogin,
-              email: e.target.value,
-            })
-            }
-            required />
-            <label>Password</label>
-            <input 
-            type="password" 
-            name="password" 
-            value={userLogin.password} 
-            onChange={(e) =>
-              setUserLogin({
-              ...userLogin,
-              password: e.target.value,
-                })
-            }
-            required />
-            {/* <button type="submit" disabled={disable}>SIGN UP</button> */}
-            <button type="submit">LOGIN UP</button>
-          </form>
-        </div>
-        <p className="error-message">&nbsp;{userLogin.error}</p>
-        
+    <div >
+      
+      
+          
+       <form autoComplete="off" onSubmit={handleSubmit}>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">E-mail:</label>
+    <input 
+    type="email" 
+    name="email" 
+    value={userLogin.email} 
+    class="form-control" 
+    id="exampleInputEmail1" 
+    aria-describedby="emailHelp"
+    onChange={(e) =>
+        setUserLogin({
+        ...userLogin,
+        email: e.target.value,
+      })
+      }
+      required />
+    
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password:</label>
+    <input 
+    type="password" 
+    name="password" 
+    value={userLogin.password} 
+    class="form-control" 
+    id="exampleInputPassword1"
+    onChange={(e) =>
+        setUserLogin({
+        ...userLogin,
+        password: e.target.value,
+          })
+      }
+      required 
+    
+    
+    />
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Log In</button>
+</form>
+<p className="error-message h6 g-2">&nbsp;{userLogin.error}</p>
       </div>
-    </div>
+    // </div>
   )
 }
 

@@ -26,7 +26,7 @@ const MagazinePage = (allArticles, user) => {
   return (
     <div>
       <NavMagazine setSearchInput={setSearchInput} hamburgerBtnActive={hamburgerBtnActive} handleBtnActive={handleBtnActive}/>
-      <HeroMagazine />
+      <HeroMagazine hamburgerBtnActive={hamburgerBtnActive}/>
      <ArticleCardGroup articles={allArticles} searchInput={searchInput} />
      <ContributorCardGroup contributors={allArticles.allContributors}/>
      <FooterMagazine user={allArticles.user}/>

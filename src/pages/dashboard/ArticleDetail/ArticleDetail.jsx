@@ -19,7 +19,7 @@ const ArticleDetail = (props) => {
     <div class="col d-flex flex-column h-sm-100">
       <div
        id="detailContainer"
-        class="row overflow-auto d-flex justify-content-center col-10 col-md-7 col-sm-11 col-lg-5"
+        class="row overflow-auto d-flex justify-content-center col-10 col-md-7 col-sm-11 col-lg-6"
         style={{ margin: '0 auto' }}
       >
         {/* <div>

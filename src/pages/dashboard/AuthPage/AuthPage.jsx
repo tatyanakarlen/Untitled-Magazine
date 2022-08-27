@@ -10,19 +10,21 @@ const AuthPage = ({setUserInState, user}) => {
 
   let [showLogin, setShowLogin] = useState(true)
   return (
-    <div>
-      I AM AUTH PAGE
-      <br/>
-      <Link className="nav-left-link" to="/">
-        MAGAZINE
-      </Link>
+    <div class="row col-lg-4 col-md-6 col-sm-10 d-flex justify-content-center;" style={{margin: '0 auto', marginTop: '2rem', display: 'flex', alignItems: 'center'}}>
+      <div>
+    
+    
       <h3 onClick={() => setShowLogin(!showLogin)}>
-      {showLogin ? 'SIGN UP' : 'LOG IN'}
+      {/* {showLogin ? 'SIGN UP' : 'LOG IN'} */}
+      UNTITLEDmagazine
       </h3>
+      <hr/>
+      <p class="h5">Content Manager Login</p>
       {showLogin ? 
       <LoginForm user={user} setUserInState={setUserInState}/>:
       <SignUpForm user={user} setUserInState={setUserInState}/>
       }
+    </div>
     </div>
   )
 }
