@@ -9,7 +9,7 @@ const ArticleCard = (props) => {
 
 
    
-    <div class="col-md-4 col-lg-4">
+    <div class="col-md-6 col-lg-4">
       
       <div class="card" style={{minHeight: '100%'}} onClick={()=> navigate(`/detail?id=${props.id}`)}>
     
