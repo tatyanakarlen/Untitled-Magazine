@@ -33,52 +33,7 @@ const PostArticleForm = ({
   const [formValidMsg, setFormValidMsg] = useState(false)
 
 
-  // const [articleFormValidation, setArticleFormValidation] = useState({
-  //   title: '',
-  //   contributor: '',
-  //   headline: '',
-  //   body: '',
-  //   tags: '',
-  // });
-
-  // const [formValid, setFormValid] = useState(false)
-
-  // if (
-  //   articleFormValidation.title > 4 && articleFormValidation.contributor > 4 && articleFormValidation.headline > 4
-  //   && articleFormValidation.body > 4 && articleFormValidation.tags > 4 ) {
-  //   setFormValid(true)
-  //   }
-    
   
-
-
-  // formRef,
-  // formValid,
-  // setFormValid,
-  // errorMsg,
-  //setErrorMsg,
-
-  // const isFieldValid = e.target.checkValidity();
-  //   let errorMsg = "";
-  //   if (!isFieldValid) {
-  //     errorMsg = `${e.target.name} is not valid`;
-  //   }
-
-  // stateChanges.errorMsg = errorMsg;
-    // stateChanges.formValid = this.formRef.current.checkValidity();
-
-    //end handle change 
-
-
-    // {this.state.errorMsg}
-    //   <form ref={this.formRef}>
-
-    //pattern="[A-Za-z]{2,}"
-
-    //disabled={!this.state.formValid}
-
-    
-
   return (
     <div class="col-md">
       <div class="card bg-light text-dark">

@@ -9,8 +9,7 @@ import BreadCrumb from '../BreadCrumb/BreadCrumb'
 
 const PostArticle = ({ user, allArticles, setArticles, getData, allContributors, userOwnedContributors }) => {
   
-  // const formRef = React.createRef();
-  // const [formValid, setFormValid] = useState(false)
+ 
   const [errorMsg, setErrorMsg] = useState('')
 
   const ref = useRef();
@@ -97,6 +96,14 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors,
       console.log(res);
       if (res.statusText === 'OK') {
         console.log('SUCCESSLY ADDED TO DB =>', article);
+        setArticleFormValidation({
+          title: '',
+          headline: '',
+          body: '',
+          tags: '',
+        });
+      
+        setFormValid(false)
 
         setArticle({
           title: '',
