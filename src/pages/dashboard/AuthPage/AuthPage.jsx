@@ -19,7 +19,7 @@ const AuthPage = ({setUserInState, user}) => {
       UNTITLEDmagazine
       </h3>
       <hr/>
-      <p class="h6">Content manager login</p>
+      <p class="h5">Content Manager Login</p>
       {showLogin ? 
       <LoginForm user={user} setUserInState={setUserInState}/>:
       <SignUpForm user={user} setUserInState={setUserInState}/>

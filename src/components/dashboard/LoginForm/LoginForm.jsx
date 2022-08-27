@@ -56,7 +56,7 @@ const LoginForm = ({ setUserInState, user }) => {
           
        <form autoComplete="off" onSubmit={handleSubmit}>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email</label>
+    <label for="exampleInputEmail1" class="form-label">E-mail:</label>
     <input 
     type="email" 
     name="email" 
@@ -75,7 +75,7 @@ const LoginForm = ({ setUserInState, user }) => {
     
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <label for="exampleInputPassword1" class="form-label">Password:</label>
     <input 
     type="password" 
     name="password" 
