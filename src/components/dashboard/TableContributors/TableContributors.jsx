@@ -12,12 +12,11 @@ const TableContributors = ({ userOwnedContributors, button, allContributors,setU
     setDeleteSelectedContributor, setDeleteContributorAlert, deleteContributorAlert
  }) => {
 
-// const reversedContribsList = allContributors.reverse()
+
 
   return (
     <div class="table-responsive-md">
     <p class="h3 text-left" style={{ textAlign: 'left' }}>
-      {/* this button must be passed down to form */}
       All contributors{button}
     </p>
     <table class="table table-bordered table-hover table-striped">
@@ -32,7 +31,6 @@ const TableContributors = ({ userOwnedContributors, button, allContributors,setU
         </tr>
       </thead>
       <tbody>
-        {/* pass down allContributers */}
         {userOwnedContributors.map((m, i) => (
           <tr>
             <th key={i} scope="row">{m.name}</th>
@@ -45,8 +43,6 @@ const TableContributors = ({ userOwnedContributors, button, allContributors,setU
 
               <Link
                 to=""
-               
-                // pass down setUpdateCOntribFOrm state
                 onClick={() => {
                   setUpdateContributorForm(!updateContributorForm);
                   updateSelectedContributor({
@@ -69,9 +65,7 @@ const TableContributors = ({ userOwnedContributors, button, allContributors,setU
             <td>
             <Link
                 to=""
-                // pass down setDeleteSelectedContrib
                 onMouseEnter={() => setDeleteSelectedContributor(m._id)}
-                // pass down setDeleteContributoralert
                 onClick={() =>
                   setDeleteContributorAlert(!deleteContributorAlert)
                 }

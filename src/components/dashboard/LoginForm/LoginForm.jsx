@@ -98,7 +98,6 @@ const LoginForm = ({ setUserInState, user }) => {
 </form>
 <p className="error-message h6 g-2">&nbsp;{userLogin.error}</p>
       </div>
-    // </div>
   )
 }
 

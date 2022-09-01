@@ -10,7 +10,6 @@ const UpdateContributorForm = ( {selectedContributor, updateSelectedContributor,
       <hr/>
       <form class="row g-3">
           <div id="form-box" class="col-md-12">
-              {/* <br/> */}
              <label class="float-left" for="comments" class="form-label">Name:</label>
                <input 
               class="form-control title-place shadow" 

@@ -60,9 +60,6 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors,
     e.preventDefault();
 
     console.log(article);
-    //Image sending starts here
-    // telling the server - take this photo - send it to cloudinary - and give us the link of where it is stored
-    //
     try {
       let jwt = localStorage.getItem('token');
       let responseOne = await fetch('/img', {
@@ -80,13 +77,11 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors,
 
       console.log('cloudinary url :', responseTwo.imageurl);
       setArticle({
-        // hook  - ? why is this not updating in time for the next api cal ??
         ...article,
-        image: responseTwo.imageurl, // this is the image url where it is stored and should be sent to the db, but it is
-        // being stored as an empty string.... why?
+        image: responseTwo.imageurl, 
       });
 
-      //Image sending ends here
+      
       article.image = responseTwo.imageurl;
       const res = await fetch('/api/articleSubmissions', {
         method: 'POST',
@@ -114,11 +109,9 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors,
           image: '',
           postedBy: user._id,
         });
-        // getData();
+        
 
         setImg('');
-        // setImgLink("")
-        // console.log(fileInputRef.current);
         fileInputRef.current.value = '';
       }
       getData();
@@ -127,35 +120,6 @@ const PostArticle = ({ user, allArticles, setArticles, getData, allContributors,
     }
   };
 
-  // const postArticle = async (e) => {
-  //   e.preventDefault();
-  //   console.log(article);
-
-  //   try {
-  //       const res = await fetch('/api/articleSubmissions', {
-  //         method: 'POST',
-  //         headers: { 'Content-Type': 'application/json' },
-  //         body: JSON.stringify({ article: article }),
-  //       });
-  //       console.log(res);
-  //       if (res.statusText === 'OK') {
-  //         console.log('SUCCESSLY ADDED TO DB =>', article);
-  //         setArticle({
-  //           title: '',
-  //           contributor: '',
-  //           body: '',
-  //           tags: '',
-  //           postedBy: user._id,
-  //         });
-
-  //         const newArticlesList = [...allArticles, article]
-  //         setArticles(newArticlesList)
-  //       }
-  //     } catch (err) {
-  //       console.log(err.message);
-  //     }
-
-  // }
 
   return (
     <div class="col d-flex flex-column h-sm-100">
