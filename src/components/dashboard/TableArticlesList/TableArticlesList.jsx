@@ -8,15 +8,6 @@ const TableArticlesList = ({ userOwnedArticles, allArticles, setUpdateArticleFor
     setDeleteArticleAlert, deleteArticleAlert, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData
   }) => {
 
-    // allArticles={allArticles}
-    // setUpdateArticleForm={setUpdateArticleForm}
-    // updateArticleForm={updateArticleForm}
-    // updateSelectedArticle={updateSelectedArticle}
-    // selectedArticle={selectedArticle}
-    // setDeleteSelectedArticle={setDeleteSelectedArticle}
-    // setDeleteArticleAlert={setDeleteArticleAlert}
-    // deleteArticleAlert={deleteArticleAlert}
-
   return (
     <div class="table-responsive-md">
     <p class="h3 text-left" style={{ textAlign: 'left' }}>
@@ -35,7 +26,6 @@ const TableArticlesList = ({ userOwnedArticles, allArticles, setUpdateArticleFor
         </tr>
       </thead>
       <tbody>
-        {/* have to pass down allArticles */}
         {userOwnedArticles.map((m) => (
           <tr>
             <th scope="row">{m.title}</th>
@@ -64,8 +54,6 @@ const TableArticlesList = ({ userOwnedArticles, allArticles, setUpdateArticleFor
               <Link
                 to=""
                 onClick={() => {
-                  // have to pass down setUpdateArticleForm
-                  // updateSelectedARtciel
                   setUpdateArticleForm(!updateArticleForm);
                   updateSelectedArticle({
                     ...selectedArticle,
@@ -86,13 +74,10 @@ const TableArticlesList = ({ userOwnedArticles, allArticles, setUpdateArticleFor
             <td>
               <Link
                 to=""
-                // have to pass down setDeleteSelectedArtciel
                 onMouseEnter={() => setDeleteSelectedArticle(m._id)}
-              // have to pass doen below 
                 onClick={() =>
                   setDeleteArticleAlert(!deleteArticleAlert)
                 }
-                // href="#"
                 class="btn btn-sm btn-danger"
               >
                 <BsFillTrashFill />

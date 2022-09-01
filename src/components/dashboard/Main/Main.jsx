@@ -8,12 +8,6 @@ import './Main.css';
 
 const Main = ({ user, allArticles, articleViewActive, setarticleViewActive, articleViewData, setarticleViewData, userOwnedArticles, userOwnedContributors }) => {
 
-  // const showArticle = articleViewActive
-
-  // <ArticleView
-  //   articleViewActive={articleViewActive}
-  //   setarticleViewActive={setarticleViewActive}
-  // />;
 
   let contrib = userOwnedContributors.length
   let articles = userOwnedArticles.length

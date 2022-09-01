@@ -25,7 +25,6 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
       <hr/>
       <form class="row g-3">
           <div id="form-box" class="col-md-12">
-              {/* <br/> */}
              <label for="comments" class="form-label">Name:</label>
                <input 
               class="form-control title-place shadow" 
@@ -167,15 +166,15 @@ const AddContributorForm = ( {contributor, setContributor, postContributor, setA
                     setErrorMsg('')
                   }
                   setFormValidMsg(!formValidMsg)
-                setContributor({
+                  setContributor({
                     ...contributor, 
                     country: e.target.value
                 })
-                setContributorFormValidation({
+                  setContributorFormValidation({
                   ...contributorFormValidation, 
                   country: e.target.value,
                })
-                checkValid()
+                  checkValid()
               }
             }
               >

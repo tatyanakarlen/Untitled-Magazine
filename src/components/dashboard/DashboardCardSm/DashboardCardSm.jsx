@@ -1,8 +1,8 @@
 import React from 'react';
 import './DashboardCardSm.css'
-import * as Icon from 'react-bootstrap-icons';
 
-{/* <Icon.ArrowRight /> */}
+
+
 
 const DashboardCardSm = ({ title, count, word, color }) => {
   return (

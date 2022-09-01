@@ -6,8 +6,7 @@ import Table from '../TableArticlesList/TableArticlesList';
 import { Link } from 'react-router-dom';
 import UpdateArticleForm from '../UpdateArticleForm/UpdateArticleForm.jsx';
 import TableArticlesList from '../TableArticlesList/TableArticlesList';
-import ArticleView from '../ArticleView/ArticleView';
-// import { Breadcrumb } from 'react-bootstrap';
+import ArticleView from '../ArticleView/ArticleView'
 import BreadCrumb from '../BreadCrumb/BreadCrumb';
 
 const ArticlesList = ({
@@ -21,19 +20,6 @@ const ArticlesList = ({
   setarticleViewData,
   userOwnedArticles
 }) => {
-
-
-  
-  // this is only the user articles posts!!!!
-
-  // const userOwnedArticles = allArticles.filter(function (el) {
-  //   return el.postedBy === user._id
-          
-  // });
-  // console.log('this is user owner articles', userOwnedArticles)
-  
-  
-
 
 
   const [updateArticleForm, setUpdateArticleForm] = useState(false);
@@ -106,7 +92,7 @@ const ArticlesList = ({
         {
           method: 'DELETE',
           headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + jwt},
-          // body: JSON.stringify({ deleteSelectedArticle: deleteSelectedArticle }),
+         
         }
       );
       console.log('response', res);

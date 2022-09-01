@@ -45,10 +45,8 @@ const PostArticleForm = ({
           {errorMsg}
           <hr />
           <form 
-          // ref={formRef}
           class="row g-3">
             <div class="col-md-12">
-              {/* <br/> */}
               <label
                 for="comments"
                 class="form-label"
@@ -56,8 +54,6 @@ const PostArticleForm = ({
               >
                 Title:
               </label>
-              {/* style={{ float: 'left'}} */}
-              {/* class="form-label"  */}
 
               <input
                 class="form-control title-place shadow"
@@ -248,7 +244,6 @@ const PostArticleForm = ({
                     onClick={postArticle} disabled={!formValid}
                     type="submit"
                     class="btn btn-primary"
-                    // col-2 mt-2
                   >
                     Submit
                   </button>

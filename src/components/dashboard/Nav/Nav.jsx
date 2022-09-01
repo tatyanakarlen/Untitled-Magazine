@@ -7,7 +7,6 @@ const SPAN_CLASS = 'ms-1 d-none d-md-inline';
 const Nav = ({ handleLogOut, navActive, setNavActive }) => {
   return (
     <div class="bg-light col-12 col-md-2 sticky-top">
-      {/* pay attention to line above */}
       <a
         href="/"
         class="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-dark text-decoration-none"

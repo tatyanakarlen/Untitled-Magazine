@@ -3,18 +3,6 @@ import { BsXLg } from "react-icons/bs"
 
 const UpdateArticleForm = ({ selectedArticle, updateSelectedArticle, updateArticle, updateArticleForm, setUpdateArticleForm }) => {
 
-
-    // const [selectedArticle, updateSelectedArticle] = useState({
-    //     title: '',
-    //     contributor: '',
-    //     body: '',
-    //     tags: '',
-    //     articleId: '',
-    //     postedBy: user._id,
-    //   });
-    
-
-
   return (
     <div>
       <header class="d-flex justify-content-between"><span class="h4">Edit Article</span><button class='btn btn-primary btn-sm' onClick={() => setUpdateArticleForm(!updateArticleForm)}><BsXLg /></button>
@@ -22,7 +10,6 @@ const UpdateArticleForm = ({ selectedArticle, updateSelectedArticle, updateArtic
       <hr/>
       <form class="row g-3">
           <div id="form-box" class="col-md-12">
-              {/* <br/> */}
              <label for="comments" class="form-label">Title:</label>
                <input 
               class="form-control title-place shadow" 

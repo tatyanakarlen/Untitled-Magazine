@@ -45,7 +45,6 @@ const ContributorsList = ({
     if ( (contributorFormValidation.name.length >= 2 && contributorFormValidation.email.length >= 2) 
     && (contributorFormValidation.city.length >= 2 && contributorFormValidation.country.length >= 2)) {
      setFormValid(true)
-     // console.log('form valid')
      }
    }
 
@@ -81,7 +80,7 @@ const ContributorsList = ({
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        photo: img, // take this image, if all goes wel then ....
+        photo: img, 
       }),
     });
 
@@ -104,7 +103,6 @@ const ContributorsList = ({
     city: '',
     country: '',
     contributerId: '',
-    // bio: '',
     postedBy: user._id,
   });
 
@@ -150,7 +148,7 @@ const ContributorsList = ({
           postedBy: user._id,
         });
 
-        // ref.current.value = '';
+       
         setImg('');
         console.log('image link is about to happen');
         setImgLink('');
@@ -301,10 +299,6 @@ const ContributorsList = ({
     );
   }
 
-  // btn btn-sm btn-primary
-
-  // const [deleteAlert, setDeleteAlert] = useState(false)
-
   let alert = '';
   if (deleteContributorAlert) {
     alert = (
@@ -343,7 +337,6 @@ const ContributorsList = ({
         {breadCrumbActive}
           {activeAddContribForm}
           {activeUpdateContribForm}
-          {/* table goes here */}
 
           <TableContributors
             userOwnedContributors={userOwnedContributors}
