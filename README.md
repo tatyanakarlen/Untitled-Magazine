@@ -55,14 +55,11 @@ ________________________________________________________________________________
 <br>
 <br>
 
-<!-- ## We then went on to create the ERD to visualize the relationships between our data: -->
+## Contributors List and Footer:
+![clone](https://imgur.com/25rIMod.png)
 
-<br>
 
-<!-- ![clone](https://imgur.com/kDv6PyL.png) -->
 
-<br>
-<!-- ![clone](https://imgur.com/VryyRAS.png) -->
 
 ## Technologies used to develop Online Magazine
 
