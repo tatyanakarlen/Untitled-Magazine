@@ -1,4 +1,4 @@
-<!-- ![clone](https://i.imgur.com/kTtQx4X.png) -->
+
 ![Alt text](http://i.imgur.com/kTtQx4X.png)
 
 
