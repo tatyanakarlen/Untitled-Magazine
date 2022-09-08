@@ -10,7 +10,7 @@ ________________________________________________________________________________
 <!-- ![clone](https://imgur.com/2wai22O.png) -->
 
 
-## UNTITLEDmagazine. 
+## UNTITLEDmagazine Content-Management Dashboard & Magazine
 
 <br>
 
@@ -54,7 +54,7 @@ Untitled Magazine is a content-management admin dashboard and online magazine. R
 
 
 
-## Article View Page that can be shared via Facebook, Twitter and What's App:
+## Article View/Show Page 
 
 <br>
 
