@@ -71,9 +71,7 @@ ________________________________________________________________________________
 
 
 
-## Technologies used to develop Online Magazine
-
-### We relied on the following tech to make this app possible:
+## Technologies used:
 <br>
 
 1. React
@@ -95,5 +93,3 @@ ________________________________________________________________________________
 <br>
 <br>
 
-
-![clone](https://imgur.com/9k1V3D2.png)
