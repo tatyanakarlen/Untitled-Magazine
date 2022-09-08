@@ -44,9 +44,15 @@ Untitled Magazine is a content-management admin dashboard and online magazine. R
 
 ![clone](https://imgur.com/Xo9MfNR.png)
 
+<br>
+
+![clone](https://imgur.com/u2rqn6J.png)
 
 <br>
 <br>
+
+
+
 
 ## Article View Page that can be shared via Facebook, Twitter and What's App:
 
