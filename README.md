@@ -79,13 +79,19 @@ ________________________________________________________________________________
 ### We relied on the following tech to make this app possible:
 <br>
 
-1. HTML
+1. React
 
-2. CSS
+2. HTML/CSS
 
 3. JavaScript
 
-4. React
+4. Node.JS
+
+5. Express
+
+6. MongoDB
+
+7. Bootstrap CSS
 
 <br>
 <br>
