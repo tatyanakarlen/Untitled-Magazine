@@ -44,11 +44,12 @@ ________________________________________________________________________________
 <br>
 <br>
 
-## Main data that our online magazine requires:
+## Article View Page that can be shared via Facebook, Twitter and What's App:
 
 <br>
 
-![clone](https://imgur.com/KH95owh.png)
+![clone](https://imgur.com/c9bLTKF.png)
+
 
 <br>
 <br>
