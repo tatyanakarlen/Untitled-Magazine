@@ -10,7 +10,7 @@ ________________________________________________________________________________
 <!-- ![clone](https://imgur.com/2wai22O.png) -->
 
 
-## Welcome to our ReadMe. 
+## UNTITLEDmagazine. 
 
 <br>
 
@@ -18,12 +18,12 @@ ________________________________________________________________________________
 
 <br>
 
-### Visit <em><a href="https://untitled-magazine.herokuapp.com/">UNTITLEDmagazine</a>.</em> 
+### Visit the deployed app here <em><a href="https://untitled-magazine.herokuapp.com/">UNTITLEDmagazine</a>.</em> 
 
 
 <br>
 
-### Link to the project's GitHub repo can be found <em><a href="https://github.com/tatyanakarlen/Untitled-Magazine">here</a>.</em>
+### Link to the project's GitHub repo can be found here <em><a href="https://github.com/tatyanakarlen/Untitled-Magazine">here</a>.</em>
 
 <br>
 
