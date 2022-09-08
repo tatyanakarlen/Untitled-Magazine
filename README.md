@@ -20,11 +20,8 @@ Untitled Magazine is a content-management admin dashboard and online magazine. R
 <br>
 
 ### Visit the deployed app here <em><a href="https://untitled-magazine.herokuapp.com/">UNTITLEDmagazine</a>.</em> 
-
 <br>
-
 ### Link to the project's GitHub repo can be found here <em><a href="https://github.com/tatyanakarlen/Untitled-Magazine">here</a>.</em>
-
 <br>
 
 ## Admin dashboard:
