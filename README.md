@@ -51,6 +51,9 @@ ________________________________________________________________________________
 ![clone](https://imgur.com/c9bLTKF.png)
 
 <br>
+<br>
+
+## Articles can be shared via Facebook, Twitter and What's App:
 
 ![clone](https://imgur.com/HQMpzIw.png)
 
