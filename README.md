@@ -36,23 +36,6 @@ ________________________________________________________________________________
 
 <br>
 
-![clone](https://imgur.com/LjiQqaF.png)
-
-<br>
-
-## If you subscribe, you may
-
-<br>
-
-- Save articles to your User Profile
-
-- Subscribe for email updates
-
-- Search article by Author
-
-- Go Ad Free!!
-
-<br>
 
 ![clone](https://imgur.com/UaPgSwC.png)
 
