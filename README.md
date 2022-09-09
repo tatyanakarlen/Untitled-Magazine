@@ -5,6 +5,7 @@
 
 
 
+
 _____________________________________________________________________________________
 
 
@@ -25,6 +26,12 @@ Untitled Magazine is a content-management admin dashboard and online magazine. R
 ### Link to the project's GitHub repo can be found here <em><a href="https://github.com/tatyanakarlen/Untitled-Magazine">here</a>.</em>
 
 <br>
+
+## Content manager is able to log in with JSON Web Token (JWT authentication):
+
+<br>
+
+![clone](https://imgur.com/PAIJcvH.png)
 
 ## Admin dashboard:
 
@@ -96,6 +103,8 @@ Untitled Magazine is a content-management admin dashboard and online magazine. R
 6. MongoDB
 
 7. Bootstrap CSS
+
+8.JSON Web Token (JWT)
 
 <br>
 <br>
