@@ -106,7 +106,7 @@ Untitled Magazine is a content-management admin dashboard and online magazine. R
 
 7. Bootstrap CSS
 
-8.JSON Web Token (JWT)
+8. JSON Web Token (JWT)
 
 <br>
 <br>
