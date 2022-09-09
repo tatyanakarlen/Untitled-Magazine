@@ -44,7 +44,8 @@ Untitled Magazine is a content-management admin dashboard and online magazine. R
 <br>
 
 
-![clone](https://imgur.com/Adws0ge.png)
+![clone](https://imgur.com/ENkdaG6.png)
+
 
 <br>
 
