@@ -3,6 +3,7 @@ import './NavMagazine.css';
 import useIsBelow from '../../../hooks';
 import { Link } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
+import { useMediaQuery } from 'react-responsive'
 
 const NavMagazine = (props, setHamburgerBtnActive, hamburgerBtnActive ) => {
   const { isBelow } = useIsBelow();
@@ -13,23 +14,49 @@ const NavMagazine = (props, setHamburgerBtnActive, hamburgerBtnActive ) => {
     props.setSearchInput(e.target.value);
   };
 
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' })
 
+ 
+  // let inputContainer = 
+  // <div class="d-flex flex-row">
+  // <input
+  // type="text"
+  // class="form-control news-input"
+  // placeholder="Search"
+  // style={{ height: '37px', width: '100x' }}
+  // onChange={handleChange}
+  // />
+  // <button class="btn btn-dark" style={{ marginBottom: '1rem' }}>
+  // <BsSearch style={{ fontSize: '23px' }} />
+  // </button>
+  // </div>
+
+  let inputContainer = 
+  <div class="d-flex flex-row">
+    <input
+    type="text"
+    class="form-control news-input"
+    placeholder="Search"
+    style={{ height: '37px', width: '100x' }}
+    onChange={handleChange}
+    />
+    <button class="btn btn-dark" style={{ marginBottom: '1rem' }}>
+    <BsSearch style={{ fontSize: '23px' }} />
+    </button>
+    </div>
+
+  if(isMobile && isBelow) {
+    inputContainer = ''
+  }
+
+  
+  
   return (
     <div>
       <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
         <div class="container d-flex flex-row align-items-baseline">
           <div class="d-flex flex-row">
-            <input
-              type="text"
-              class="form-control news-input"
-              placeholder="Search"
-              style={{ height: '37px', width: '100x' }}
-              onChange={handleChange}
-            />
-            <button class="btn btn-dark" style={{ marginBottom: '1rem' }}>
-              <BsSearch style={{ fontSize: '23px' }} />
-            </button>
-
+             {inputContainer} 
             {isBelow && (
               <h2 style={{ color: 'white' }}>
                 UNTITLED
