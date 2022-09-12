@@ -61,9 +61,8 @@ const ArticleDetail = (props) => {
 
                 <div class="row text-center g-1 ">
                   <div class="card mb-3" style={{ border: 'none' }}>
-                    <img
+                    <img id="img"
                       class="card-img-top"
-                      style={{ minHeight: '30%', maxHeight: '40%' }}
                       src={a.image}
                       alt="Card image cap"
                     />
